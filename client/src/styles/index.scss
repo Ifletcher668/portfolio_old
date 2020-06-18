@@ -1,0 +1,33 @@
+@import './_mixins.scss';
+@import './colorScheme';
+
+// ########################
+// General styles
+// ########################
+* {
+    margin: 0;
+}
+html,
+body,
+#root,
+#site-wrapper {
+    min-height: 100vh;
+    // min-width: 100vw;
+    background-color: $backgroundColor;
+    text-align: center;
+    color: $primaryText;
+}
+
+a {
+    color: $linkColor;
+    text-decoration: none;
+}
+
+.root {
+    @include flexbox();
+    flex-flow: column wrap;
+}
+
+.hide {
+    display: none;
+}

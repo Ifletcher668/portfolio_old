@@ -1,0 +1,34 @@
+@import './colorScheme';
+@import './mixins';
+
+.sentenceFragment {
+    margin: 5px;
+}
+
+.boxLink {
+    margin: auto;
+}
+
+.container {
+    @include flexbox();
+    @include flex(1 100%);
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.container:nth-of-type(1) {
+    min-height: 20vh;
+}
+.container:nth-of-type(2) {
+    min-height: 80vh;
+}
+
+@media (max-width: 390px) {
+    .sentenceFragment {
+        font-size: 0.8em;
+    }
+    .boxLink {
+        margin: 0;
+    }
+}

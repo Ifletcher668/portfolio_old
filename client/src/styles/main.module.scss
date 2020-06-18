@@ -1,0 +1,23 @@
+@import './colorScheme';
+@import './mixins';
+
+.container {
+    @include flexbox();
+    @include flex(1);
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 90px;
+}
+
+.container:nth-child(1) {
+    background-color: grey;
+    justify-content: space-between;
+    @include flex(2 0);
+}
+.container:nth-child(2) {
+    @include flex(9 0);
+}
+.container:nth-child(3) {
+    background-color: tomato;
+}

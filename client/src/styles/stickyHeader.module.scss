@@ -1,0 +1,39 @@
+@import './mixins';
+@import './colorScheme';
+
+.sticky {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.stickyWrapper {
+    position: relative;
+}
+
+.sticky .stickyInner {
+    position: fixed;
+    text-align: left;
+    min-height: 60px;
+    background-color: #080c12;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.navbar {
+    @include flexbox();
+    @include flex(1);
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.container {
+    @include flexbox();
+    // @include flex(1);
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    min-height: 90px;
+}
