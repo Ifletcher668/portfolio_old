@@ -1,0 +1,9 @@
+import React from 'react';
+import Title from './Title';
+import services from '../constants/services';
+
+const Services: React.FC<IProps> = (props: IProps) => {
+    return <h2>services component</h2>;
+};
+
+export default Services;
