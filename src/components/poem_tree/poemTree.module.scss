@@ -1,0 +1,11 @@
+.wrapper {
+    position: relative;
+}
+
+.childOverlay {
+    position: absolute;
+}
+
+.childOverlay .node:hover {
+    opacity: 1;
+}

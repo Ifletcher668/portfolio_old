@@ -3,7 +3,23 @@ import Title from './Title';
 import Blog from './Blog';
 import { Link } from 'gatsby';
 
-export const Blogs: React.FC<IProps> = (props: IProps) => {
-    return <h2>blog list section</h2>;
+export const Blogs: React.FC<IBlogsPage> = (props: IBlogsPage) => {
+    const { posts, title, showLink } = props;
+
+    return (
+        <section className='section blogs'>
+            <Title title={title} />
+            <div className='section-center blogs-center'>
+                {posts.map((blog, idx) => (
+                    <Blog key={idx} {...blog} />
+                ))}
+            </div>
+            {showLink && (
+                <Link to='/blogs' className='btn center-btn'>
+                    All Blogs
+                </Link>
+            )}
+        </section>
+    );
 };
 export default Blogs;

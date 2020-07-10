@@ -19,8 +19,8 @@ const data = [
     },
     {
         id: 4,
-        text: 'blog',
-        url: '/blog/',
+        text: 'blogs',
+        url: '/blogs/',
     },
     {
         id: 5,
@@ -36,7 +36,6 @@ const tempLinks = data.map((link) => {
         </li>
     );
 });
-// I KNOW WE CAN COMBINE IT !!!!!
 
 export default (props: IProps) => {
     const { className } = props;

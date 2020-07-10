@@ -1,0 +1,53 @@
+@import '../../styles/_mixins';
+@import '../../styles/_colors';
+
+.tab-list-col,
+.tab-list-row {
+    @include flexbox();
+    @include justify-content(space-around);
+    @include align-items(flex-start);
+}
+
+.tab-list-col {
+    @include flex-flow(column nowrap);
+    border-right: 1px solid $secondaryText;
+    padding-right: 1em;
+    margin: 0 0.7rem;
+}
+
+.tab-list-row {
+    @include flex-flow();
+    @include flex(1 0 100%);
+    margin: 0.7rem 0;
+}
+
+.tab button {
+    background-color: $backgroundColor;
+
+    box-sizing: border-box;
+    font-size: 2.2em;
+    border: none;
+    color: $primaryText;
+    min-width: fit-content;
+}
+
+.tab-list-row .tab button,
+.tab-list-col .tab button {
+    text-align: left;
+    margin: 0;
+    padding: 0.1em;
+}
+
+.tab button:hover {
+    color: $secondaryText;
+    cursor: pointer;
+}
+
+.tab.active button {
+    color: $secondaryText;
+    border-bottom: $secondaryText 2px solid;
+}
+
+.section {
+    @include flex-flow();
+}

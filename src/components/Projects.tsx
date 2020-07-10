@@ -1,7 +1,7 @@
 import React from 'react';
 import Title from './Title';
 import Project from './Project';
-import { Link } from 'gatsby';
+import { Link, useStaticQuery } from 'gatsby';
 
 const Projects: React.FC<IProps> = (props: IProps) => {
     return <h2>projects list</h2>;

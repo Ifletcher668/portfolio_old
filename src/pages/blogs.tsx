@@ -1,32 +1,28 @@
 import React from 'react';
-import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
-import Hero from '../components/Hero';
-import Services from '../components/Services';
-import Jobs from '../components/Jobs';
-import Projects from '../components/Projects';
+import { graphql } from 'gatsby';
 import Blogs from '../components/Blogs';
+// ...GatsbyImageSharpFluid
 
-export default ({ data }: { [key: string]: any }) => {
-    console.log(data);
-
+const Blog: React.FC<IProps> = ({ data }: { [key: string]: any }) => {
     const {
-        blogs: { nodes: blogs },
-    }: { blogs: { [key: string]: Blog[] } } = data;
+        allStrapiBlogs: { nodes: blogs },
+    }: { allStrapiBlogs: { [key: string]: Blog[] } } = data;
 
     return (
         <Layout>
-            <Hero />
-            {/* <Services />
-            <Jobs />
-            <Blogs posts={blogs} title='Latest Articles' showLink /> */}
+            <section className='blog-page'>
+                <Blogs posts={blogs} title='blog' showLink={false} />
+            </section>
         </Layout>
     );
 };
 
+export default Blog;
+
 export const query = graphql`
     {
-        blogs: allStrapiBlogs(limit: 3, sort: { fields: date, order: DESC }) {
+        allStrapiBlogs {
             nodes {
                 title
                 author
@@ -35,7 +31,7 @@ export const query = graphql`
                 tag {
                     tag
                 }
-                date(formatString: "DD MMMM, YYYY")
+                date(formatString: "DD MMM, YYYY")
                 image {
                     childImageSharp {
                         fluid {
