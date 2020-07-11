@@ -3,20 +3,40 @@ import { Link } from 'gatsby';
 
 const data = [
     {
-        text: 'home',
-        url: '/',
-    },
-    {
         text: 'about',
         url: '/about/',
     },
     {
-        text: 'projects',
-        url: '/projects/',
+        text: 'music',
+        url: '/music/',
+        subMenu: [
+            {
+                text: 'aterrima',
+                url: '/aterrima',
+            },
+            {
+                text: 'transcripts',
+                url: '/transcripts/',
+            },
+        ],
     },
     {
-        text: 'blogs',
-        url: '/blogs/',
+        text: 'writing',
+        url: '/writing/',
+        subMenu: [
+            {
+                text: 'poetry',
+                url: '/poetry/',
+            },
+            {
+                text: 'blogs',
+                url: '/blogs/',
+            },
+        ],
+    },
+    {
+        text: 'portfolio',
+        url: '/portfolio',
     },
     {
         text: 'contact',
@@ -28,10 +48,22 @@ const data = [
     },
 ];
 
-const tempLinks = data.map((link, idx) => {
+const primaryLinks = data.map((link, idx) => {
     return (
-        <li key={idx}>
+        <li key={idx} className='nav-link'>
             <Link to={link.url}>{link.text}</Link>
+            {link.subMenu ? (
+                <ul className='sub-menu'>
+                    {link.subMenu.map((link, idx) => {
+                        return (
+                            <li key={idx}>
+                                {' '}
+                                <Link to={link.url}>{link.text}</Link>{' '}
+                            </li>
+                        );
+                    })}
+                </ul>
+            ) : null}
         </li>
     );
 });
@@ -39,5 +71,5 @@ const tempLinks = data.map((link, idx) => {
 export default (props: IProps) => {
     const { className } = props;
 
-    return <ul className={`page-links ${className ? className : ''}`}>{tempLinks}</ul>;
+    return <ul className={`page-links ${className ? className : ''}`}>{primaryLinks}</ul>;
 };

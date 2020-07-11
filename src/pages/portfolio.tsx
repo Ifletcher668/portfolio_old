@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
+import Layout from '../components/Layout';
 
 const query = graphql`
     {
@@ -22,7 +23,11 @@ const query = graphql`
 const Portfolio: React.FC<IProps> = (props: IProps) => {
     const data = useStaticQuery(query);
 
-    return <>//</>;
+    return (
+        <Layout>
+            <h1>Portfolio</h1>
+        </Layout>
+    );
 };
 
 export default Portfolio;

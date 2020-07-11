@@ -9,20 +9,20 @@ import Blogs from '../components/Blogs';
 import Tabs from '../components/tabs/index';
 
 export default ({ data }: { [key: string]: any }) => {
-    console.log(data);
-
     const {
         blogs: { nodes: blogs },
     }: { blogs: { [key: string]: Blog[] } } = data;
 
     return (
         <>
-            <Layout>
-                <Hero />
-                {/* <Services />
+            <div className='overflow-container'>
+                <Layout id='index-page'>
+                    <Hero />
+                    {/* <Services />
             <Jobs />
-            <Blogs posts={blogs} title='Latest Articles' showLink /> */}
-            </Layout>
+        <Blogs posts={blogs} title='Latest Articles' showLink /> */}
+                </Layout>
+            </div>
         </>
     );
 };

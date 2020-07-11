@@ -1,26 +1,34 @@
 import React, { useContext } from 'react';
 import logo from '../assets/logo.svg';
+import { Link } from 'gatsby';
 import { FaAlignJustify } from 'react-icons/fa';
 import PageLinks from '../constants/links';
 import { sidebarContext } from './Layout';
-import Tabs from './tabs/index';
 
-const Navbar: React.FC<IProps> = (props: IProps) => {
+const Navbar: React.FC<INavbarProps> = (props: INavbarProps) => {
     const { toggleSidebar } = useContext(sidebarContext);
+    const { placement } = props;
 
     return (
-        <nav className='navbar'>
-            <div className='nav-center'>
-                <div className='nav-header'>
-                    <img src={logo} alt='logo' />
-                    <button type='button' className='toggle-btn' onClick={() => toggleSidebar()}>
-                        <FaAlignJustify />
-                    </button>
+        <>
+            <nav className={`navbar navbar-${placement}`}>
+                <div className='nav-center'>
+                    <div className='nav-header'>
+                        <Link to='/'>
+                            <img src={logo} alt='logo' />
+                        </Link>
+
+                        <button
+                            type='button'
+                            className='toggle-btn'
+                            onClick={() => toggleSidebar()}>
+                            <FaAlignJustify />
+                        </button>
+                    </div>
+                    <PageLinks className='nav-links' />
                 </div>
-                {/* <Tabs /> */}
-                <PageLinks className='nav-links' />
-            </div>
-        </nav>
+            </nav>
+        </>
     );
 };
 
