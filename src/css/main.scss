@@ -85,6 +85,7 @@ body {
     line-height: 1.5;
     font-size: 0.875rem;
     margin-top: 5rem;
+    overflow: hidden;
 }
 
 h1,
@@ -136,6 +137,7 @@ p {
         line-height: 1;
     }
 }
+
 /*  global classes */
 
 .btn {
@@ -223,8 +225,7 @@ Navbar
 */
 
 .navbar {
-    // position: absolute;
-    top: 0;
+    position: absolute;
     left: 0;
     width: 100%;
     height: 5rem;
@@ -236,6 +237,7 @@ Navbar
 .nav-center {
     width: var(--center-width);
     max-width: 1170px;
+    z-index: 201;
     margin: 0 auto;
 }
 .nav-header {
@@ -260,7 +262,18 @@ Navbar
 .nav-links {
     display: none;
 }
+
+// top: 0;
+@media screen and (max-width: 768px) {
+    .navbar {
+        top: 0;
+    }
+}
+
 @media screen and (min-width: 768px) {
+    .navbar {
+        bottom: 0;
+    }
     .toggle-btn {
         display: none;
     }
@@ -425,13 +438,13 @@ Sidebar Animation
 
 /*
 =============== 
-Hero
+HeroHero
 ===============
 */
-/* underline added to globals */
+
 .hero {
-    margin-top: -5rem;
-    padding-top: 5rem;
+    margin-top: -6.8rem;
+
     height: 100vh;
     background: var(--clr-black);
     position: relative;
@@ -456,7 +469,6 @@ Hero
 
     background: var(--clr-white);
     border-radius: 0.15em;
-
     grid-row: 1/1;
     grid-column: 1 / span 12;
 }
@@ -471,20 +483,24 @@ Hero
     color: var(--clr-grey-5);
     font-size: 1.5em;
 }
+
 .hero-info h4:nth-child(3) {
     text-indent: 2em;
 }
+
 .hero-info h4 span {
     color: red;
 }
+
 .hero-info .social-links,
 .hero-info .btn {
     z-index: 1;
 }
 
-.hero-icons {
-    justify-items: flex-start;
-}
+// .hero-icons {
+//     justify-items: flex-start;
+// }
+
 .hero .btn,
 .hero .social-links {
     align-self: center;
@@ -495,8 +511,29 @@ Hero
     .hero-center {
         grid-template-rows: 1fr;
     }
+
     .hero-img {
         display: none;
+    }
+
+    .hero-info {
+        margin-top: 6.8em;
+        height: 60vh;
+    }
+
+    .hero-info h4 {
+        color: var(--clr-grey-5);
+        font-size: 1em;
+    }
+}
+
+@media (max-height: 800px) {
+    .hero-info {
+        margin-top: 2.8em;
+    }
+
+    .hero-info h4 {
+        z-index: 200;
     }
 }
 
@@ -505,53 +542,54 @@ Hero
 Services
 ===============
 */
-.service {
-    background: var(--clr-black);
-    padding: 3rem 1.5rem;
-    margin-bottom: 2rem;
-    border-radius: var(--radius);
-    text-align: center;
-    -webkit-transition: var(--transition);
-    transition: var(--transition);
-}
-.service-icon {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-}
-.service .underline {
-    width: 3rem;
-    height: 0.12rem;
-    -webkit-transition: var(--transition);
-    transition: var(--transition);
-}
-.service p {
-    -webkit-transition: var(--transition);
-    transition: var(--transition);
-}
-.service:hover {
-    background: var(--clr-primary-5);
-    color: var(--clr-primary-9);
-}
-.service:hover p {
-    color: var(--clr-primary-9);
-}
-.service:hover .underline {
-    background: var(--clr-primary-9);
-}
-@media screen and (min-width: 676px) {
-    .services-center {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        -webkit-column-gap: 2rem;
-        -moz-column-gap: 2rem;
-        column-gap: 2rem;
-    }
-}
-@media screen and (min-width: 992px) {
-    .services-center {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-}
+
+// .service {
+//     background: var(--clr-black);
+//     // padding: 3rem 1.5rem;
+//     // margin-bottom: 2rem;
+//     border-radius: var(--radius);
+//     text-align: center;
+//     -webkit-transition: var(--transition);
+//     transition: var(--transition);
+// }
+// .service-icon {
+//     font-size: 2rem;
+//     margin-bottom: 1.5rem;
+// }
+// .service .underline {
+//     width: 3rem;
+//     height: 0.12rem;
+//     -webkit-transition: var(--transition);
+//     transition: var(--transition);
+// }
+// .service p {
+//     -webkit-transition: var(--transition);
+//     transition: var(--transition);
+// }
+// .service:hover {
+//     background: var(--clr-primary-5);
+//     color: var(--clr-primary-9);
+// }
+// .service:hover p {
+//     color: var(--clr-primary-9);
+// }
+// .service:hover .underline {
+//     background: var(--clr-primary-9);
+// }
+// @media screen and (min-width: 676px) {
+//     .services-center {
+//         display: grid;
+//         grid-template-columns: 1fr 1fr;
+//         -webkit-column-gap: 2rem;
+//         -moz-column-gap: 2rem;
+//         column-gap: 2rem;
+//     }
+// }
+// @media screen and (min-width: 992px) {
+//     .services-center {
+//         grid-template-columns: 1fr 1fr 1fr;
+//     }
+// }
 
 /*
 =============== 
@@ -849,8 +887,7 @@ Footer
 ===============
 */
 .footer {
-    height: 9rem;
-    background: clr-dark;
+    background: var(--clr-dark);
     text-align: center;
     display: grid;
     place-items: center;

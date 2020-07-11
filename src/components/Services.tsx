@@ -7,23 +7,20 @@ import services from '../constants/services';
 const Services: React.FC<IProps> = (props: IProps) => {
     return (
         <>
-            <section className='section bg-grey'>
-                <Title title='services' />
-                <div className='section-center services-center'>
-                    {services.map((service, idx) => {
-                        const { icon, title, text } = service;
-
-                        return (
-                            <article key={idx} className='service'>
-                                {icon}
-                                <h4>{title}</h4>
-                                <div className='underline'></div>
-                                <p>{text}</p>
-                            </article>
-                        );
-                    })}
-                </div>
-            </section>
+            {/* <Title title='services' /> */}
+            <div className='section-center services-center'>
+                {services.map((service, idx) => {
+                    const { icon, title, text } = service;
+                    return (
+                        <article key={idx} className='service'>
+                            {icon}
+                            <h4>{title}</h4>
+                            <div className='underline'></div>
+                            <p>{text}</p>
+                        </article>
+                    );
+                })}
+            </div>
         </>
     );
 };

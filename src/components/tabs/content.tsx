@@ -8,7 +8,7 @@ const Content: React.FC<IProps> = (props: IProps) => {
     const panel = useContext(panelContext);
 
     return selectedPanel === panel ? (
-        <section id={id} className={`${className ? className : ''}`}>
+        <section id={id} className={`tab-content ${className ? className : ''}`}>
             {children}
         </section>
     ) : null;

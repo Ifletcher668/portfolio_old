@@ -1,72 +1,39 @@
-import React, { useState, useEffect, Fragment } from 'react';
+import React, { Fragment } from 'react';
 import Tabs from './tabs';
 import Panel from './panel';
 import Tab from './tab';
 import Content from './content';
-import MusicPage from '../../pages/music';
-import WritingPage from '../../pages/writing';
-import ContactPage from '../../pages/contact-me';
-import Portfolio from '../../pages/portfolio';
 import './tabs.scss';
-import ResourcesPage from '../../pages/resources';
+
+import Portfolio from '../../pages/portfolio';
+import About from '../about';
+import useTabs from './useTabs';
+import Services from '../Services';
 
 const TabsComponent: React.FC<IProps> = (props: IProps) => {
-    const [activePanel, setActivePanel] = useState<any>();
-    const [firstPanelRef, setFirstPanelRef] = useState<any>();
-
-    useEffect(() => setActivePanel(firstPanelRef), [firstPanelRef]);
+    const { activePanel, setActivePanel, setFirstPanelRef } = useTabs();
 
     return (
-        <Fragment>
+        <article className='tabs-container'>
             <Tabs
-                id='sidebar'
-                className='test'
+                id='nav-links'
+                className='tab-col'
                 direction='col'
                 activePanel={activePanel}
                 onActivePanelChange={setActivePanel}>
                 {/*if ever need a first panel ref={setFirstPanelRef} */}
                 <Panel>
-                    <Tab>Musician</Tab>
-                    <Content
-                        id='music-page'
-                        className='overflow-contained flex-container flex-full section'>
-                        <MusicPage />
+                    <Tab>Who am I?</Tab>
+                    <Content>
+                        <About />
                     </Content>
                 </Panel>
-                <Panel>
-                    <Tab>Writer</Tab>
-                    <Content
-                        id='writing-page'
-                        className='overflow-contained flex-container flex-full section'>
-                        <WritingPage />
-                    </Content>
-                </Panel>
-                <Panel>
-                    <Tab>Web Developer</Tab>
-                    <Content
-                        id='dev-portfolio'
-                        className='overflow-contained flex-container flex-full section'>
-                        <Portfolio />
-                    </Content>
-                </Panel>
-                <Panel>
-                    <Tab>Contact Me</Tab>
-                    <Content
-                        id='contact-me-page'
-                        className='overflow-contained flex-container flex-full section'>
-                        <ContactPage />
-                    </Content>
-                </Panel>
-                <Panel>
-                    <Tab>Resources</Tab>
-                    <Content
-                        id='resources-page'
-                        className='overflow-contained flex-container flex-full section'>
-                        <ResourcesPage />
-                    </Content>
+                <Panel ref={setFirstPanelRef}>
+                    <Tab>Where else can you find me?</Tab>
+                    <Content></Content>
                 </Panel>
             </Tabs>
-        </Fragment>
+        </article>
     );
 };
 

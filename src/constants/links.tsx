@@ -3,35 +3,34 @@ import { Link } from 'gatsby';
 
 const data = [
     {
-        id: 1,
         text: 'home',
         url: '/',
     },
     {
-        id: 2,
         text: 'about',
         url: '/about/',
     },
     {
-        id: 3,
         text: 'projects',
         url: '/projects/',
     },
     {
-        id: 4,
         text: 'blogs',
         url: '/blogs/',
     },
     {
-        id: 5,
         text: 'contact',
-        url: '/contact/',
+        url: '/contact',
+    },
+    {
+        text: 'extras',
+        url: '/extras',
     },
 ];
 
-const tempLinks = data.map((link) => {
+const tempLinks = data.map((link, idx) => {
     return (
-        <li key={link.id}>
+        <li key={idx}>
             <Link to={link.url}>{link.text}</Link>
         </li>
     );

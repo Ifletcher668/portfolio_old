@@ -6,6 +6,7 @@ import Services from '../components/Services';
 import Jobs from '../components/Jobs';
 import Projects from '../components/Projects';
 import Blogs from '../components/Blogs';
+import Tabs from '../components/tabs/index';
 
 export default ({ data }: { [key: string]: any }) => {
     console.log(data);
@@ -15,12 +16,14 @@ export default ({ data }: { [key: string]: any }) => {
     }: { blogs: { [key: string]: Blog[] } } = data;
 
     return (
-        <Layout>
-            <Hero />
-            {/* <Services />
+        <>
+            <Layout>
+                <Hero />
+                {/* <Services />
             <Jobs />
             <Blogs posts={blogs} title='Latest Articles' showLink /> */}
-        </Layout>
+            </Layout>
+        </>
     );
 };
 

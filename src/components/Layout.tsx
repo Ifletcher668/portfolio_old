@@ -34,7 +34,7 @@ const Layout: React.FC<IProps> = (props: IProps) => {
                 <Navbar />
                 <Sidebar />
             </sidebarContext.Provider>
-            <Footer />
+            {/* <Footer /> */}
         </>
     );
 };

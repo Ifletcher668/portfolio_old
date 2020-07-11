@@ -1,4 +1,5 @@
 import React, { useContext, useCallback } from 'react';
+
 import {
     tabListElementContext,
     setSelectedPanelContext,
@@ -23,9 +24,11 @@ const Tab: React.FC<ITab> = (props: ITab) => {
     if (selectedPanel === panel) classNames.push('active');
 
     return createPortal(
-        <div className={classNames.join(' ')}>
-            <button onClick={handleClick}>{children}</button>
-        </div>,
+        <li className={classNames.join(' ')}>
+            <button className='btn' onClick={handleClick}>
+                {children}
+            </button>
+        </li>,
         tabListElement
     );
 };

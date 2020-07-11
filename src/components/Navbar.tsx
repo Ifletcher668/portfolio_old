@@ -3,6 +3,7 @@ import logo from '../assets/logo.svg';
 import { FaAlignJustify } from 'react-icons/fa';
 import PageLinks from '../constants/links';
 import { sidebarContext } from './Layout';
+import Tabs from './tabs/index';
 
 const Navbar: React.FC<IProps> = (props: IProps) => {
     const { toggleSidebar } = useContext(sidebarContext);
@@ -16,6 +17,7 @@ const Navbar: React.FC<IProps> = (props: IProps) => {
                         <FaAlignJustify />
                     </button>
                 </div>
+                {/* <Tabs /> */}
                 <PageLinks className='nav-links' />
             </div>
         </nav>
