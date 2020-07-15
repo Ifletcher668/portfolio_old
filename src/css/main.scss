@@ -266,6 +266,7 @@ Navbar
 .toggle-btn:hover {
     color: var(--clr-primary-2);
 }
+
 .nav-links {
     display: none;
 }
@@ -275,11 +276,24 @@ Navbar
     background-color: var(--clr-grey-10);
     border-radius: 0.2em;
 }
-.nav-link:hover .sub-menu {
-    animation: showSubMenu 0.1s ease-in-out 0.3s forwards;
+
+.navbar-top .nav-link:hover .sub-menu {
+    animation: transitionSubMenuFromTop 0.1s ease-in-out 0.3s forwards;
 }
 
-@keyframes showSubMenu {
+.navbar-bottom .nav-link:hover .sub-menu {
+    animation: transitionSubMenuFromBottom 0.1s ease-in-out 0.3s forwards;
+}
+
+.nav-link .sub-menu {
+    position: absolute;
+}
+
+.nav-link .sub-menu li a:hover {
+    box-shadow: none;
+}
+
+@keyframes transitionSubMenuFromTop {
     0% {
         transform: translateY(0px);
         opacity: 0;
@@ -290,7 +304,18 @@ Navbar
         opacity: 1;
     }
 }
-// top: 0;
+@keyframes transitionSubMenuFromBottom {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(-80px);
+
+        opacity: 1;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .navbar {
         top: 0;

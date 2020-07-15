@@ -2,21 +2,21 @@ import React from 'react';
 import { Link } from 'gatsby';
 
 const data = [
-    {
-        text: 'about',
-        url: '/about/',
-    },
+    // {
+    //     text: 'about',
+    //     url: '/about/',
+    // },
     {
         text: 'music',
         url: '/music/',
         subMenu: [
             {
                 text: 'aterrima',
-                url: '/aterrima',
+                url: 'music/aterrima',
             },
             {
                 text: 'transcripts',
-                url: '/transcripts/',
+                url: 'music/transcripts/',
             },
         ],
     },
@@ -26,16 +26,16 @@ const data = [
         subMenu: [
             {
                 text: 'poetry',
-                url: '/poetry/',
+                url: 'writing/poetry/',
             },
             {
                 text: 'blogs',
-                url: '/blogs/',
+                url: 'writing/blogs/',
             },
         ],
     },
     {
-        text: 'portfolio',
+        text: 'Web Developer',
         url: '/portfolio',
     },
     {
@@ -44,7 +44,7 @@ const data = [
     },
     {
         text: 'extras',
-        url: '/extras',
+        url: '/extras/',
     },
 ];
 
