@@ -6,7 +6,7 @@ const Blog: React.FC<IBlogLinks> = (props: IBlogLinks) => {
     const { title, author, preview, date, slug, image, tag } = props;
 
     return (
-        <Link to={`/blogs/${slug}`} key={title} className='blog'>
+        <Link to={`writing/blogs/${slug}`} key={title} className='blog'>
             <article>
                 <Image fluid={image.childImageSharp.fluid} className='blog-img' />
                 <div className='blog-card'>

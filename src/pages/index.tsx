@@ -10,7 +10,7 @@ import Tabs from '../components/tabs/index';
 
 export default ({ data }: { [key: string]: any }) => {
     const {
-        blogs: { nodes: blogs },
+        blogs: { blogs },
     }: { blogs: { [key: string]: Blog[] } } = data;
 
     return (
@@ -30,7 +30,7 @@ export default ({ data }: { [key: string]: any }) => {
 export const query = graphql`
     {
         blogs: allStrapiBlogs(limit: 3, sort: { fields: date, order: DESC }) {
-            nodes {
+            blogs: nodes {
                 title
                 author
                 body

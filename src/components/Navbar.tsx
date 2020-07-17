@@ -5,6 +5,8 @@ import { FaAlignJustify } from 'react-icons/fa';
 import PageLinks from '../constants/links';
 import { sidebarContext } from './Layout';
 
+// TODO: Find a better placement for submenus. They're getting in the way
+
 const Navbar: React.FC<INavbarProps> = (props: INavbarProps) => {
     const { toggleSidebar } = useContext(sidebarContext);
     const { placement } = props;

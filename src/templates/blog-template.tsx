@@ -16,8 +16,7 @@ const BlogTemplate: React.FC = ({ data }: { [key: string]: any }) => {
                     <SubTitle title={`by ${author}, ${date}`} />
                     <Image fluid={image.childImageSharp.fluid} /> <br />
                     <article className='blog-content'>{body}</article>
-                    {tag.map((t, idx) => {
-                        const { tag } = t;
+                    {tag.map(({ tag }, idx) => {
                         return <span key={idx}>{tag} </span>;
                     })}
                 </div>

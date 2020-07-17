@@ -1,0 +1,12 @@
+-   Configure all routes through gatsby-node
+-   Change services component to accept a unique title prop
+-   Change services component to accept unique services
+-   Design layout of portfolio page
+-   Color Scheme
+-   Add Poem-Tree to extras
+-   Devise a list of book links
+-   Build backend function on netlify
+-   Refactor
+    -   Test for bugs
+        -   The submenu needs to be off the screen until parent is hovered over
+        -   The menu looks weird on a medium sized screen. Submenus are fucking with it

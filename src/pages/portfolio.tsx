@@ -1,11 +1,29 @@
-import React from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
+import React, { Fragment } from 'react';
+import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
+import Title from '../components/Title';
+import SubTitle from '../components/sub_title';
 
-const query = graphql`
+type Paragraph = {
+    sub_title: string;
+    body: string;
+};
+
+type Stack = {
+    tag: string;
+};
+
+type Portfolio = {
+    title: string;
+    sub_title: string;
+    paragraph: Paragraph[];
+    stack: Stack[];
+};
+
+export const query = graphql`
     {
-        allStrapiPortfolio {
-            nodes {
+        portfolio: allStrapiPortfolio {
+            content: nodes {
                 title
                 sub_title
                 paragraph {
@@ -20,14 +38,36 @@ const query = graphql`
     }
 `;
 
-const Portfolio: React.FC<IProps> = (props: IProps) => {
-    const data = useStaticQuery(query);
+export default ({ data }: { [key: string]: any }) => {
+    const {
+        portfolio: { content },
+    }: { [key: string]: { [key: string]: Portfolio[] } } = data;
+
+    const { title, sub_title, paragraph, stack } = content[0];
 
     return (
         <Layout>
-            <h1>Portfolio</h1>
+            <Title title={title} />
+            <SubTitle title={sub_title} />
+            <div className='section-center'>
+                {paragraph.map(({ sub_title, body }, idx) => {
+                    return (
+                        <Fragment key={idx}>
+                            <SubTitle title={sub_title} />
+                            <div className='section'>{body}</div>
+                        </Fragment>
+                    );
+                })}
+            </div>
+            <div className='section-center'>
+                {stack.map(({ tag }, idx) => {
+                    return (
+                        <div key={idx} className='portfolio-tags'>
+                            <p>{tag}</p>
+                        </div>
+                    );
+                })}
+            </div>
         </Layout>
     );
 };
-
-export default Portfolio;
