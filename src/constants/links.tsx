@@ -39,6 +39,7 @@ const data = [
         url: '/portfolio',
     },
     {
+        id: 5,
         text: 'contact',
         url: '/contact',
     },

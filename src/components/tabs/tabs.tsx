@@ -18,7 +18,7 @@ const Tabs: React.FC<ITabs> = ({
 
     return (
         <Fragment>
-            <ul
+            <section
                 className={`tab-list-${direction} ${className ? className : ''}`}
                 ref={setTabListElement}
             />

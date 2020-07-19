@@ -1,16 +1,5 @@
-@import '../../css/_mixins';
-@import '../../css/_colors';
-
-/* general styles */
-
-.tabs-container {
-    @include flexbox();
-}
-
-.tab-content {
-    @include flexbox();
-    @include flex-flow(column wrap);
-}
+@import '../../styles/_mixins';
+@import '../../styles/_colors';
 
 .tab-list-col,
 .tab-list-row {
@@ -32,8 +21,18 @@
     margin: 0.7rem 0;
 }
 
-.tab-row .tab li,
-.tab-col .tab li {
+.tab button {
+    background-color: $backgroundColor;
+
+    box-sizing: border-box;
+    font-size: 2.2em;
+    border: none;
+    color: $primaryText;
+    min-width: fit-content;
+}
+
+.tab-list-row .tab button,
+.tab-list-col .tab button {
     text-align: left;
     margin: 0;
     padding: 0.1em;
@@ -49,6 +48,6 @@
     border-bottom: $secondaryText 2px solid;
 }
 
-// .section {
-//     @include flex-flow();
-// }
+.section {
+    @include flex-flow();
+}

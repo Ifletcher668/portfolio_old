@@ -136,7 +136,6 @@ p {
         line-height: 1;
     }
 }
-
 /*  global classes */
 
 .btn {
@@ -224,7 +223,8 @@ Navbar
 */
 
 .navbar {
-    position: absolute;
+    // position: absolute;
+    top: 0;
     left: 0;
     width: 100%;
     height: 5rem;
@@ -244,7 +244,6 @@ Navbar
 .nav-center {
     width: var(--center-width);
     max-width: 1170px;
-    z-index: 201;
     margin: 0 auto;
 }
 .nav-header {
@@ -323,9 +322,6 @@ Navbar
 }
 
 @media screen and (min-width: 768px) {
-    .navbar {
-        bottom: 0;
-    }
     .toggle-btn {
         display: none;
     }
@@ -490,13 +486,13 @@ Sidebar Animation
 
 /*
 =============== 
-HeroHero
+Hero
 ===============
 */
-
+/* underline added to globals */
 .hero {
-    margin-top: -6.8rem;
-
+    margin-top: -5rem;
+    padding-top: 5rem;
     height: 100vh;
     background: var(--clr-black);
     position: relative;
@@ -521,6 +517,7 @@ HeroHero
 
     background: var(--clr-white);
     border-radius: 0.15em;
+
     grid-row: 1/1;
     grid-column: 1 / span 12;
 }
@@ -535,24 +532,20 @@ HeroHero
     color: var(--clr-grey-5);
     font-size: 1.5em;
 }
-
 .hero-info h4:nth-child(3) {
     text-indent: 2em;
 }
-
 .hero-info h4 span {
     color: red;
 }
-
 .hero-info .social-links,
 .hero-info .btn {
     z-index: 1;
 }
 
-// .hero-icons {
-//     justify-items: flex-start;
-// }
-
+.hero-icons {
+    justify-items: flex-start;
+}
 .hero .btn,
 .hero .social-links {
     align-self: center;
@@ -563,29 +556,8 @@ HeroHero
     .hero-center {
         grid-template-rows: 1fr;
     }
-
     .hero-img {
         display: none;
-    }
-
-    .hero-info {
-        margin-top: 6.8em;
-        height: 60vh;
-    }
-
-    .hero-info h4 {
-        color: var(--clr-grey-5);
-        font-size: 1em;
-    }
-}
-
-@media (max-height: 800px) {
-    .hero-info {
-        margin-top: 2.8em;
-    }
-
-    .hero-info h4 {
-        z-index: 200;
     }
 }
 
@@ -594,7 +566,6 @@ HeroHero
 Services
 ===============
 */
-
 .service {
     background: var(--clr-black);
     padding: 3rem 1.5rem;
@@ -604,7 +575,6 @@ Services
     -webkit-transition: var(--transition);
     transition: var(--transition);
 }
-
 .service-icon {
     font-size: 2rem;
     margin-bottom: 1.5rem;
@@ -940,6 +910,7 @@ Footer
 ===============
 */
 .footer {
+<<<<<<< HEAD
     background: linear-gradient(
         var(--clr-black),
         var(--clr-black),
@@ -947,6 +918,10 @@ Footer
         var(--clr-dark),
         var(--clr-primary-1)
     );
+=======
+    height: 9rem;
+    background: clr-dark;
+>>>>>>> parent of 3b4afa9... simplifying
     text-align: center;
     display: grid;
     place-items: center;
