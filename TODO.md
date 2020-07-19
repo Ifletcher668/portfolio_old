@@ -4,6 +4,7 @@
 -   Add Poem-Tree to extras
 -   Devise a list of book links
 -   Build backend function on netlify
+-   Contact page needs a height adjustment
 -   Refactor
     -   Test for bugs
         -   The submenu needs to be off the screen until parent is hovered over
