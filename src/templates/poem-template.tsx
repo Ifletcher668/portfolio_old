@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
-import Layout from '../components/Layout';
+import Layout from '../components/layout';
 
 const ComponentName: React.FC<IProps> = (props: IProps) => {
     return <h2>poem template</h2>;

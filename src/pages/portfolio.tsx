@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
 import { graphql } from 'gatsby';
-import Layout from '../components/Layout';
-import Title from '../components/Title';
-import SubTitle from '../components/sub_title';
+import Layout from '../components/layout';
+import Title from '../components/title';
+import SubTitle from '../components/subTitle';
 
 type Paragraph = {
     sub_title: string;

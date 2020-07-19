@@ -1,6 +1,6 @@
 import React from 'react';
-import Title from './Title';
-import Blog from './Blog';
+import Title from './title';
+import Blog from './blog';
 import { Link } from 'gatsby';
 
 export const Blogs: React.FC<IBlogsPage> = (props: IBlogsPage) => {

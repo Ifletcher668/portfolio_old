@@ -1,6 +1,6 @@
 import React from 'react';
-import Layout from '../components/Layout';
-import Title from '../components/Title';
+import Layout from '../components/layout';
+import Title from '../components/title';
 
 const contact: React.FC<IProps> = (props: IProps) => {
     return (

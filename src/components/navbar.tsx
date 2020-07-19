@@ -3,7 +3,7 @@ import logo from '../assets/logo.svg';
 import { Link } from 'gatsby';
 import { FaAlignJustify } from 'react-icons/fa';
 import PageLinks from '../constants/links';
-import { sidebarContext } from './Layout';
+import { sidebarContext } from './layout';
 
 // TODO: Find a better placement for submenus. They're getting in the way
 

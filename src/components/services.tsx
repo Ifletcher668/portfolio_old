@@ -1,5 +1,5 @@
 import React from 'react';
-import Title from './Title';
+import Title from './title';
 import services from '../constants/services';
 
 // page imports an array of services, stored locally in this project

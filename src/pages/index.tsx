@@ -1,11 +1,11 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Layout from '../components/Layout';
-import Hero from '../components/Hero';
-import Services from '../components/Services';
-import Jobs from '../components/Jobs';
-import Projects from '../components/Projects';
-import Blogs from '../components/Blogs';
+import Layout from '../components/layout';
+import Hero from '../components/hero';
+import Services from '../components/services';
+import Jobs from '../components/jobs';
+import Projects from '../components/projects';
+import Blogs from '../components/blogs';
 import Tabs from '../components/tabs/index';
 
 export default ({ data }: { [key: string]: any }) => {

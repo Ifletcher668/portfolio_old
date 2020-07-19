@@ -1,7 +1,7 @@
 import React, { useState, createContext } from 'react';
-import Navbar from './Navbar';
-import Sidebar from './Sidebar';
-import Footer from './Footer';
+import Navbar from './navbar';
+import Sidebar from './sidebar';
+import Footer from './footer';
 
 type SidebarContext = {
     isSidebarOpen: boolean;
