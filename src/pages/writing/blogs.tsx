@@ -4,7 +4,7 @@ import { graphql } from 'gatsby';
 import Blogs from '../../components/blogs';
 // ...GatsbyImageSharpFluid
 
-const Blog: React.FC<IProps> = ({ data }: { [key: string]: any }) => {
+export default ({ data }: { [key: string]: any }) => {
     const {
         allStrapiBlogs: { nodes: blogs },
     }: { allStrapiBlogs: { [key: string]: Blog[] } } = data;
@@ -12,13 +12,11 @@ const Blog: React.FC<IProps> = ({ data }: { [key: string]: any }) => {
     return (
         <Layout>
             <section className='blog-page'>
-                <Blogs posts={blogs} title='blog' showLink={false} />
+                <Blogs blogs={blogs} title='blog' showLink={false} />
             </section>
         </Layout>
     );
 };
-
-export default Blog;
 
 export const query = graphql`
     {
@@ -28,7 +26,7 @@ export const query = graphql`
                 author
                 body
                 slug
-                tag {
+                tags {
                     tag
                 }
                 date(formatString: "DD MMM, YYYY")

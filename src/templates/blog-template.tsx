@@ -5,8 +5,10 @@ import Layout from '../components/layout';
 import { Title, SubTitle } from '../components/titles';
 
 const BlogTemplate: React.FC = ({ data }: { [key: string]: any }) => {
-    const { blog }: { [key: string]: Blog } = data;
-    const { title, body, author, tag, date, image } = blog;
+    const {
+        blog: { title, body, author, tag, date, image },
+    }: { [key: string]: Blog } = data;
+
     return (
         <Layout>
             <section className='blog-template'>
@@ -30,7 +32,7 @@ export const query = graphql`
             title
             body
             author
-            tag {
+            tags {
                 tag
             }
             date(formatString: "DD MMMM, YYYY")

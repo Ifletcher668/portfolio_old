@@ -1,11 +1,16 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
 import Layout from '../components/layout';
+import { Title } from '../components/titles';
 
-const ComponentName: React.FC<IProps> = (props: IProps) => {
+export default ({ data }: { [key: string]: any }) => {
+    const {
+        poem: { title, body, author, published, tags },
+    }: { [key: string]: Poem } = data;
+
     return (
         <Layout>
-            <h2>poem template</h2>;
+            <Title title={title} />
         </Layout>
     );
 };
@@ -13,9 +18,13 @@ const ComponentName: React.FC<IProps> = (props: IProps) => {
 export const query = graphql`
     query GetSinglePoem($slug: String) {
         poem: strapiPoems(slug: { eq: $slug }) {
-            slug
+            title
+            body
+            author
+            published
+            tags {
+                tag
+            }
         }
     }
 `;
-
-export default ComponentName;
