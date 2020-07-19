@@ -19,6 +19,8 @@ const Layout: React.FC<IProps> = (props: IProps) => {
 
     const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
 
+    const idxPageId: string = 'index-page';
+
     const toggleSidebar = () => {
         setIsSidebarOpen(!isSidebarOpen);
     };
@@ -31,11 +33,11 @@ const Layout: React.FC<IProps> = (props: IProps) => {
     return (
         <>
             <sidebarContext.Provider value={contextValue}>
-                <Navbar placement={id === 'index-page' ? 'bottom' : 'top'} />
+                <Navbar placement={id === idxPageId ? 'bottom' : 'top'} />
                 <Sidebar />
             </sidebarContext.Provider>
             <main className='main'>{children}</main>
-            <Footer />
+            {id === idxPageId ? '' : <Footer />}
         </>
     );
 };

@@ -84,7 +84,8 @@ body {
     color: var(--clr-grey-1);
     line-height: 1.5;
     font-size: 0.875rem;
-    margin-top: 5rem;
+    margin-top: 9vh;
+    min-height: 91vh;
 }
 
 h1,
@@ -950,7 +951,8 @@ Footer
     text-align: center;
     display: grid;
     place-items: center;
-    position: absolute;
+    // position: absolute;
+
     min-width: 100%;
 }
 .footer h4 {
