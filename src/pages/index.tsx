@@ -9,11 +9,9 @@ import Blogs from '../components/writtenContent';
 export default () => {
     return (
         <>
-            <div className='overflow-container'>
-                <Layout id='index-page'>
-                    <Hero />
-                </Layout>
-            </div>
+            <Layout id='index-page'>
+                <Hero />
+            </Layout>
         </>
     );
 };

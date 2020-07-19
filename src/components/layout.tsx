@@ -34,7 +34,7 @@ const Layout: React.FC<IProps> = (props: IProps) => {
                 <Navbar placement={id === 'index-page' ? 'bottom' : 'top'} />
                 <Sidebar />
             </sidebarContext.Provider>
-            <main>{children}</main>
+            <main className='main'>{children}</main>
             <Footer />
         </>
     );
