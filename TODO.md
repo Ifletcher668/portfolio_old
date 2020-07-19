@@ -1,6 +1,4 @@
 -   Configure all routes through gatsby-node
--   Change services component to accept a unique title prop
--   Change services component to accept unique services
 -   Design layout of portfolio page
 -   Color Scheme
 -   Add Poem-Tree to extras

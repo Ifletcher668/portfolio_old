@@ -87,6 +87,9 @@ body {
     margin-top: 9vh;
     min-height: 91vh;
 }
+body.overflow-hidden {
+    overflow: hidden;
+}
 
 h1,
 h2,
@@ -139,6 +142,10 @@ p {
 }
 
 /*  global classes */
+
+.main {
+    min-height: 42.2rem;
+}
 
 .btn {
     text-transform: uppercase;
@@ -954,6 +961,7 @@ Footer
     // position: absolute;
 
     min-width: 100%;
+    height: 10rem;
 }
 .footer h4 {
     margin-top: 0.5rem;

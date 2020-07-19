@@ -1,27 +1,28 @@
 import React from 'react';
-import { FaCode, FaSketch, FaAndroid } from 'react-icons/fa';
+import { GiBookshelf, GiTiedScroll, GiDrum } from 'react-icons/gi';
+import { BsMusicNoteBeamed } from 'react-icons/bs';
 
 const services: Service[] = [
     {
-        icon: <FaCode className='service-icon' />,
+        icon: <GiBookshelf className='service-icon' />,
         title: 'Blogs',
         text: `I'm baby meditation tofu chillwave, distillery messenger bag thundercats chicharrones kale chips gochujang. Banh mi direct trade marfa salvia.`,
         type: 'writing',
     },
     {
-        icon: <FaSketch className='service-icon' />,
-        title: 'Writing',
+        icon: <GiTiedScroll className='service-icon' />,
+        title: 'Poetry',
         text: `I'm baby meditation tofu chillwave, distillery messenger bag thundercats chicharrones kale chips gochujang. Banh mi direct trade marfa salvia.`,
         type: 'writing',
     },
     {
-        icon: <FaCode className='service-icon' />,
+        icon: <BsMusicNoteBeamed className='service-icon' />,
         title: 'Aterrima',
         text: `I'm baby meditation tofu chillwave, distillery messenger bag thundercats chicharrones kale chips gochujang. Banh mi direct trade marfa salvia.`,
         type: 'music',
     },
     {
-        icon: <FaSketch className='service-icon' />,
+        icon: <GiDrum className='service-icon' />,
         title: 'Drum Transcripts',
         text: `I'm baby meditation tofu chillwave, distillery messenger bag thundercats chicharrones kale chips gochujang. Banh mi direct trade marfa salvia.`,
         type: 'music',

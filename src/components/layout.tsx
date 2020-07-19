@@ -30,8 +30,8 @@ const Layout: React.FC<IProps> = (props: IProps) => {
         toggleSidebar,
     };
 
-    if (location.pathname === '/') document.body.classList.add('test');
-    else document.body.classList.remove('test');
+    if (location.pathname === '/') document.body.classList.add('overflow-hidden');
+    else document.body.classList.remove('overflow-hidden');
 
     return (
         <>
