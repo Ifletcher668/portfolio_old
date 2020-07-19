@@ -1,8 +1,9 @@
 const path = require('path');
 
-// programmatically creates pages
+require('dotenv').config({
+    path: `.env.${process.env.NODE_ENV}`,
+});
 
-// blog pages
 exports.createPages = async ({ graphql, actions, reporter }) => {
     const { createPage } = actions;
 
@@ -27,7 +28,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
     result.data.blogs.nodes.forEach((blog) => {
         createPage({
-            path: `writing/blogs/${blog.slug}`,
+            path: `${process.env.GATSBY_BASE_BLOG_ROUTE}${blog.slug}`,
             component: path.resolve(`./src/templates/blog-template.tsx`), // the template
             context: {
                 slug: blog.slug,
@@ -37,7 +38,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
     result.data.poems.nodes.forEach((poem) => {
         createPage({
-            path: `writing/poetry/${poem.slug}`,
+            path: `${process.env.GATSBY_BASE_POETRY_ROUTE}${poem.slug}`,
             component: path.resolve(`./src/templates/poem-template.tsx`),
             context: {
                 slug: poem.slug,
