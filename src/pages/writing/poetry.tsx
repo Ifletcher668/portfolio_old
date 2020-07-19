@@ -1,23 +1,26 @@
 import React from 'react';
 import Layout from '../../components/layout';
 import { graphql } from 'gatsby';
+import Content from '../../components/writtenContent';
 
 export default ({ data }: { [key: string]: any }) => {
     const {
-        poetry: { content },
-    }: { poetry: { [key: string]: Poem[] } } = data;
+        allPoetry: { poems },
+    }: { allPoetry: { [key: string]: Poem[] } } = data;
 
     return (
         <Layout>
-            <h1>Poetry</h1>
+            <section className='blog-page'>
+                <Content poetry={poems} title='poetry' showLink={false} />
+            </section>
         </Layout>
     );
 };
 
 export const query = graphql`
     {
-        poetry: allStrapiPoems {
-            content: nodes {
+        allPoetry: allStrapiPoems {
+            poems: nodes {
                 title
                 body
                 author
@@ -25,6 +28,7 @@ export const query = graphql`
                 tags {
                     tag
                 }
+                slug
             }
         }
     }

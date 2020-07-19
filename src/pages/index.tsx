@@ -4,7 +4,7 @@ import Layout from '../components/layout';
 import Hero from '../components/hero';
 import Services from '../components/services';
 import Jobs from '../components/jobs';
-import Blogs from '../components/blogs';
+import Blogs from '../components/writtenContent';
 
 export default () => {
     return (

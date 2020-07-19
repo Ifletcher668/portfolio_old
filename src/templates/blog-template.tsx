@@ -6,7 +6,7 @@ import { Title, SubTitle } from '../components/titles';
 
 const BlogTemplate: React.FC = ({ data }: { [key: string]: any }) => {
     const {
-        blog: { title, body, author, tag, date, image },
+        blog: { title, body, author, tags, date, image },
     }: { [key: string]: Blog } = data;
 
     return (
@@ -17,7 +17,7 @@ const BlogTemplate: React.FC = ({ data }: { [key: string]: any }) => {
                     <SubTitle title={`by ${author}, ${date}`} />
                     <Image fluid={image.childImageSharp.fluid} /> <br />
                     <article className='blog-content'>{body}</article>
-                    {tag.map(({ tag }, idx) => {
+                    {tags.map(({ tag }, idx) => {
                         return <span key={idx}>{tag} </span>;
                     })}
                 </div>

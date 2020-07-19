@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from '../../components/layout';
 import { graphql } from 'gatsby';
-import Blogs from '../../components/blogs';
+import Content from '../../components/writtenContent';
 // ...GatsbyImageSharpFluid
 
 export default ({ data }: { [key: string]: any }) => {
@@ -12,7 +12,7 @@ export default ({ data }: { [key: string]: any }) => {
     return (
         <Layout>
             <section className='blog-page'>
-                <Blogs blogs={blogs} title='blog' showLink={false} />
+                <Content blogs={blogs} title='blog' showLink={false} />
             </section>
         </Layout>
     );
