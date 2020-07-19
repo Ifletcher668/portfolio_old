@@ -5,7 +5,7 @@ import Layout from '../../components/layout';
 export default (props: IProps) => {
     return (
         <Layout>
-            <Services />
+            <Services type='writing' title={`My Writing`} />
         </Layout>
     );
 };
