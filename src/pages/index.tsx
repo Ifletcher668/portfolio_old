@@ -4,7 +4,6 @@ import Layout from '../components/layout';
 import Hero from '../components/hero';
 import Services from '../components/services';
 import Jobs from '../components/jobs';
-import Projects from '../components/projects';
 import Blogs from '../components/blogs';
 
 export default ({ data }: { [key: string]: any }) => {

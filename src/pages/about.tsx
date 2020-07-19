@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from '../components/layout';
 import { graphql, useStaticQuery } from 'gatsby';
-import Title from '../components/title';
+import { Title } from '../components/titles';
 import Image from 'gatsby-image';
 // ...GatsbyImageSharpFluid
 

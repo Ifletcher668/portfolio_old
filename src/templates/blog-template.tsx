@@ -2,8 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Image from 'gatsby-image';
 import Layout from '../components/layout';
-import Title from '../components/title';
-import SubTitle from '../components/subTitle';
+import { Title, SubTitle } from '../components/titles';
 
 const BlogTemplate: React.FC = ({ data }: { [key: string]: any }) => {
     const { blog }: { [key: string]: Blog } = data;
