@@ -12,11 +12,11 @@ const data = [
         subMenu: [
             {
                 text: 'aterrima',
-                url: 'music/aterrima',
+                url: '/music/aterrima',
             },
             {
                 text: 'transcripts',
-                url: 'music/transcripts/',
+                url: '/music/transcripts/',
             },
         ],
     },
@@ -26,11 +26,11 @@ const data = [
         subMenu: [
             {
                 text: 'poetry',
-                url: 'writing/poetry/',
+                url: '/writing/poetry/',
             },
             {
                 text: 'blogs',
-                url: 'writing/blogs/',
+                url: '/writing/blogs/',
             },
         ],
     },

@@ -5,10 +5,8 @@ import Hero from '../components/hero';
 
 export default () => {
     return (
-        <>
-            <Layout id='index-page'>
-                <Hero />
-            </Layout>
-        </>
+        <Layout id='index-page'>
+            <Hero />
+        </Layout>
     );
 };
