@@ -6,7 +6,6 @@ import Services from '../components/services';
 import Jobs from '../components/jobs';
 import Projects from '../components/projects';
 import Blogs from '../components/blogs';
-import Tabs from '../components/tabs/index';
 
 export default ({ data }: { [key: string]: any }) => {
     const {
