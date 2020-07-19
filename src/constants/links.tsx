@@ -8,29 +8,29 @@ const data = [
     // },
     {
         text: 'music',
-        url: '/music/',
+        url: `${process.env.GATSBY_BASE_MUSIC_ROUTE}`,
         subMenu: [
             {
                 text: 'aterrima',
-                url: '/music/aterrima',
+                url: `${process.env.GATSBY_BASE_ATERRIMA_ROUTE}`,
             },
             {
                 text: 'transcripts',
-                url: '/music/transcripts/',
+                url: `${process.env.GATSBY_BASE_TRANSCRIPTS_ROUTE}`,
             },
         ],
     },
     {
         text: 'writing',
-        url: '/writing/',
+        url: `${process.env.GATSBY_BASE_WRITING_ROUTE}`,
         subMenu: [
             {
                 text: 'poetry',
-                url: '/writing/poetry/',
+                url: `${process.env.GATSBY_BASE_POETRY_ROUTE}`,
             },
             {
                 text: 'blogs',
-                url: '/writing/blogs/',
+                url: `${process.env.GATSBY_BASE_BLOG_ROUTE}`,
             },
         ],
     },
@@ -39,7 +39,6 @@ const data = [
         url: '/portfolio',
     },
     {
-        id: 5,
         text: 'contact',
         url: '/contact',
     },

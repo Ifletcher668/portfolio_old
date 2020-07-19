@@ -3,31 +3,27 @@ import { FaFacebookSquare, FaLinkedin, FaInstagramSquare, FaGithubSquare } from 
 
 const data = [
     {
-        id: 1,
         icon: <FaFacebookSquare className='social-icon'></FaFacebookSquare>,
-        url: 'https://www.facebook.com/fletchmydrumsticks',
+        url: `${process.env.GATSBY_FACEBOOK}`,
     },
     {
-        id: 2,
         icon: <FaInstagramSquare className='social-icon'></FaInstagramSquare>,
-        url: 'https://www.instagram.com/fletchmydrumsticks/?hl=en',
+        url: `${process.env.GATSBY_INSTAGRAM}`,
     },
     {
-        id: 3,
         icon: <FaGithubSquare className='social-icon'></FaGithubSquare>,
-        url: 'https://github.com/Ifletcher668?tab=repositories',
+        url: `${process.env.GATSBY_GITHUB}`,
     },
     {
-        id: 4,
         icon: <FaLinkedin className='social-icon'></FaLinkedin>,
-        url: 'https://www.linkedin.com/in/isiah-fletcher-074060159/',
+        url: `${process.env.GATSBY_LINKEDIN}`,
     },
 ];
-const links = data.map((link) => {
+const links = data.map(({ url, icon }, idx) => {
     return (
-        <li key={link.id}>
-            <a href={link.url} className='social-link' target='_blank'>
-                {link.icon}
+        <li key={idx}>
+            <a href={url} className='social-link' target='_blank'>
+                {icon}
             </a>
         </li>
     );
