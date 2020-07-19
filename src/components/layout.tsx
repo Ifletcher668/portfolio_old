@@ -30,11 +30,11 @@ const Layout: React.FC<IProps> = (props: IProps) => {
 
     return (
         <>
-            {children}
             <sidebarContext.Provider value={contextValue}>
                 <Navbar placement={id === 'index-page' ? 'bottom' : 'top'} />
                 <Sidebar />
             </sidebarContext.Provider>
+            <main>{children}</main>
             <Footer />
         </>
     );
