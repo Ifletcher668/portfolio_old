@@ -84,8 +84,7 @@ body {
     color: var(--clr-grey-1);
     line-height: 1.5;
     font-size: 0.875rem;
-    margin-top: 9vh;
-    min-height: 91vh;
+    min-height: 100vh;
 }
 body.overflow-hidden {
     overflow: hidden;
@@ -144,7 +143,16 @@ p {
 /*  global classes */
 
 .main {
-    min-height: 42.2rem;
+    // min-height: 42.2rem;
+    // grid-area: main;
+}
+
+#gatsby-focus-wrapper {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 1fr 0.01fr;
+    // grid-auto-rows: auto;
 }
 
 .btn {
@@ -225,6 +233,7 @@ p {
 .social-link:hover {
     color: var(--clr-primary-5);
 }
+
 /*
 =============== 
 Navbar
@@ -232,21 +241,18 @@ Navbar
 */
 
 .navbar {
-    position: absolute;
-    left: 0;
     width: 100%;
-    height: 5rem;
+    // height: 5rem;
     display: flex;
     align-items: center;
-    z-index: 200;
     background: var(--clr-dark);
 }
 
-.navbar-bottom {
+.navbar.navbar-bottom {
+    position: absolute;
+    left: 0;
     bottom: 0;
-}
-.navbar-top {
-    top: 0;
+    z-index: 200;
 }
 
 .nav-center {
@@ -331,9 +337,6 @@ Navbar
 }
 
 @media screen and (min-width: 768px) {
-    .navbar {
-        bottom: 0;
-    }
     .toggle-btn {
         display: none;
     }
@@ -961,7 +964,7 @@ Footer
     // position: absolute;
 
     min-width: 100%;
-    height: 10rem;
+    // height: 10rem;
 }
 .footer h4 {
     margin-top: 0.5rem;
