@@ -41,12 +41,9 @@ Variables
     --clr-white: #fff;
     --ff-primary: 'Cormorant Garamond', serif;
     --ff-secondary: 'Montserrat', sans-serif;
-
     /* transition styles */
     --translateY-subtle: translateY(0.05rem) scale(1.004);
     --transition: all 0.3s linear;
-    --transition-med: all 300ms;
-    --transition-slow: all 500ms;
     --spacing: 0.2rem;
     --radius: 0.25rem;
     --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -81,7 +78,7 @@ Global Styles
 body {
     font-family: var(--ff-secondary);
     background: var(--clr-black);
-    color: var(--clr-grey-1);
+    color: var(--clr-grey-5);
     line-height: 1.5;
     font-size: 0.875rem;
     min-height: 100vh;
@@ -140,11 +137,54 @@ p {
     }
 }
 
+a.blog:visited {
+    color: var(--clr-grey-5);
+}
+
 /*  global classes */
 
-.main {
-    // min-height: 42.2rem;
-    // grid-area: main;
+.content-card {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+.card {
+    background: var(--clr-grey-1);
+    padding: 3rem 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: var(--radius);
+    text-align: center;
+    -webkit-transition: var(--transition);
+    transition: var(--transition);
+}
+
+.card h5 {
+    color: var(--clr-grey-1);
+}
+
+.card .underline {
+    width: 3rem;
+    height: 0.12rem;
+    -webkit-transition: var(--transition);
+    transition: var(--transition);
+}
+
+.card p {
+    -webkit-transition: var(--transition);
+    transition: var(--transition);
+}
+
+.card:hover {
+    background: var(--clr-primary-5);
+    color: var(--clr-primary-9);
+}
+
+.card:hover p {
+    color: var(--clr-primary-9);
+}
+
+.card:hover .underline {
+    background: var(--clr-primary-9);
 }
 
 #gatsby-focus-wrapper {
@@ -196,6 +236,14 @@ p {
 @media screen and (min-width: 992px) {
     .section-center {
         width: 95vw;
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .section-center {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(368px, 1fr));
+        column-gap: 2rem;
     }
 }
 
@@ -606,40 +654,11 @@ Services
 ===============
 */
 
-.service {
-    background: var(--clr-black);
-    padding: 3rem 1.5rem;
-    margin-bottom: 2rem;
-    border-radius: var(--radius);
-    text-align: center;
-    -webkit-transition: var(--transition);
-    transition: var(--transition);
-}
-
 .service-icon {
     font-size: 2rem;
     margin-bottom: 1.5rem;
 }
-.service .underline {
-    width: 3rem;
-    height: 0.12rem;
-    -webkit-transition: var(--transition);
-    transition: var(--transition);
-}
-.service p {
-    -webkit-transition: var(--transition);
-    transition: var(--transition);
-}
-.service:hover {
-    background: var(--clr-primary-5);
-    color: var(--clr-primary-9);
-}
-.service:hover p {
-    color: var(--clr-primary-9);
-}
-.service:hover .underline {
-    background: var(--clr-primary-9);
-}
+
 @media screen and (min-width: 676px) {
     .services-center {
         display: grid;
@@ -872,13 +891,11 @@ Projects
 Blog
 ===============
 */
-.blogs {
-    background: var(--clr-white);
-}
+
 .blog {
     display: block;
     margin-bottom: 2rem;
-    background: var(--clr-grey-10);
+    // background: var(--clr-grey-10);
     border-radius: var(--radius);
     box-shadow: var(--light-shadow);
     transition: var(--transition);
@@ -892,20 +909,11 @@ Blog
     display: grid;
     grid-template-rows: auto 1fr;
 }
-.blog-card {
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-}
+
 .blog-img {
     border-top-left-radius: var(--radius);
     border-top-right-radius: var(--radius);
     height: 15rem;
-}
-.blog-card {
-    padding: 1.5rem 1rem;
-}
-.blog-card h4 {
-    color: var(--clr-grey-1);
 }
 
 .blog-footer {
@@ -930,11 +938,6 @@ Blog
     font-size: 0.85rem;
 }
 @media screen and (min-width: 576px) {
-    .blogs-center {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(368px, 1fr));
-        column-gap: 2rem;
-    }
     .blog-img {
         height: 17.5rem;
     }
@@ -994,15 +997,15 @@ Footer
 Pages
 ===============
 */
-.blog-template,
-.projects-page,
-.blog-page,
-.error-page,
-.about-page,
-.contact-page {
-    background: var(--clr-grey-10);
-    min-height: calc(100vh - 5rem - 9rem);
-}
+// .blog-template,
+// .projects-page,
+// .blog-page,
+// .error-page,
+// .about-page,
+// .contact-page {
+//     background: var(--clr-grey-10);
+//     min-height: calc(100vh - 5rem - 9rem);
+// }
 .error-page {
     display: grid;
     place-items: center;
@@ -1018,11 +1021,8 @@ Pages
 ===============
 Blog Page
 ===============
-*/
-.blog-page .blog {
-    background: var(--clr-black);
-}
-/*
+
+
 ===============
 About Page
 ===============

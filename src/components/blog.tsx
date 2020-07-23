@@ -9,7 +9,7 @@ const Blog: React.FC<IBlogLinks> = (props: IBlogLinks) => {
         <Link to={`${process.env.GATSBY_BASE_BLOG_ROUTE}${slug}`} key={title} className='blog'>
             <article>
                 <Image fluid={image.childImageSharp.fluid} className='blog-img' />
-                <div className='blog-card'>
+                <div className='card content-card'>
                     <h4>{title}</h4>
                     <h5>{author}</h5>
                     <p>{preview}</p>

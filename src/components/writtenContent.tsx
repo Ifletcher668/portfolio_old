@@ -8,11 +8,9 @@ export const Blogs: React.FC<IWrittenContent> = (props: IWrittenContent) => {
     const { blogs, poetry, title, showLink } = props;
 
     const handleContentType = () => {
-        if (blogs && !poetry) {
-            return blogs.map((blog, idx) => <Blog key={idx} {...blog} />);
-        } else if (poetry && !blogs) {
-            return poetry.map((poem, idx) => <Poem key={idx} {...poem} />);
-        } else if (poetry && blogs) {
+        if (blogs && !poetry) return blogs.map((blog, idx) => <Blog key={idx} {...blog} />);
+        else if (poetry && !blogs) return poetry.map((poem, idx) => <Poem key={idx} {...poem} />);
+        else if (poetry && blogs) {
             return (
                 <>
                     {blogs.map((blog, idx) => (
@@ -25,10 +23,11 @@ export const Blogs: React.FC<IWrittenContent> = (props: IWrittenContent) => {
             );
         }
     };
+
     return (
-        <section className='section blogs'>
+        <section className='section'>
             <Title title={title} />
-            <div className='section-center blogs-center'>{handleContentType()}</div>
+            <div className='section-center '>{handleContentType()}</div>
             {showLink && (
                 <Link to='/blogs' className='btn center-btn'>
                     All Blogs

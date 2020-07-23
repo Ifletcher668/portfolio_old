@@ -7,9 +7,9 @@ const Poem: React.FC<IPoetryLinks> = (props: IPoetryLinks) => {
     return (
         <Link to={`${process.env.GATSBY_BASE_POETRY_ROUTE}${slug}`} key={title} className='blog'>
             <article>
-                <div className='blog-card'>
+                <div className='card content-card'>
                     <h4>{title}</h4>
-                    <h5>{author}</h5>
+                    <h5>by {author}</h5>
                     <div className='blog-footer'>
                         {tags.map(({ tag }, idx) => {
                             return <p key={idx}>{tag}</p>;

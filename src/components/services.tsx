@@ -18,7 +18,7 @@ const Services: React.FC<IServices> = (props: IServices) => {
                     .map((service, idx) => {
                         const { icon, title, text } = service;
                         return (
-                            <article key={idx} className='service'>
+                            <article key={idx} className='card'>
                                 {icon}
                                 <h4>{title}</h4>
                                 <div className='underline'></div>
