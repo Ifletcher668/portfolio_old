@@ -5,7 +5,7 @@ import Hero from '../components/hero';
 
 export default () => {
     return (
-        <Layout id='index-page'>
+        <Layout id='index-page' className='hero'>
             <Hero />
         </Layout>
     );

@@ -11,16 +11,14 @@ const BlogTemplate: React.FC = ({ data }: { [key: string]: any }) => {
 
     return (
         <Layout>
-            <section className='blog-template'>
-                <div className='section-center'>
-                    <Title title={title} />
-                    <SubTitle title={`by ${author}, ${date}`} />
-                    <Image fluid={image.childImageSharp.fluid} /> <br />
-                    <article className='blog-content'>{body}</article>
-                    {tags.map(({ tag }, idx) => {
-                        return <span key={idx}>{tag} </span>;
-                    })}
-                </div>
+            <section className='blog-template gutter'>
+                <Title title={title} />
+                <SubTitle title={`by ${author}, ${date}`} />
+                <Image fluid={image.childImageSharp.fluid} /> <br />
+                <article className='blog-content'>{body}</article>
+                {tags.map(({ tag }, idx) => {
+                    return <span key={idx}>{tag} </span>;
+                })}
             </section>
         </Layout>
     );

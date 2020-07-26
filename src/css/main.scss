@@ -51,8 +51,7 @@ Variables
 
     /* screen sizes */
     --max-width: 1170px;
-    --fixed-width: 700px;
-
+    --gutter: 95vw;
     --screen-small: 500px;
     --screen-small-no-gutter: 499.99px;
 
@@ -83,8 +82,11 @@ body {
     font-size: 0.875rem;
     min-height: 100vh;
 }
-body.overflow-hidden {
-    overflow: hidden;
+
+@media (min-width: 768px) {
+    body.overflow-hidden {
+        overflow: hidden;
+    }
 }
 
 h1,
@@ -137,7 +139,9 @@ p {
     }
 }
 
-a.blog:visited {
+a,
+a:visited,
+a:visited {
     color: var(--clr-grey-5);
 }
 
@@ -150,12 +154,15 @@ a.blog:visited {
 
 .card {
     background: var(--clr-grey-1);
-    padding: 3rem 1.5rem;
-    margin-bottom: 2rem;
     border-radius: var(--radius);
-    text-align: center;
     -webkit-transition: var(--transition);
     transition: var(--transition);
+}
+
+.card:not(.no-placement) {
+    padding: 3rem 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
 }
 
 .card h5 {
@@ -174,7 +181,7 @@ a.blog:visited {
     transition: var(--transition);
 }
 
-.card:hover {
+.card:not(.no-hover):hover {
     background: var(--clr-primary-5);
     color: var(--clr-primary-9);
 }
@@ -222,9 +229,15 @@ a.blog:visited {
     margin: 0 auto;
     margin-top: 3rem;
 }
+
+.gutter {
+    width: var(--gutter);
+    margin: auto;
+}
+
 /* section */
 .section {
-    padding: 5rem 0;
+    padding: 2rem 0;
 }
 
 .section-center {
@@ -235,7 +248,7 @@ a.blog:visited {
 
 @media screen and (min-width: 992px) {
     .section-center {
-        width: 95vw;
+        width: var(--gutter);
     }
 }
 
@@ -257,7 +270,7 @@ a.blog:visited {
 }
 
 .section-title {
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
     text-align: center;
 }
 .bg-grey {
@@ -296,13 +309,6 @@ Navbar
     background: var(--clr-dark);
 }
 
-.navbar.navbar-bottom {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    z-index: 200;
-}
-
 .nav-center {
     width: var(--center-width);
     max-width: 1170px;
@@ -332,6 +338,12 @@ Navbar
 .nav-links {
     display: none;
 }
+
+/*
+=============== 
+Navbar Submenu 
+===============
+*/
 
 .sub-menu {
     opacity: 0;
@@ -366,6 +378,7 @@ Navbar
         opacity: 1;
     }
 }
+
 @keyframes transitionSubMenuFromBottom {
     0% {
         transform: translateY(-20px);
@@ -378,9 +391,12 @@ Navbar
     }
 }
 
-@media screen and (max-width: 768px) {
-    .navbar {
-        top: 0;
+@media screen and (min-width: 768px) {
+    .navbar.navbar-bottom {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: 200;
     }
 }
 
@@ -553,33 +569,33 @@ HeroHero
 ===============
 */
 
-.hero {
-    margin-top: -6.8rem;
+// some styling to the card element
+// are only applied if NOT .hero-info
 
+.hero {
     height: 100vh;
     background: var(--clr-black);
     position: relative;
 }
 
 .hero-center {
-    height: 100%;
+    height: 100vh;
+
+    // margin: auto;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: 1fr 1fr;
     align-items: center;
 }
 
-.hero .underline {
-    margin-bottom: 0.5rem;
-    margin-left: 0;
-}
+// .hero .underline {
+//     margin-bottom: 0.5rem;
+//     margin-left: 0;
+// }
 
 .hero-info {
     display: flex;
     flex-direction: column;
-
-    background: var(--clr-white);
-    border-radius: 0.15em;
     grid-row: 1/1;
     grid-column: 1 / span 12;
 }
@@ -619,22 +635,26 @@ HeroHero
 }
 
 @media screen and (max-width: 768px) {
-    .hero-center {
-        grid-template-rows: 1fr;
+    .hero {
+        height: auto;
     }
 
     .hero-img {
         display: none;
     }
 
-    .hero-info {
-        margin-top: 6.8em;
-        height: 60vh;
+    // .hero-info {
+    //     margin-top: 6.8em;
+    // }
+
+    .hero-info h1 {
+        text-align: center;
+        font-size: 3.5rem;
     }
 
     .hero-info h4 {
         color: var(--clr-grey-5);
-        font-size: 1em;
+        font-size: 2em;
     }
 }
 
@@ -662,7 +682,6 @@ Services
 @media screen and (min-width: 676px) {
     .services-center {
         display: grid;
-        grid-template-columns: 1fr 1fr;
         -webkit-column-gap: 2rem;
         -moz-column-gap: 2rem;
         column-gap: 2rem;
@@ -670,7 +689,7 @@ Services
 }
 @media screen and (min-width: 992px) {
     .services-center {
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
     }
 }
 
@@ -948,6 +967,17 @@ Blog
     }
 }
 
+.portfolio-page {
+    display: grid;
+    grid-template-columns: 0.4fr 2fr;
+
+    gap: 0 100px;
+}
+.portfolio-tags {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
 /*
 ===============
 Footer
@@ -1086,8 +1116,8 @@ Contact Page
 .contact-page {
     display: grid;
     place-items: center;
-    padding: 5rem 0;
 }
+
 .contact-form {
     background: var(--clr-black);
     border-radius: var(--radius);
@@ -1106,6 +1136,12 @@ Contact Page
 }
 .form-group {
     padding: 1rem 1.5rem;
+    text-align: left;
+}
+
+.form-group label {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
 }
 .form-control {
     display: block;

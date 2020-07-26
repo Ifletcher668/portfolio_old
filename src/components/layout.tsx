@@ -15,7 +15,7 @@ const blankCtxObj: SidebarContext = {
 export const sidebarContext = createContext(blankCtxObj);
 
 const Layout: React.FC<IProps> = (props: IProps) => {
-    const { id, children } = props;
+    const { id, className, children } = props;
 
     const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
 
@@ -39,7 +39,7 @@ const Layout: React.FC<IProps> = (props: IProps) => {
                 <Navbar placement={id === idxPageId ? 'bottom' : 'top'} />
                 <Sidebar />
             </sidebarContext.Provider>
-            <main className='main'>{children}</main>
+            <main className={`main${className ? ' ' + className : ''}`}>{children}</main>
             {id === idxPageId ? '' : <Footer />}
         </>
     );

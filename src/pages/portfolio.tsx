@@ -4,7 +4,7 @@ import Layout from '../components/layout';
 import { Title, SubTitle } from '../components/titles';
 
 type Paragraph = {
-    sub_title: string;
+    subTitle: string;
     body: string;
 };
 
@@ -14,7 +14,7 @@ type Stack = {
 
 type Portfolio = {
     title: string;
-    sub_title: string;
+    subTitle: string;
     paragraph: Paragraph[];
     stack: Stack[];
 };
@@ -24,9 +24,9 @@ export const query = graphql`
         portfolio: allStrapiPortfolio {
             content: nodes {
                 title
-                sub_title
+                subTitle: sub_title
                 paragraph {
-                    sub_title
+                    subTitle: sub_title
                     body
                 }
                 stack {
@@ -42,30 +42,32 @@ export default ({ data }: { [key: string]: any }) => {
         portfolio: { content },
     }: { [key: string]: { [key: string]: Portfolio[] } } = data;
 
-    const { title, sub_title, paragraph, stack } = content[0];
+    const { title, subTitle, paragraph, stack } = content[0];
 
     return (
         <Layout>
-            <Title title={title} />
-            <SubTitle title={sub_title} />
-            <div className='section-center'>
-                {paragraph.map(({ sub_title, body }, idx) => {
-                    return (
-                        <Fragment key={idx}>
-                            <SubTitle title={sub_title} />
-                            <div className='section'>{body}</div>
-                        </Fragment>
-                    );
-                })}
-            </div>
-            <div className='section-center'>
-                {stack.map(({ tag }, idx) => {
-                    return (
-                        <div key={idx} className='portfolio-tags'>
-                            <p>{tag}</p>
-                        </div>
-                    );
-                })}
+            {/* <Title title={`${title}`} /> */}
+            <div className='portfolio-page gutter'>
+                {/* <SubTitle title={subTitle} /> */}
+                <aside className='portfolio-tags'>
+                    {stack.map(({ tag }, idx) => {
+                        return (
+                            <Fragment key={idx}>
+                                <p>{tag}</p>
+                            </Fragment>
+                        );
+                    })}
+                </aside>
+                <article className='portfolio'>
+                    {paragraph.map(({ subTitle, body }, idx) => {
+                        return (
+                            <Fragment key={idx}>
+                                <SubTitle title={subTitle} />
+                                <div className='section'>{body}</div>
+                            </Fragment>
+                        );
+                    })}
+                </article>
             </div>
         </Layout>
     );
