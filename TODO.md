@@ -1,10 +1,8 @@
--   Configure all routes through gatsby-node
--   Design layout of portfolio page
 -   Color Scheme
 -   Add Poem-Tree to extras
 -   Devise a list of book links
 -   Build backend function on netlify
--   Contact page needs a height adjustment
+-   Figure out how to send formatted text (poems) to gatsby
 -   Refactor
     -   Test for bugs
         -   The submenu needs to be off the screen until parent is hovered over

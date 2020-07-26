@@ -4,6 +4,7 @@ import { Link, graphql, useStaticQuery } from 'gatsby';
 import { FaAlignJustify } from 'react-icons/fa';
 import PageLinks from '../constants/links';
 import { sidebarContext } from './layout';
+import { Title } from './titles';
 
 // TODO: Find a better placement for submenus. They're getting in the way
 
@@ -37,7 +38,8 @@ const Navbar: React.FC<INavbarProps> = (props: INavbarProps) => {
                 <div className='nav-center'>
                     <div className='nav-header'>
                         <Link to='/'>
-                            <img src={logo} alt='logo' />
+                            {/* <img src={logo} alt='logo' /> */}
+                            <Title title='Isiah Fletcher' />
                         </Link>
 
                         <button

@@ -8,9 +8,12 @@ export default ({ data }: { [key: string]: any }) => {
         poem: { title, body, author, published, tags },
     }: { [key: string]: Poem } = data;
 
+    console.log(body);
+
     return (
         <Layout>
             <Title title={title} />
+            {/* <div>{body}</div> */}
         </Layout>
     );
 };

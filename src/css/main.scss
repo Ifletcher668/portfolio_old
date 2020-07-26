@@ -1127,13 +1127,16 @@ Contact Page
     width: var(--center-width);
     max-width: 35rem;
 }
+
 .contact-form:hover {
     box-shadow: var(--dark-shadow);
 }
+
 .contact-form h3 {
     padding-top: 1.25rem;
     color: var(--clr-grey-5);
 }
+
 .form-group {
     padding: 1rem 1.5rem;
     text-align: left;
@@ -1143,6 +1146,7 @@ Contact Page
     font-size: 1.4rem;
     margin-bottom: 0.8rem;
 }
+
 .form-control {
     display: block;
     width: 100%;
@@ -1154,12 +1158,14 @@ Contact Page
     text-transform: uppercase;
     letter-spacing: var(--spacing);
 }
+
 .form-control::placeholder {
     font-family: var(--ff-primary);
     color: var(--clr-grey-1);
     text-transform: uppercase;
     letter-spacing: var(--spacing);
 }
+
 .submit-btn {
     display: block;
     width: 100%;
@@ -1202,6 +1208,7 @@ Blog Template
     color: var(--clr-primary-5);
     margin: 2rem 0;
 }
+
 .blog-template pre {
     background: #222;
     color: yellow;
@@ -1209,6 +1216,7 @@ Blog Template
     padding: 1rem 1.5rem;
     border-radius: var(--radius);
 }
+
 .blog-template img {
     width: 15rem;
     height: 15rem;
