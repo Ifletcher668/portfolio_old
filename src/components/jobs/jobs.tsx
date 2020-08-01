@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Title } from './titles';
+import { Title } from '../titles/titles';
 import { FaAngleDoubleRight } from 'react-icons/fa';
 import { graphql, useStaticQuery } from 'gatsby';
 import { Link } from 'gatsby';

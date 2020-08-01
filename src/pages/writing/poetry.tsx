@@ -1,7 +1,7 @@
 import React from 'react';
-import Layout from '../../components/layout';
+import Layout from '../../components/layout/layout';
 import { graphql } from 'gatsby';
-import Content from '../../components/writtenContent';
+import Content from '../../components/content/writtenContent';
 
 export default ({ data }: { [key: string]: any }) => {
     const {

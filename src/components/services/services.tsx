@@ -1,6 +1,6 @@
 import React from 'react';
-import { Title } from './titles';
-import services from '../constants/services';
+import { Title } from '../titles/titles';
+import services from '../../constants/services';
 import { Link } from 'gatsby';
 
 interface IServices extends IProps {

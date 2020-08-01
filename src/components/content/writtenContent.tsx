@@ -1,7 +1,7 @@
 import React from 'react';
-import { Title } from './titles';
-import Blog from './blog';
-import Poem from './poem';
+import { Title } from '../titles/titles';
+import Blog from '../blog/blog';
+import Poem from '../poem/poem';
 import { Link } from 'gatsby';
 
 export const Blogs: React.FC<IWrittenContent> = (props: IWrittenContent) => {

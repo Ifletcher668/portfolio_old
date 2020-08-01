@@ -1,8 +1,8 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Image from 'gatsby-image';
-import Layout from '../components/layout';
-import { Title, SubTitle } from '../components/titles';
+import Layout from '../components/layout/layout';
+import { Title, SubTitle } from '../components/titles/titles';
 
 const BlogTemplate: React.FC = ({ data }: { [key: string]: any }) => {
     const {

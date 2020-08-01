@@ -1,16 +1,49 @@
-/*
-=============== 
-Fonts
-===============
-*/
+@import 'libs/vars';
+@import 'libs/functions';
+@import 'libs/mixins';
+@import 'libs/vendor';
+@import 'libs/breakpoints';
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap');
+
+// base
+
+@include breakpoints(
+    (
+        xlarge: (
+            1281px,
+            1680px,
+        ),
+        large: (
+            981px,
+            1280px,
+        ),
+        medium: (
+            737px,
+            980px,
+        ),
+        small: (
+            481px,
+            736px,
+        ),
+        xsmall: (
+            361px,
+            480px,
+        ),
+        xxsmall: (
+            null,
+            360px,
+        ),
+    )
+);
+
+@import 'base/_reset';
+@import 'base/typography';
 
 /*
 =============== 
 Variables
 ===============
 */
-
 :root {
     /* dark shades of primary color*/
     --clr-primary-1: hsl(184, 91%, 17%);
@@ -602,7 +635,7 @@ HeroHero
 
 .hero-img {
     grid-row: 2/2;
-    grid-column: 1 / 9;
+    grid-column: 1 / 8;
     align-self: center;
 }
 

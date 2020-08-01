@@ -1,7 +1,7 @@
 import React from 'react';
-import Layout from '../components/layout';
+import Layout from '../components/layout/layout';
 import { Link } from 'gatsby';
-import SEO from '../components/SEO';
+import SEO from '../components/SEO/SEO';
 
 const Error: React.FC<IProps> = (props: IProps) => {
     return (

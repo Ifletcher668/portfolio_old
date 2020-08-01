@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
-import Links from '../constants/links';
-import SocialLinks from '../constants/socialLinks';
+import Links from '../../constants/links';
+import SocialLinks from '../../constants/socialLinks';
 import { FaTimes } from 'react-icons/fa';
-import { sidebarContext } from './layout';
+import { sidebarContext } from '../layout/layout';
 
 const Sidebar: React.FC<IProps> = () => {
     const { isSidebarOpen, toggleSidebar } = useContext(sidebarContext);

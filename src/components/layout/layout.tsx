@@ -1,8 +1,7 @@
 import React, { useState, createContext } from 'react';
-import Navbar from './navbar';
-import Sidebar from './sidebar';
-import Footer from './footer';
-
+import Navbar from '../navbar/navbar';
+import Sidebar from '../sidebar/sidebar';
+import Footer from '../footer/footer';
 type SidebarContext = {
     isSidebarOpen: boolean;
     toggleSidebar: Function;
