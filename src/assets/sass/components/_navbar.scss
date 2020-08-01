@@ -1,0 +1,142 @@
+.navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: var(--clr-dark);
+}
+
+.nav-center {
+    width: var(--center-width);
+    max-width: 1170px;
+    z-index: 201;
+    margin: 0 auto;
+}
+.nav-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-header img {
+    margin-bottom: 0.375rem;
+}
+.toggle-btn {
+    font-size: 2rem;
+    background: transparent;
+    border-color: transparent;
+    color: var(--clr-primary-5);
+    cursor: pointer;
+    transition: var(--transition);
+}
+.toggle-btn:hover {
+    color: var(--clr-primary-2);
+}
+
+.nav-links {
+    display: none;
+}
+
+/*
+=============== 
+Navbar Submenu 
+===============
+*/
+
+.sub-menu {
+    opacity: 0;
+    background-color: var(--clr-grey-10);
+    border-radius: 0.2em;
+}
+
+.navbar-top .nav-link:hover .sub-menu {
+    animation: transitionSubMenuFromTop 0.1s ease-in-out 0.3s forwards;
+}
+
+.navbar-bottom .nav-link:hover .sub-menu {
+    animation: transitionSubMenuFromBottom 0.1s ease-in-out 0.3s forwards;
+}
+
+.navbar-bottom .title {
+    display: none;
+}
+
+.navbar {
+    font-size: 1.3rem;
+    height: 5rem;
+}
+
+.nav-link .sub-menu {
+    position: absolute;
+}
+
+.nav-link .sub-menu li a:hover {
+    box-shadow: none;
+}
+
+@keyframes transitionSubMenuFromTop {
+    0% {
+        transform: translateY(0px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(6px);
+
+        opacity: 1;
+    }
+}
+
+@keyframes transitionSubMenuFromBottom {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(-80px);
+
+        opacity: 1;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .navbar.navbar-bottom {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: 200;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .toggle-btn {
+        display: none;
+    }
+    .nav-links {
+        display: flex;
+        justify-content: flex-end;
+    }
+    .nav-links li {
+        margin-right: 2rem;
+    }
+    .nav-links li a {
+        text-transform: capitalize;
+        color: var(--clr-primary-1);
+        font-weight: bold;
+        letter-spacing: var(--spacing);
+        transition: var(--transition);
+        padding: 0.5rem 0;
+    }
+    .nav-links a:hover {
+        color: var(--clr-primary-5);
+        box-shadow: 0px 2px var(--clr-primary-5);
+    }
+    .nav-center {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        align-items: center;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .navbar {
+        background: transparent;
+    }
+}

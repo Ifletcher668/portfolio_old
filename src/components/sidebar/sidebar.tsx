@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import Links from '../../constants/links';
-import SocialLinks from '../../constants/socialLinks';
+import SocialLinks from '../social_links/socialLinks';
 import { FaTimes } from 'react-icons/fa';
 import { sidebarContext } from '../layout/layout';
 

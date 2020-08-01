@@ -1,0 +1,15 @@
+.social-links {
+    margin-top: 2rem;
+    width: 15rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.social-link {
+    font-size: 2rem;
+    // color: var(--clr-grey-1);
+    transition: var(--transition);
+}
+.social-link:hover {
+    color: var(--clr-primary-5);
+}

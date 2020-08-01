@@ -1,0 +1,18 @@
+.service-icon {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+@media screen and (min-width: 676px) {
+    .services-center {
+        display: grid;
+        -webkit-column-gap: 2rem;
+        -moz-column-gap: 2rem;
+        column-gap: 2rem;
+    }
+}
+@media screen and (min-width: 992px) {
+    .services-center {
+        grid-template-columns: 1fr 1fr;
+    }
+}

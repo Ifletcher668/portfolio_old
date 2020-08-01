@@ -1,0 +1,10 @@
+.portfolio-page {
+    display: grid;
+    grid-template-columns: 0.4fr 2fr;
+
+    gap: 0 100px;
+}
+.portfolio-tags {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}

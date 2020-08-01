@@ -41,8 +41,8 @@ a {
         'transition',
         'color #{_duration(transition)} ease-in-out, border-bottom-color #{_duration(transition)} ease-in-out'
     );
-    // border-bottom: dotted 1px _palette(fg-light);
-    color: _palette(fg-bold);
+
+    color: _palette(fg-light);
     text-decoration: none;
 
     &:hover {
@@ -91,6 +91,9 @@ a {
                 background-color: _palette(border2-bg);
             }
         }
+        &:visited {
+            color: _palette(fg-light);
+        }
     }
 }
 
@@ -115,12 +118,11 @@ h3,
 h4,
 h5,
 h6 {
-    color: _palette(fg-bold);
-    font-family: _font(family-heading);
+    color: _palette(txt-light);
+    font-family: _font(family);
     font-weight: _font(weight-heading-bold);
     letter-spacing: _font(kern-heading);
-    margin: 0 0 (_size(element-margin) * 0.5) 0;
-    text-transform: uppercase;
+    margin: 0 0 (_size(element-margin) * 0.1) 0;
 
     a {
         color: inherit;
@@ -138,16 +140,21 @@ h6 {
     }
 }
 
+h1 {
+    font-size: 3rem;
+    color: _palette(txt-light);
+}
+
 h2 {
-    font-size: 1.2em;
+    font-size: 2em;
 }
 
 h3 {
-    font-size: 0.9em;
+    font-size: 1.3rem;
 }
 
 h4 {
-    font-size: 0.7em;
+    font-size: 1rem;
 }
 
 h5 {
@@ -219,16 +226,4 @@ hr {
     &.major {
         margin: (_size(element-margin) * 2) 0;
     }
-}
-
-.align-left {
-    text-align: left;
-}
-
-.align-center {
-    text-align: center;
-}
-
-.align-right {
-    text-align: right;
 }
