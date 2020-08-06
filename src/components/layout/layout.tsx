@@ -1,4 +1,4 @@
-import React, { useState, createContext } from 'react';
+import React, { useState, createContext, useEffect } from 'react';
 import Navbar from '../navbar/navbar';
 import Sidebar from '../sidebar/sidebar';
 import Footer from '../footer/footer';
@@ -29,8 +29,10 @@ const Layout: React.FC<IProps> = (props: IProps) => {
         toggleSidebar,
     };
 
-    if (location.pathname === '/') document.body.classList.add('overflow-hidden');
-    else document.body.classList.remove('overflow-hidden');
+    useEffect(() => {
+        if (location.pathname === '/') document.body.classList.add('overflow-hidden');
+        else document.body.classList.remove('overflow-hidden');
+    }, []);
 
     return (
         <>

@@ -5,7 +5,7 @@
     "version": "0.1.0",
     "license": "MIT",
     "scripts": {
-        "build": "gatsby build",
+        "build": "gatsby clean && gatsby build && echo 'ensure strapi is running!' ",
         "develop": "gatsby develop -p 3000",
         "start": "npm run clean && npm run develop",
         "serve": "gatsby serve",
