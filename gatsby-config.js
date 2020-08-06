@@ -6,9 +6,9 @@
 
 module.exports = {
     siteMetadata: {
-        title: 'WebDev Portfolio',
-        description: 'This is WebDev Portfolio Site',
-        author: '@webdev',
+        title: 'Isiahfletcher.com',
+        description: 'A drummer. A web developer. A poet. Isiah Fletcher lives in Boise, Idaho',
+        author: 'Isiah Fletcher',
         twitterUsername: '@john_smilga',
         image: '/twitter-img.png',
         siteUrl: 'https://testing-strapi-gatsby-build.netlify.app',
