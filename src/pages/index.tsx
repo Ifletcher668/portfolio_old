@@ -27,7 +27,7 @@ export default () => {
 
     return (
         <Layout id='index-page' className='hero'>
-            <SEO title='Home' />
+            <SEO title='Home' descFor='homepage' />
             <div className='hero-center gutter'>
                 <Image fluid={fluid} className='hero-img' />
                 <article className='hero-info card no-hover no-placement'>
