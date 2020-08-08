@@ -3,9 +3,10 @@ import Layout from '../components/layout/layout';
 import { Link } from 'gatsby';
 import SEO from '../components/SEO/SEO';
 
-const Error: React.FC<IProps> = (props: IProps) => {
+export default () => {
     return (
         <Layout>
+            <SEO title='Sorry! Page Not Found' />
             <main className='error-page'>
                 <div className='error-container'>
                     <h1>I'm sorry, I can't do that right now</h1>
@@ -18,5 +19,3 @@ const Error: React.FC<IProps> = (props: IProps) => {
         </Layout>
     );
 };
-
-export default Error;

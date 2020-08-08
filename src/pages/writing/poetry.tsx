@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from '../../components/layout/layout';
 import { graphql } from 'gatsby';
 import Content from '../../components/content/writtenContent';
+import SEO from '../../components/SEO/SEO';
 
 export default ({ data }: { [key: string]: any }) => {
     const {
@@ -10,6 +11,7 @@ export default ({ data }: { [key: string]: any }) => {
 
     return (
         <Layout>
+            <SEO title='Poetry' />
             <section className='blog-page'>
                 <Content poetry={poems} title='poetry' showLink={false} />
             </section>

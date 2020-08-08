@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/layout/layout';
 import { Title, SubTitle } from '../components/titles/titles';
+import SEO from '../components/SEO/SEO';
 
 type Paragraph = {
     subTitle: string;
@@ -46,6 +47,7 @@ export default ({ data }: { [key: string]: any }) => {
 
     return (
         <Layout>
+            <SEO title='Software Portfolio' />
             {/* <Title title={`${title}`} /> */}
             <div className='portfolio-page gutter'>
                 {/* <SubTitle title={subTitle} /> */}

@@ -1,10 +1,12 @@
 import React from 'react';
 import Layout from '../components/layout/layout';
 import { Title } from '../components/titles/titles';
+import SEO from '../components/SEO/SEO';
 
 const contact: React.FC<IProps> = (props: IProps) => {
     return (
         <Layout>
+            <SEO title='Get in Touch' />
             <section className='contact-page'>
                 <article className='contact-form'>
                     <Title title='Get in Touch' />

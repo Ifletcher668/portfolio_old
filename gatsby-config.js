@@ -7,11 +7,9 @@
 module.exports = {
     siteMetadata: {
         title: 'Isiahfletcher.com',
-        description: 'A drummer. A web developer. A poet. Isiah Fletcher lives in Boise, Idaho',
+        description: 'Drummer. Web Developer. Poet. Isiah Fletcher lives in Boise, Idaho',
         author: 'Isiah Fletcher',
-        twitterUsername: '@john_smilga',
-        image: '/twitter-img.png',
-        siteUrl: 'https://testing-strapi-gatsby-build.netlify.app',
+        siteUrl: 'https://isiahfletcher.netlify.app',
     },
     plugins: [
         `gatsby-transformer-sharp`,
