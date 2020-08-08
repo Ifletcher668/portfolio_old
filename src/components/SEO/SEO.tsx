@@ -6,8 +6,6 @@ interface ISEOProps {
     title: string;
     htmlAttributes?: { [key: string]: string };
     descFor?: string;
-    // title: string;
-    // title: string;
 }
 
 const query = graphql`
