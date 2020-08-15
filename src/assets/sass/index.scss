@@ -48,13 +48,12 @@
 @import 'components/sidebar';
 @import 'components/services';
 @import 'components/jobs';
+@import 'components/poem';
 
 // pages
 @import 'pages/indexPage';
 @import 'pages/blogPage';
-@import 'pages/poem';
 @import 'pages/contactPage';
-@import 'pages/portfolioPage';
 
 :root {
     /* dark shades of primary color*/

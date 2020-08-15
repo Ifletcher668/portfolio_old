@@ -61,7 +61,8 @@ export default ({ data }: { [key: string]: any }) => {
                         );
                     })}
                 </article>
-                <aside className='portfolio-tags'>
+                <hr className='mb-small' />
+                <aside className='tags'>
                     {stack.map(({ tag }, idx) => {
                         return (
                             <Fragment key={idx}>
@@ -70,6 +71,7 @@ export default ({ data }: { [key: string]: any }) => {
                         );
                     })}
                 </aside>
+                <hr className='mb-small' />
             </div>
         </Layout>
     );

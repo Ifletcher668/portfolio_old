@@ -6,7 +6,11 @@ export default (props: IProps) => {
     return (
         <Layout>
             <SEO title='Drum Transcripts' />
-            <h1>Transcripts</h1>
+            <div className='content-page gutter'>
+                <div className='title'>
+                    <h1>Currently Unavailable</h1>
+                </div>
+            </div>
         </Layout>
     );
 };

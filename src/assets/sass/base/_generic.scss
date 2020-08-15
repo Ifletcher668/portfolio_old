@@ -17,15 +17,18 @@ body {
     min-height: 100vh;
 }
 
-@media (min-width: 768px) {
-    body.overflow-hidden {
-        overflow: hidden;
-    }
+.center {
+    width: 50%;
+    margin: auto;
+}
+
+.mb-small {
+    margin-bottom: 1rem;
 }
 
 #gatsby-focus-wrapper {
-    min-height: 100vh;
     display: grid;
+    min-height: 100vh;
     grid-template-columns: 1fr;
     grid-template-rows: 100px 1fr 0.01fr;
 }
@@ -48,16 +51,24 @@ body {
 .raised {
     z-index: 1;
 }
-
+//     background: _palette(content-outline);
 .content-page {
     display: grid;
     gap: 0 100px;
-    background-color: var(--clr-grey-0);
+    background-color: _palette(bg-accent);
     border-radius: var(--radius);
-    padding: 1.5rem;
+    padding: _size(wrapper-edges, small);
     .paragraph {
         margin-bottom: 0.8rem;
     }
+}
+
+.tags {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 12rem);
+    align-content: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .content-card {
@@ -130,8 +141,7 @@ body {
     display: block;
     width: 12rem;
     text-align: center;
-    margin: 0 auto;
-    margin-top: 3rem;
+    margin: 2rem auto;
 }
 
 .gutter {

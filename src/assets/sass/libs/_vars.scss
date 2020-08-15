@@ -53,12 +53,18 @@ $font: (
 // Palette.
 $palette: (
     bg: hsl(0, 0%, 0%),
-    fg: hsl(209, 61%, 16%),
-    fg-light: hsl(209, 28%, 39%),
-    txt-dark: hsl(184, 91%, 17%),
-    txt-med: hsl(210, 22%, 49%),
-    txt-light: hsl(186, 100%, 94%),
-    social-links: hsl(210, 22%, 49%),
+    bg-accent: hsl(198, 100%, 2%),
+    // --clr-black
+        // --clr-grey-0
+        fg: hsl(209, 61%, 16%),
+    // --clr-grey-1
+        fg-light: hsl(209, 28%, 39%),
+    // --clr-grey-4
+        txt-dark: hsl(184, 91%, 17%),
+    // clr-primary-1
+        txt-med: hsl(210, 22%, 49%),
+    // --clr-grey-5
+        txt-light: hsl(186, 100%, 94%),
     content-outline: rgb(2, 3, 9),
     border: hsl(209, 34%, 30%),
     border-bg: rgba(255, 255, 255, 0.025),
@@ -67,4 +73,5 @@ $palette: (
     accent: #4c5c96,
     button: hsl(184, 65%, 59%),
     btn-hover: hsl(185, 81%, 29%),
+    red: hsl(360, 67%, 44%),
 );

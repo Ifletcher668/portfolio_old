@@ -1,3 +1,7 @@
 import React from 'react';
 
-export default () => <button onClick={() => window.history.back()}>Return</button>;
+export default () => (
+    <button className='btn center-btn' onClick={() => window.history.back()}>
+        Return
+    </button>
+);
