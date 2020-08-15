@@ -52,6 +52,7 @@ body {
     z-index: 1;
 }
 //     background: _palette(content-outline);
+
 .content-page {
     display: grid;
     gap: 0 100px;
@@ -144,9 +145,17 @@ body {
     margin: 2rem auto;
 }
 
-.gutter {
-    width: var(--gutter);
-    margin: auto;
+@media (min-width: 1200px) {
+    .gutter {
+        width: 95vw;
+        margin: auto;
+    }
+}
+
+@media (min-width: 1800px) {
+    .gutter {
+        width: 75vw;
+    }
 }
 
 /* section */
@@ -158,12 +167,6 @@ body {
     width: var(--center-width);
     margin: 0 auto;
     max-width: 1170px;
-}
-
-@media screen and (min-width: 992px) {
-    .section-center {
-        width: var(--gutter);
-    }
 }
 
 @media screen and (min-width: 576px) {

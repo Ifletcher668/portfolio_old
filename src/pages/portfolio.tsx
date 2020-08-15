@@ -50,7 +50,7 @@ export default ({ data }: { [key: string]: any }) => {
         <Layout>
             <SEO title='Software Portfolio' />
             <div className='content-page gutter'>
-                <article className='portfolio'>
+                <article>
                     <Jobs />
                     {paragraph.map(({ subTitle, body }, idx) => {
                         return (

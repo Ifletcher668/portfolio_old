@@ -25,7 +25,7 @@ export const Blogs: React.FC<IWrittenContent> = (props: IWrittenContent) => {
     };
 
     return (
-        <section className='section'>
+        <section className=' section gutter'>
             <Title title={title} />
             <div className='section-center'>{handleContentType()}</div>
             {showLink && (
