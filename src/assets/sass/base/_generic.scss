@@ -49,6 +49,17 @@ body {
     z-index: 1;
 }
 
+.content-page {
+    display: grid;
+    gap: 0 100px;
+    background-color: var(--clr-grey-0);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    .paragraph {
+        margin-bottom: 0.8rem;
+    }
+}
+
 .content-card {
     display: grid;
     grid-template-rows: auto 1fr auto;
