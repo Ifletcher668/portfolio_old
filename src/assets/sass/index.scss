@@ -70,6 +70,7 @@
     --clr-primary-9: hsl(185, 94%, 87%);
     --clr-primary-10: hsl(186, 100%, 94%);
     /* darkest grey - used for headings */
+    --clr-grey-0: hsl(204, 71%, 3%);
     --clr-grey-1: hsl(209, 61%, 16%);
     --clr-grey-3: hsl(209, 34%, 30%);
     --clr-grey-4: hsl(209, 28%, 39%);
@@ -96,7 +97,7 @@
 
     /* screen sizes */
     --max-width: 1170px;
-    --gutter: 95vw;
+    --gutter: 75vw;
     --screen-small: 500px;
     --screen-small-no-gutter: 499.99px;
 

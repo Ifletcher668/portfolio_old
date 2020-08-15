@@ -42,22 +42,22 @@ const Jobs: React.FC<IProps> = (props: IProps) => {
 
     return (
         <section className='section jobs'>
-            <Title title='experience' />
+            <Title title='projects' />
             <div className='jobs-center'>
                 <div className='btn-container'>
-                    {projects.map((project, idx) => {
+                    {projects.map(({ project }, idx) => {
                         return (
                             <button
                                 key={idx}
                                 className={`job-btn ${idx === value && 'active-btn'}`}
                                 onClick={() => setValue(idx)}>
-                                {project.project}
+                                {project}
                             </button>
                         );
                     })}
                 </div>
                 <article className='job-info'>
-                    <h3>{project}</h3>
+                    <h3>{project}</h3> {/*// TODO: Make this a link to the project */}
                     <p className='job-date'>{date}</p>
                     {description.map((desc, idx) => {
                         const { body } = desc;
@@ -70,9 +70,6 @@ const Jobs: React.FC<IProps> = (props: IProps) => {
                     })}
                 </article>
             </div>
-            <Link to='/about' className='btn center-btn'>
-                More Information
-            </Link>
         </section>
     );
 };

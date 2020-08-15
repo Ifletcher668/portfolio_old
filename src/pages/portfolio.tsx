@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import Layout from '../components/layout/layout';
 import { Title, SubTitle } from '../components/titles/titles';
 import SEO from '../components/SEO/SEO';
+import Jobs from '../components/jobs/jobs';
 
 type Paragraph = {
     subTitle: string;
@@ -48,19 +49,9 @@ export default ({ data }: { [key: string]: any }) => {
     return (
         <Layout>
             <SEO title='Software Portfolio' />
-            {/* <Title title={`${title}`} /> */}
             <div className='portfolio-page gutter'>
-                {/* <SubTitle title={subTitle} /> */}
-                <aside className='portfolio-tags'>
-                    {stack.map(({ tag }, idx) => {
-                        return (
-                            <Fragment key={idx}>
-                                <p>{tag}</p>
-                            </Fragment>
-                        );
-                    })}
-                </aside>
                 <article className='portfolio'>
+                    <Jobs />
                     {paragraph.map(({ subTitle, body }, idx) => {
                         return (
                             <Fragment key={idx}>
@@ -70,6 +61,15 @@ export default ({ data }: { [key: string]: any }) => {
                         );
                     })}
                 </article>
+                <aside className='portfolio-tags'>
+                    {stack.map(({ tag }, idx) => {
+                        return (
+                            <Fragment key={idx}>
+                                <span>{tag}</span>
+                            </Fragment>
+                        );
+                    })}
+                </aside>
             </div>
         </Layout>
     );

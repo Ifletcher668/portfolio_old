@@ -1,10 +1,14 @@
 .portfolio-page {
     display: grid;
-    grid-template-columns: 0.4fr 2fr;
-
     gap: 0 100px;
+    background-color: var(--clr-grey-0);
+    border-radius: var(--radius);
+    padding: 1.5rem;
 }
 .portfolio-tags {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fill, 195px);
+    align-content: center;
+    justify-content: center;
+    text-align: center;
 }
