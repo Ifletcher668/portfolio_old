@@ -1,4 +1,13 @@
-.poem-body {
-    padding: 6rem;
-    text-align: left;
+@media (min-width: 760px) {
+    .poem-body {
+        font-size: 0.7rem;
+    }
+}
+
+@media (min-width: 1400px) {
+    .poem-body {
+        padding: 6rem;
+        text-align: left;
+        font-size: 1rem;
+    }
 }

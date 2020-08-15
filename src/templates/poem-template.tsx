@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/layout/layout';
-import { Title, SubTitle } from '../components/titles/titles';
 import BackButton from '../components/back_button/backButton';
 
 export const query = graphql`
@@ -20,6 +19,8 @@ export const query = graphql`
 `;
 
 export default ({ data }: { [key: string]: any }) => {
+    const [center, setCenter] = useState<string>('center');
+
     const {
         poem: { title, test_body, body, author, published, tags },
     }: { [key: string]: Poem } = data;
@@ -31,7 +32,7 @@ export default ({ data }: { [key: string]: any }) => {
                 <div className='title'>
                     <h2>{title}</h2>
                 </div>
-                <div className='center'>
+                <div className={`${center} mb-small`}>
                     <article
                         className='poem-body'
                         dangerouslySetInnerHTML={{ __html: test_body }}></article>
