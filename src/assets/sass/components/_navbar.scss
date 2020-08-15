@@ -2,7 +2,6 @@
     width: 100%;
     display: flex;
     align-items: center;
-    background: var(--clr-dark);
     font-size: 1.3rem;
     height: 5rem;
 }
@@ -55,39 +54,15 @@ Navbar Sub-menu
             padding: 0.2rem;
             border-radius: 0.2em;
             position: absolute;
-        }
-    }
-}
-.navbar-top {
-    .nav-link {
-        .sub-menu {
             top: -60px;
         }
     }
-}
-
-.navbar-bottom {
-    .nav-link {
-        .sub-menu {
-            top: 80px;
-        }
-    }
-}
-
-.navbar-top .nav-link:hover .sub-menu {
-    animation: transitionSubMenuFromTop 0.2s ease-in-out 0.2s forwards;
-}
-
-.navbar-bottom {
     .nav-link:hover .sub-menu {
-        animation: transitionSubMenuFromBottom 0.2s ease-in-out 0.2s forwards;
-    }
-    .title {
-        display: none;
+        animation: showSubMenu 0.2s ease-in-out 0.2s forwards;
     }
 }
 
-@keyframes transitionSubMenuFromTop {
+@keyframes showSubMenu {
     0% {
         transform: translateY(100px);
         opacity: 0;
@@ -99,27 +74,6 @@ Navbar Sub-menu
     }
 }
 
-@keyframes transitionSubMenuFromBottom {
-    0% {
-        transform: translateY(-100px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(-120px);
-
-        opacity: 1;
-    }
-}
-
-@media screen and (min-width: 768px) {
-    .navbar.navbar-bottom {
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        z-index: 200;
-    }
-}
-
 @media screen and (min-width: 768px) {
     .toggle-btn {
         display: none;
@@ -128,10 +82,8 @@ Navbar Sub-menu
     .nav-links {
         display: flex;
         justify-content: flex-end;
-
         li {
             margin-right: 2rem;
-
             a {
                 text-transform: capitalize;
                 color: var(--clr-primary-1);
@@ -140,19 +92,16 @@ Navbar Sub-menu
                 transition: var(--transition);
                 padding: 0.5rem 0;
             }
-
             a:hover {
                 color: var(--clr-primary-5);
             }
         }
-
-        .nav-link:not(.strip-bottom) {
+        .nav-link {
             a:hover {
                 box-shadow: 0px 2px var(--clr-primary-5);
             }
         }
     }
-
     .nav-center {
         display: grid;
         grid-template-columns: auto 1fr;

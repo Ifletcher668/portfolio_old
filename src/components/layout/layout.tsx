@@ -18,8 +18,6 @@ const Layout: React.FC<IProps> = (props: IProps) => {
 
     const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
 
-    const idxPageId: string = 'index-page';
-
     const toggleSidebar = () => {
         setIsSidebarOpen(!isSidebarOpen);
     };
@@ -29,19 +27,14 @@ const Layout: React.FC<IProps> = (props: IProps) => {
         toggleSidebar,
     };
 
-    useEffect(() => {
-        if (location.pathname === '/') document.body.classList.add('overflow-hidden');
-        else document.body.classList.remove('overflow-hidden');
-    }, []);
-
     return (
         <>
             <sidebarContext.Provider value={contextValue}>
-                <Navbar placement={id === idxPageId ? 'bottom' : 'top'} />
+                <Navbar />
                 <Sidebar />
             </sidebarContext.Provider>
             <main className={`main${className ? ' ' + className : ''}`}>{children}</main>
-            {id === idxPageId ? '' : <Footer />}
+            <Footer />
         </>
     );
 };

@@ -32,33 +32,41 @@ export default () => {
                 <Image fluid={fluid} className='hero-img' />
                 <article className='hero-info card no-hover no-placement'>
                     <h1>I'm Isiah</h1>
-                    <h4>I'm:</h4>
+                    <h4>I am:</h4>
                     <h4>
-                        <span>A drummer.</span> A timekeeper. A poet. A lyricist. The co-founder of
-                        a band, Aterrima. A software connoisseur. An amateur audio engineer. A
-                        gamer. A hiker. A bicyclist. A somewhere-between-a-taoist-and-buddhist. A
-                        graduate of the University of Idaho. A graduate of the Coding Dojo. A web
-                        developer. On Instagram
+                        <span>A drummer.</span> A timekeeper. A lyricist. The co-founder of a band,
+                        Aterrima. An amateur audio engineer. A poet. A content writer. A software
+                        connoisseur. A web developer. A software engineer. A gamer. A hiker. A
+                        bicyclist. A kayaker. A reader. A somewhere-between-a-taoist-and-buddhist. A
+                        learner. A graduate of the University of Idaho. A graduate of the Coding
+                        Dojo. On Instagram
                         <a
+                            className='text-link'
                             href='https://www.instagram.com/fletchmydrumsticks/?hl=en'
                             target='_blank'>
                             {' '}
                             here.
                         </a>{' '}
                         On Facebook{' '}
-                        <a href='https://www.facebook.com/fletchmydrumsticks' target='_blank'>
+                        <a
+                            className='text-link'
+                            href='https://www.facebook.com/fletchmydrumsticks'
+                            target='_blank'>
                             here.
                         </a>{' '}
                         On Github{' '}
-                        <a href='https://github.com/Ifletcher668?tab=repositories' target='_blank'>
+                        <a
+                            className='text-link'
+                            href='https://github.com/Ifletcher668?tab=repositories'
+                            target='_blank'>
                             {' '}
                             here.
                         </a>{' '}
                     </h4>
-                    <Link to='/contact' className='btn'>
+                    {/* <Link to='/contact' className='btn'>
                         Get in touch!
                     </Link>
-                    <SocialLinks />
+                    <SocialLinks /> */}
                 </article>
             </div>
         </Layout>

@@ -22,9 +22,8 @@ import { Title } from '../titles/titles';
 //     }
 // `;
 
-const Navbar: React.FC<INavbarProps> = (props: INavbarProps) => {
+const Navbar: React.FC<IProps> = (props: IProps) => {
     const { toggleSidebar } = useContext(sidebarContext);
-    const { placement } = props;
 
     // const {
     // file: {
@@ -34,7 +33,7 @@ const Navbar: React.FC<INavbarProps> = (props: INavbarProps) => {
 
     return (
         <>
-            <nav className={`navbar navbar-${placement}`}>
+            <nav className={`navbar`}>
                 <div className='nav-center'>
                     <div className='nav-header'>
                         <Link to='/'>
