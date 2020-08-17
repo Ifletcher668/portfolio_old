@@ -2,8 +2,12 @@
 -   Add Poem-Tree to extras
 -   Devise a list of book links
 -   Build backend function on netlify
--   Figure out how to send formatted text (poems) to gatsby
+-   Change data format on Strapi to RTF
+-   Install React MD and render the MD for poems and portfolio items 
+-   Update homescreen so that when the height is smaller (laptop screen), the picture doesn't show (or shows elsewhere)
 -   Refactor
     -   Test for bugs
-        -   The submenu needs to be off the screen until parent is hovered over
+        -   place z-index of the X button higher. 
         -   The menu looks weird on a medium sized screen. Submenus are fucking with it
+        -   Place the "Projects" underneath all sections pulled from Strapi 
+        
