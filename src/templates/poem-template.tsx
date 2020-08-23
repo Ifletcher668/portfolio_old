@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { graphql } from 'gatsby';
-import Layout from '../components/layout/layout';
-import BackButton from '../components/back_button/backButton';
+import React, { useState, useEffect } from "react";
+import { graphql } from "gatsby";
+import Layout from "../components/layout/layout";
+import BackButton from "../components/back_button/backButton";
+import SEO from "../components/SEO/SEO";
 
 export const query = graphql`
     query GetSinglePoem($slug: String) {
@@ -19,7 +20,7 @@ export const query = graphql`
 `;
 
 export default ({ data }: { [key: string]: any }) => {
-    const [center, setCenter] = useState<string>('center');
+    const [center, setCenter] = useState<string>("center");
 
     const {
         poem: { title, test_body, body, author, published, tags },
@@ -27,29 +28,31 @@ export default ({ data }: { [key: string]: any }) => {
 
     return (
         <Layout>
-            <div className='content-page gutter'>
-                <hr className='center mb-small' />
-                <div className='title'>
+            <SEO title={`${title}, by ${author}`} />
+            <div className="content-page gutter">
+                <hr className="center mb-small" />
+                <div className="title">
                     <h2>{title}</h2>
                 </div>
                 <div className={`${center} mb-small`}>
                     <article
-                        className='poem-body'
-                        dangerouslySetInnerHTML={{ __html: test_body }}></article>
+                        className="poem-body"
+                        dangerouslySetInnerHTML={{ __html: test_body }}
+                    ></article>
                 </div>
-                <div className='title'>
+                <div className="title">
                     <h3>
                         By {author}, {published}
                     </h3>
                 </div>
                 <div>
-                    <hr className='center mb-small' />
+                    <hr className="center mb-small" />
                 </div>
-                <div className='tags'>
+                <div className="tags">
                     {tags.map(({ tag }, idx) => {
                         return (
                             <React.Fragment key={idx}>
-                                <span className='tag'>{tag} </span>
+                                <span className="tag">{tag} </span>
                             </React.Fragment>
                         );
                     })}
