@@ -1,8 +1,8 @@
-import React from 'react';
-import Layout from '../../components/layout/layout';
-import { graphql } from 'gatsby';
-import Content from '../../components/content/writtenContent';
-import SEO from '../../components/SEO/SEO';
+import React from "react";
+import Layout from "../../components/layout/layout";
+import { graphql } from "gatsby";
+import Content from "../../components/content/writtenContent";
+import SEO from "../../components/SEO/SEO";
 // ...GatsbyImageSharpFluid
 
 export default ({ data }: { [key: string]: any }) => {
@@ -12,9 +12,9 @@ export default ({ data }: { [key: string]: any }) => {
 
     return (
         <Layout>
-            <SEO title='Blogs' />
-            <section className='blog-page'>
-                <Content blogs={blogs} title='blog' showLink={false} />
+            <SEO title="Blogs" descFor="blogPage" />
+            <section className="blog-page">
+                <Content blogs={blogs} title="blog" showLink={false} />
             </section>
         </Layout>
     );

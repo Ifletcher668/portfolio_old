@@ -1,9 +1,9 @@
-import React, { Fragment } from 'react';
-import { graphql } from 'gatsby';
-import Layout from '../components/layout/layout';
-import { Title, SubTitle } from '../components/titles/titles';
-import SEO from '../components/SEO/SEO';
-import Jobs from '../components/jobs/jobs';
+import React, { Fragment } from "react";
+import { graphql } from "gatsby";
+import Layout from "../components/layout/layout";
+import { Title, SubTitle } from "../components/titles/titles";
+import SEO from "../components/SEO/SEO";
+import Jobs from "../components/jobs/jobs";
 
 type Paragraph = {
     subTitle: string;
@@ -48,21 +48,21 @@ export default ({ data }: { [key: string]: any }) => {
 
     return (
         <Layout>
-            <SEO title='Software Portfolio' />
-            <div className='content-page gutter'>
+            <SEO title="Software Portfolio" descFor="portfolio" />
+            <div className="content-page gutter">
                 <article>
                     <Jobs />
                     {paragraph.map(({ subTitle, body }, idx) => {
                         return (
                             <Fragment key={idx}>
                                 <SubTitle title={subTitle} />
-                                <div className='section'>{body}</div>
+                                <div className="section">{body}</div>
                             </Fragment>
                         );
                     })}
                 </article>
-                <hr className='mb-small' />
-                <aside className='tags'>
+                <hr className="mb-small" />
+                <aside className="tags">
                     {stack.map(({ tag }, idx) => {
                         return (
                             <Fragment key={idx}>
@@ -71,7 +71,7 @@ export default ({ data }: { [key: string]: any }) => {
                         );
                     })}
                 </aside>
-                <hr className='mb-small' />
+                <hr className="mb-small" />
             </div>
         </Layout>
     );
