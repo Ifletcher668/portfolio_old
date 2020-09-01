@@ -9,19 +9,19 @@ export const query = graphql`
         allStrapiBlogs {
             nodes {
                 title
-                author
-                body
-                slug
-                tags {
-                    tag
-                }
-                published(formatString: "DD MMM, YYYY")
                 image {
                     childImageSharp {
                         fluid {
                             ...GatsbyImageSharpFluid
                         }
                     }
+                }
+                body
+                author
+                published(formatString: "DD MMM, YYYY")
+                slug
+                tags {
+                    tag
                 }
                 preview
             }

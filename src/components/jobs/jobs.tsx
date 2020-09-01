@@ -17,6 +17,7 @@ const query = graphql`
         }
     }
 `;
+
 type Description = {
     sentence: string;
 };
