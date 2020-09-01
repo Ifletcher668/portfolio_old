@@ -28,7 +28,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
     result.data.blogs.nodes.forEach((blog) => {
         createPage({
-            path: `${process.env.GATSBY_BASE_BLOG_ROUTE}${blog.slug}`,
+            path: `/writing/blogs/${blog.slug}`,
             component: path.resolve(`./src/templates/blog-template.tsx`), // the template
             context: {
                 slug: blog.slug,
@@ -38,7 +38,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
     result.data.poems.nodes.forEach((poem) => {
         createPage({
-            path: `${process.env.GATSBY_BASE_POETRY_ROUTE}${poem.slug}`,
+            path: `/writing/poetry/${poem.slug}`,
             component: path.resolve(`./src/templates/poem-template.tsx`),
             context: {
                 slug: poem.slug,
