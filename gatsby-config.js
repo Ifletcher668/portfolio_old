@@ -28,7 +28,11 @@ module.exports = {
         {
             resolve: `gatsby-source-strapi`,
             options: {
-                apiURL: `https://isiahfletcheradmin.herokuapp.com/`,
+                apiURL: `${
+                    process.env.NODE_ENV === 'production'
+                        ? 'https://isiahfletcheradmin.herokuapp.com/'
+                        : 'localhost:1337'
+                }`,
                 queryLimit: 1000,
                 //  ONLY ADD TO ARRAY IF YOU HAVE DATA IN STRAPI !!!!
                 contentTypes: [`projects`, `blogs`, `poems`],
