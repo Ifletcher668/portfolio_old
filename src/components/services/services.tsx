@@ -19,12 +19,7 @@ const Services: React.FC<IServices> = (props: IServices) => {
                     .map((service, idx) => {
                         const { icon, title, text, url } = service;
                         return (
-                            <Link
-                                to={`${
-                                    type === 'writing'
-                                        ? process.env.GATSBY_BASE_WRITING_ROUTE
-                                        : process.env.GATSBY_BASE_MUSIC_ROUTE
-                                }${url}`}>
+                            <Link to={`${type === 'writing' ? /writing/ : /music/}${url}`}>
                                 <article key={idx} className='card'>
                                     {icon}
                                     <h4>{title}</h4>

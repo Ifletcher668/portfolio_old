@@ -4,29 +4,29 @@ import { Link } from 'gatsby';
 const data = [
     {
         text: 'music',
-        url: `${process.env.GATSBY_BASE_MUSIC_ROUTE}`,
+        url: `/music/`,
         subMenu: [
             {
                 text: 'aterrima',
-                url: `${process.env.GATSBY_BASE_ATERRIMA_ROUTE}`,
+                url: `/music/aterrima/`,
             },
             {
                 text: 'transcripts',
-                url: `${process.env.GATSBY_BASE_TRANSCRIPTS_ROUTE}`,
+                url: `/music/transcripts/`,
             },
         ],
     },
     {
         text: 'writing',
-        url: `${process.env.GATSBY_BASE_WRITING_ROUTE}`,
+        url: `/writing/`,
         subMenu: [
             {
                 text: 'poetry',
-                url: `${process.env.GATSBY_BASE_POETRY_ROUTE}`,
+                url: `/writing/poetry/`,
             },
             {
                 text: 'blogs',
-                url: `${process.env.GATSBY_BASE_BLOG_ROUTE}`,
+                url: `/writing/blogs/`,
             },
         ],
     },

@@ -5,7 +5,7 @@ const Poem: React.FC<IPoetryLinks> = (props: IPoetryLinks) => {
     const { title, author, published, slug, tags } = props;
 
     return (
-        <Link to={`${process.env.GATSBY_BASE_POETRY_ROUTE}${slug}`} key={title} className='blog'>
+        <Link to={`/writing/poetry/${slug}`} key={title} className='blog'>
             <article>
                 <div className='card content-card'>
                     <h4>{title}</h4>
