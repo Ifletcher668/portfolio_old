@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import Image from 'gatsby-image';
 import Layout from '../components/layout/layout';
 import { Title, SubTitle } from '../components/titles/titles';
+import SEO from '../components/SEO/SEO';
 
 export const query = graphql`
     query GetSingleBlog($slug: String) {
@@ -32,6 +33,7 @@ const BlogTemplate: React.FC = ({ data }: { [key: string]: any }) => {
 
     return (
         <Layout>
+            <SEO title={`${title}, by ${author}`} />
             <section className='blog-template gutter'>
                 <Title title={title} />
                 <SubTitle title={`by ${author}, ${published}`} />

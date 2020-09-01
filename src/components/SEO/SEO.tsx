@@ -1,7 +1,7 @@
-import React from 'react';
-import { Helmet } from 'react-helmet';
-import { useStaticQuery, graphql } from 'gatsby';
-import metaDescription from '../../constants/metaDescriptions';
+import React from "react";
+import { Helmet } from "react-helmet";
+import { useStaticQuery, graphql } from "gatsby";
+import metaDescription from "../../constants/metaDescriptions";
 interface ISEOProps {
     title: string;
     htmlAttributes?: { [key: string]: string };
@@ -32,8 +32,12 @@ const SEO: React.FC<ISEOProps> = (props: ISEOProps) => {
     return (
         <Helmet
             title={`${title} | ${siteTitle}`}
-            htmlAttributes={{ lang: 'en', ...(htmlAttributes || '') }}>
-            <meta name='description' content={metaDescription[descFor!] || siteDescription} />
+            htmlAttributes={{ lang: "en", ...(htmlAttributes || "") }}
+        >
+            <meta
+                name="description"
+                content={metaDescription[descFor!] || siteDescription}
+            />
         </Helmet>
     );
 };

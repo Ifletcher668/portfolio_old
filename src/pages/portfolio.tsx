@@ -30,7 +30,7 @@ export default ({ data }: { [key: string]: any }) => {
 
     return (
         <Layout>
-            <SEO title='Software Portfolio' />
+            <SEO title='Software Portfolio' descFor='portfolio' />
             <div className='content-page gutter'>
                 <article>
                     <Jobs />

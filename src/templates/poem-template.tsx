@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/layout/layout';
 import BackButton from '../components/back_button/backButton';
+import SEO from '../components/SEO/SEO';
 
 export const query = graphql`
     query GetSinglePoem($slug: String) {
@@ -26,6 +27,7 @@ export default ({ data }: { [key: string]: any }) => {
 
     return (
         <Layout>
+            <SEO title={`${title}, by ${author}`} />
             <div className='content-page gutter'>
                 <hr className='center mb-small' />
                 <div className='title'>

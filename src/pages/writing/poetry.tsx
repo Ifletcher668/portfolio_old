@@ -28,7 +28,7 @@ export default ({ data }: { [key: string]: any }) => {
 
     return (
         <Layout>
-            <SEO title='Poetry' />
+            <SEO title='Poetry' descFor='poetryPage' />
             <section className='blog-page'>
                 <Content poetry={poems} title='poetry' showLink={false} />
             </section>
