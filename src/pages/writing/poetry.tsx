@@ -4,21 +4,6 @@ import { graphql } from 'gatsby';
 import Content from '../../components/content/writtenContent';
 import SEO from '../../components/SEO/SEO';
 
-export default ({ data }: { [key: string]: any }) => {
-    const {
-        allPoetry: { poems },
-    }: { allPoetry: { [key: string]: Poem[] } } = data;
-
-    return (
-        <Layout>
-            <SEO title='Poetry' />
-            <section className='blog-page'>
-                <Content poetry={poems} title='poetry' showLink={false} />
-            </section>
-        </Layout>
-    );
-};
-
 export const query = graphql`
     {
         allPoetry: allStrapiPoems {
@@ -36,18 +21,17 @@ export const query = graphql`
     }
 `;
 
-// const Blog: React.FC<IProps> = ({ data }: { [key: string]: any }) => {
-//     const {
-//         allStrapiBlogs: { nodes: blogs },
-//     }: { allStrapiBlogs: { [key: string]: Blog[] } } = data;
+export default ({ data }: { [key: string]: any }) => {
+    const {
+        allPoetry: { poems },
+    }: { allPoetry: { [key: string]: Poem[] } } = data;
 
-//     return (
-//         <Layout>
-//             <section className='blog-page'>
-//                 <Blogs posts={blogs} title='blog' showLink={false} />
-//             </section>
-//         </Layout>
-//     );
-// };
-
-// export default Blog;
+    return (
+        <Layout>
+            <SEO title='Poetry' />
+            <section className='blog-page'>
+                <Content poetry={poems} title='poetry' showLink={false} />
+            </section>
+        </Layout>
+    );
+};

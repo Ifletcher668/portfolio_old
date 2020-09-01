@@ -29,12 +29,10 @@ module.exports = {
             resolve: `gatsby-source-strapi`,
             options: {
                 apiURL: `http://localhost:1337`,
-                queryLimit: 1000, // Default to 100
-                //   contentTypes : `poems`, `projects`, `blogs`,
-                //   singleType : `about`
+                queryLimit: 1000,
                 //  ONLY ADD TO ARRAY IF YOU HAVE DATA IN STRAPI !!!!
-                contentTypes: [`projects`, `blogs`, `poems`], // These are my api endpoints
-                singleTypes: [`portfolio`, `about`], // these are single content types
+                contentTypes: [`projects`, `blogs`, `poems`],
+                singleTypes: [`portfolio`],
             },
         },
         {

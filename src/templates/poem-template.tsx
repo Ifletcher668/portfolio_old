@@ -8,9 +8,8 @@ export const query = graphql`
         poem: strapiPoems(slug: { eq: $slug }) {
             title
             body
-            test_body
             author
-            published
+            published(formatString: "DD MMMM, YYYY")
             tags {
                 tag
             }
@@ -22,7 +21,7 @@ export default ({ data }: { [key: string]: any }) => {
     const [center, setCenter] = useState<string>('center');
 
     const {
-        poem: { title, test_body, body, author, published, tags },
+        poem: { title, body, author, published, tags },
     }: { [key: string]: Poem } = data;
 
     return (
@@ -35,7 +34,7 @@ export default ({ data }: { [key: string]: any }) => {
                 <div className={`${center} mb-small`}>
                     <article
                         className='poem-body'
-                        dangerouslySetInnerHTML={{ __html: test_body }}></article>
+                        dangerouslySetInnerHTML={{ __html: body }}></article>
                 </div>
                 <div className='title'>
                     <h3>

@@ -11,16 +11,14 @@ const query = graphql`
                 project
                 date
                 description {
-                    id
-                    body
+                    sentence
                 }
             }
         }
     }
 `;
 type Description = {
-    body: string;
-    id: number;
+    sentence: string;
 };
 
 type Node = {
@@ -59,12 +57,11 @@ const Jobs: React.FC<IProps> = (props: IProps) => {
                 <article className='job-info'>
                     <h3>{project}</h3> {/*// TODO: Make this a link to the project */}
                     <p className='job-date'>{date}</p>
-                    {description.map((desc, idx) => {
-                        const { body } = desc;
+                    {description.map(({ sentence }, idx) => {
                         return (
                             <div key={idx} className='job-desc'>
                                 <FaAngleDoubleRight className='job-icon' />
-                                <p>{body}</p>
+                                <p>{sentence}</p>
                             </div>
                         );
                     })}

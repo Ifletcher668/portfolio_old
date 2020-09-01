@@ -4,26 +4,6 @@ import Image from 'gatsby-image';
 import Layout from '../components/layout/layout';
 import { Title, SubTitle } from '../components/titles/titles';
 
-const BlogTemplate: React.FC = ({ data }: { [key: string]: any }) => {
-    const {
-        blog: { title, body, author, tags, date, image },
-    }: { [key: string]: Blog } = data;
-
-    return (
-        <Layout>
-            <section className='blog-template gutter'>
-                <Title title={title} />
-                <SubTitle title={`by ${author}, ${date}`} />
-                <Image fluid={image.childImageSharp.fluid} /> <br />
-                <article className='blog-content'>{body}</article>
-                {tags.map(({ tag }, idx) => {
-                    return <span key={idx}>{tag} </span>;
-                })}
-            </section>
-        </Layout>
-    );
-};
-
 export const query = graphql`
     query GetSingleBlog($slug: String) {
         blog: strapiBlogs(slug: { eq: $slug }) {
@@ -33,7 +13,7 @@ export const query = graphql`
             tags {
                 tag
             }
-            date(formatString: "DD MMMM, YYYY")
+            published(formatString: "DD MMMM, YYYY")
             image {
                 childImageSharp {
                     fluid {
@@ -44,5 +24,25 @@ export const query = graphql`
         }
     }
 `;
+
+const BlogTemplate: React.FC = ({ data }: { [key: string]: any }) => {
+    const {
+        blog: { title, body, author, tags, published, image },
+    }: { [key: string]: Blog } = data;
+
+    return (
+        <Layout>
+            <section className='blog-template gutter'>
+                <Title title={title} />
+                <SubTitle title={`by ${author}, ${published}`} />
+                <Image fluid={image.childImageSharp.fluid} /> <br />
+                <article className='blog-content'>{body}</article>
+                {tags.map(({ tag }, idx) => {
+                    return <span key={idx}>{tag} </span>;
+                })}
+            </section>
+        </Layout>
+    );
+};
 
 export default BlogTemplate;

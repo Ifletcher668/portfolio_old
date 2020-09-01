@@ -5,33 +5,15 @@ import { Title, SubTitle } from '../components/titles/titles';
 import SEO from '../components/SEO/SEO';
 import Jobs from '../components/jobs/jobs';
 
-type Paragraph = {
-    subTitle: string;
-    body: string;
-};
-
-type Stack = {
-    tag: string;
-};
-
-type Portfolio = {
-    title: string;
-    subTitle: string;
-    paragraph: Paragraph[];
-    stack: Stack[];
-};
-
 export const query = graphql`
     {
         portfolio: allStrapiPortfolio {
             content: nodes {
-                title
-                subTitle: sub_title
-                paragraph {
-                    subTitle: sub_title
+                section {
+                    title
                     body
                 }
-                stack {
+                tags {
                     tag
                 }
             }
@@ -44,7 +26,7 @@ export default ({ data }: { [key: string]: any }) => {
         portfolio: { content },
     }: { [key: string]: { [key: string]: Portfolio[] } } = data;
 
-    const { title, subTitle, paragraph, stack } = content[0];
+    const { section, tags } = content[0];
 
     return (
         <Layout>
@@ -52,10 +34,10 @@ export default ({ data }: { [key: string]: any }) => {
             <div className='content-page gutter'>
                 <article>
                     <Jobs />
-                    {paragraph.map(({ subTitle, body }, idx) => {
+                    {section.map(({ title, body }, idx) => {
                         return (
                             <Fragment key={idx}>
-                                <SubTitle title={subTitle} />
+                                <SubTitle title={title} />
                                 <div className='section'>{body}</div>
                             </Fragment>
                         );
@@ -63,7 +45,7 @@ export default ({ data }: { [key: string]: any }) => {
                 </article>
                 <hr className='mb-small' />
                 <aside className='tags'>
-                    {stack.map(({ tag }, idx) => {
+                    {tags.map(({ tag }, idx) => {
                         return (
                             <Fragment key={idx}>
                                 <span>{tag}</span>
