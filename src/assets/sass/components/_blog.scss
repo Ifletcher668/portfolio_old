@@ -23,11 +23,12 @@
 
 .blog-footer {
     display: flex;
-    justify-content: space-between;
+    flex-flow: row wrap;
+    justify-content: center;
     align-items: center;
 }
 .blog-footer p {
-    margin-bottom: 0;
+    margin: 0 5px;
     font-weight: bold;
     color: var(--clr-grey-5);
 }

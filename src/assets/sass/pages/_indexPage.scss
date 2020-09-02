@@ -7,11 +7,14 @@
 .hero-center {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 1fr 1fr;
     .card {
-        background-color: var(--clr-grey-0);
+        background-color: _palette(bg-accent);
         padding: 1.5rem;
         border-radius: var(--radius);
+    }
+    .card:hover {
+        box-shadow: 0px 0px 4px 1px _palette(fg-light);
+        transition: none;
     }
 }
 .text-link {
@@ -22,14 +25,14 @@
 }
 
 .hero-info {
-    grid-row: 2/2;
-    grid-column: 1 / span 12;
+    grid-row: 1/12;
+    grid-column: 6 / span 12;
     height: max-content;
 }
 
 .hero-img {
-    grid-row: 1/1;
-    grid-column: 1 / 6;
+    grid-row: 1;
+    grid-column: 1/6;
     align-self: center;
 }
 
