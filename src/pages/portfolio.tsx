@@ -4,6 +4,7 @@ import Layout from '../components/layout/layout';
 import { Title, SubTitle } from '../components/titles/titles';
 import SEO from '../components/SEO/SEO';
 import Jobs from '../components/jobs/jobs';
+import MarkdownField from 'react-markdown';
 
 export const query = graphql`
     {
@@ -33,16 +34,17 @@ export default ({ data }: { [key: string]: any }) => {
             <SEO title='Software Portfolio' descFor='portfolio' />
             <div className='content-page gutter'>
                 <article>
-                    <Jobs />
                     {section.map(({ title, body }, idx) => {
                         return (
                             <Fragment key={idx}>
-                                <SubTitle title={title} />
-                                <div className='section'>{body}</div>
+                                <Title title={title} />
+
+                                <MarkdownField source={body} />
                             </Fragment>
                         );
                     })}
                 </article>
+                <Jobs />
                 <hr className='mb-small' />
                 <aside className='tags'>
                     {tags.map(({ tag }, idx) => {
