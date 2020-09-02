@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import Layout from '../components/layout/layout';
 import BackButton from '../components/back_button/backButton';
 import SEO from '../components/SEO/SEO';
+import MarkdownField from 'react-markdown';
 
 export const query = graphql`
     query GetSinglePoem($slug: String) {
@@ -34,9 +35,7 @@ export default ({ data }: { [key: string]: any }) => {
                     <h2>{title}</h2>
                 </div>
                 <div className={`${center} mb-small`}>
-                    <article
-                        className='poem-body'
-                        dangerouslySetInnerHTML={{ __html: body }}></article>
+                    <MarkdownField source={body} />
                 </div>
                 <div className='title'>
                     <h3>

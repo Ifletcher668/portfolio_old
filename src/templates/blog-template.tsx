@@ -4,6 +4,7 @@ import Image from 'gatsby-image';
 import Layout from '../components/layout/layout';
 import { Title, SubTitle } from '../components/titles/titles';
 import SEO from '../components/SEO/SEO';
+import MarkdownField from 'react-markdown';
 
 export const query = graphql`
     query GetSingleBlog($slug: String) {
@@ -38,7 +39,7 @@ const BlogTemplate: React.FC = ({ data }: { [key: string]: any }) => {
                 <Title title={title} />
                 <SubTitle title={`by ${author}, ${published}`} />
                 <Image fluid={image.childImageSharp.fluid} /> <br />
-                <article className='blog-content'>{body}</article>
+                <MarkdownField source={body} />
                 {tags.map(({ tag }, idx) => {
                     return <span key={idx}>{tag} </span>;
                 })}
