@@ -26,7 +26,7 @@ export const Blogs: React.FC<IWrittenContent> = (props: IWrittenContent) => {
 
     return (
         <section className=' section gutter'>
-            <Title title={title} />
+            <h1>{title}</h1>
             <div className='section-center'>{handleContentType()}</div>
             {showLink && (
                 <Link to='/blogs' className='btn center-btn'>

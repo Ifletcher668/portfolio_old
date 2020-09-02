@@ -12,7 +12,7 @@ const Services: React.FC<IServices> = (props: IServices) => {
 
     return (
         <>
-            <Title title={title || 'services'} />
+            <h1>{title || 'services'}</h1>
             <section className='section-center services-center'>
                 {services
                     .filter((service) => service.type === type)

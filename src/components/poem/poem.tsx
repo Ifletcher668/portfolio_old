@@ -1,21 +1,35 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'gatsby';
 
 const Poem: React.FC<IPoetryLinks> = (props: IPoetryLinks) => {
     const { title, author, published, slug, tags } = props;
 
+    let maxLen = 20;
+    let newTitle = '';
+
+    if (title.length > maxLen) {
+        for (let i = 0; i < maxLen; i++) {
+            if (i === maxLen - 1) {
+                newTitle += '...';
+                break;
+            }
+            newTitle += title[i] as string;
+            console.log(title[i]);
+        }
+    } else newTitle = title;
+
     return (
         <Link to={`/writing/poetry/${slug}`} key={title} className='blog'>
             <article>
                 <div className='card content-card'>
-                    <h4>{title}</h4>
-                    <h5>by {author}</h5>
-                    <div className='blog-footer'>
+                    <h2>{newTitle}</h2>
+                    <h4>by {author}</h4>
+                    <div className='card-footer'>
                         {tags.map(({ tag }, idx) => {
                             return <p key={idx}>{tag}</p>;
                         })}
-                        <p>{published}</p>
                     </div>
+                    <p>{published}</p>
                 </div>
             </article>
         </Link>

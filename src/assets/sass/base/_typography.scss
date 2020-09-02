@@ -16,11 +16,11 @@ textarea {
     line-height: 1.65;
 
     @include breakpoint('<=xlarge') {
-        font-size: 13pt;
+        font-size: 16pt;
     }
 
     @include breakpoint('<=large') {
-        font-size: 12pt;
+        font-size: 13pt;
     }
 
     @include breakpoint('<=medium') {
@@ -141,8 +141,10 @@ h6 {
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: 5rem;
     color: _palette(txt-light);
+    text-align: center;
+    margin-bottom: 0.5em;
 }
 
 h2 {
@@ -150,15 +152,15 @@ h2 {
 }
 
 h3 {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
 }
 
 h4 {
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
 h5 {
-    font-size: 0.7em;
+    font-size: 0.9em;
 }
 
 h6 {

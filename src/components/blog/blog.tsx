@@ -3,7 +3,7 @@ import Image from 'gatsby-image';
 import { Link } from 'gatsby';
 
 const Blog: React.FC<IBlogLinks> = (props: IBlogLinks) => {
-    const { title, author, preview, date, slug, image, tags } = props;
+    const { title, author, preview, published, slug, image, tags } = props;
 
     return (
         <Link to={`/writing/blogs/${slug}`} key={title} className='blog'>
@@ -17,7 +17,7 @@ const Blog: React.FC<IBlogLinks> = (props: IBlogLinks) => {
                         {tags.map(({ tag }, idx) => {
                             return <p key={idx}>{tag}</p>;
                         })}
-                        <p>{date}</p>
+                        <p>{published}</p>
                     </div>
                 </div>
             </article>

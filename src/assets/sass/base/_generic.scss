@@ -13,7 +13,7 @@ body {
     background: var(--clr-black);
     color: var(--clr-grey-5);
     line-height: 1.5;
-    font-size: 1rem;
+    // font-size: 1rem;
     min-height: 100vh;
 }
 
@@ -55,7 +55,7 @@ body {
 
 .content-page {
     display: grid;
-    gap: 0 100px;
+    // gap: 0 100px;
     background-color: _palette(bg-accent);
     border-radius: var(--radius);
     padding: _size(wrapper-edges, small);
@@ -90,7 +90,7 @@ body {
     text-align: center;
 }
 
-.card h5 {
+.card h4 {
     color: var(--clr-grey-1);
 }
 
@@ -104,6 +104,7 @@ body {
 .card p {
     -webkit-transition: var(--transition);
     transition: var(--transition);
+    margin-top: 0.5rem;
 }
 
 .card:not(.no-hover):hover {
@@ -115,9 +116,23 @@ body {
     color: var(--clr-primary-9);
 }
 
-.card:hover .underline {
-    background: var(--clr-primary-9);
+.card-footer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
 }
+.card-footer p {
+    margin: 0 5px;
+    font-weight: bold;
+    color: var(--clr-grey-5);
+}
+
+.card-footer p::first-letter {
+    text-transform: uppercase;
+    font-size: 18pt;
+}
+
 .btn {
     text-transform: uppercase;
     background: var(--clr-primary-5);
@@ -147,7 +162,7 @@ body {
 
 @media (min-width: 1200px) {
     .gutter {
-        width: 95vw;
+        width: 85vw;
         margin: auto;
     }
 }
@@ -172,7 +187,7 @@ body {
 @media screen and (min-width: 576px) {
     .section-center {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(368px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
         column-gap: 2rem;
     }
 }
