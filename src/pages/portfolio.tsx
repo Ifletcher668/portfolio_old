@@ -33,29 +33,35 @@ export default ({ data }: { [key: string]: any }) => {
         <Layout>
             <SEO title='Software Portfolio' descFor='portfolio' />
             <div className='content-page gutter'>
-                <article>
-                    {section.map(({ title, body }, idx) => {
-                        return (
-                            <Fragment key={idx}>
-                                <Title title={title} />
+                <div className='content-page-inner'>
+                    <article
+                        style={{
+                            display: 'flex',
+                            flexFlow: 'column wrap',
+                        }}>
+                        {section.map(({ title, body }, idx) => {
+                            return (
+                                <Fragment key={idx}>
+                                    <Title title={title} />
 
-                                <MarkdownField source={body} />
-                            </Fragment>
-                        );
-                    })}
-                </article>
-                <Jobs />
-                <hr className='mb-small' />
-                <aside className='tags'>
-                    {tags.map(({ tag }, idx) => {
-                        return (
-                            <Fragment key={idx}>
-                                <span>{tag}</span>
-                            </Fragment>
-                        );
-                    })}
-                </aside>
-                <hr className='mb-small' />
+                                    <MarkdownField source={body} />
+                                </Fragment>
+                            );
+                        })}
+                    </article>
+                    <Jobs />
+                    <hr className='mb-small' />
+                    <section className='tags'>
+                        {tags.map(({ tag }, idx) => {
+                            return (
+                                <Fragment key={idx}>
+                                    <span>{tag}</span>
+                                </Fragment>
+                            );
+                        })}
+                    </section>
+                    <hr className='mb-small' />
+                </div>
             </div>
         </Layout>
     );

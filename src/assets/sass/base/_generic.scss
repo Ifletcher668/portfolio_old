@@ -58,10 +58,14 @@ body {
     // gap: 0 100px;
     background-color: _palette(bg-accent);
     border-radius: var(--radius);
-    padding: _size(wrapper-edges, small);
     .paragraph {
         margin-bottom: 0.8rem;
     }
+}
+
+.content-page-inner {
+    width: inherit;
+    padding: _size(wrapper-edges, small);
 }
 
 .tags {
