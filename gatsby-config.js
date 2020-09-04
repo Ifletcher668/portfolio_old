@@ -19,6 +19,16 @@ module.exports = {
         `gatsby-plugin-typescript`,
         `gatsby-plugin-sass`,
         {
+            resolve: `gatsby-plugin-manifest`,
+            options: {
+                name: 'isiahfletcher.com',
+                short_name: 'Isiah Fletcher',
+                start_url: '/',
+                icon: './static/favicon.ico',
+            },
+        },
+
+        {
             resolve: `gatsby-source-filesystem`,
             options: {
                 name: `assets`,
