@@ -24,7 +24,7 @@ module.exports = {
                 name: 'isiahfletcher.com',
                 short_name: 'Isiah Fletcher',
                 start_url: '/',
-                icon: './static/favicon.ico',
+                icon: './static/logo.ico',
             },
         },
 
