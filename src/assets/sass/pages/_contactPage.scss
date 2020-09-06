@@ -1,22 +1,17 @@
-.contact-page {
-    display: grid;
-    place-items: center;
+@include breakpoint('>=xsmall') {
+    .contact-form {
+        border-radius: _size(border-radius);
+        @include transition(_duration(transition));
+        margin: auto;
+        max-width: 80vw;
+    }
 }
 
-.contact-form {
-    background: var(--clr-black);
-    border-radius: _size(border-radius);
-    text-align: center;
-    box-shadow: var(--light-shadow);
-    @include transition(_duration(transition));
-    width: _size(center-width);
-    max-width: 35rem;
+@include breakpoint('>=xlarge') {
+    .contact-form {
+        max-width: 60vw;
+    }
 }
-
-.contact-form:hover {
-    box-shadow: var(--dark-shadow);
-}
-
 .contact-form h3 {
     padding-top: 1.25rem;
     color: _palette(txt-med);
@@ -25,23 +20,28 @@
 .form-group {
     padding: 1rem 1.5rem;
     text-align: left;
+    display: grid;
+    // max-width: 30vw;
+    // grid-template-columns: ;
+    // gap: 2rem;
 }
 
 .form-group label {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     margin-bottom: 0.8rem;
 }
 
 .form-control {
-    display: block;
     width: 100%;
-    padding: 0.75rem 1rem;
+    padding: 0.5rem;
     border: none;
     margin-bottom: 1.25rem;
-    background: var(--clr-grey-10);
+    background: _palette(txt-light);
     border-radius: _size(border-radius);
-    text-transform: uppercase;
     letter-spacing: _font(kern-body);
+}
+.form-control:focus {
+    background: _palette(accent);
 }
 
 .form-control::placeholder {
@@ -52,11 +52,7 @@
 }
 
 .submit-btn {
-    display: block;
-    width: 100%;
+    width: 50%;
     padding: 1rem;
-    border-bottom-left-radius: _size(border-radius);
-    border-bottom-right-radius: _size(border-radius);
-    border-top-right-radius: 0;
-    border-top-left-radius: 0;
+    border-radius: 0 0 _size(border-radius) _size(border-radius);
 }

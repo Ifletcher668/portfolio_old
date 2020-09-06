@@ -1,7 +1,3 @@
-.blog-template {
-    padding: 5rem 0;
-}
-
 .blog-template h1,
 .blog-template h2 {
     text-align: center;
@@ -11,7 +7,7 @@
     display: inline-block;
 }
 .blog-template ul li {
-    background: var(--clr-grey-9);
+    background: _palette(accent);
     color: _palette(txt-med);
     padding: 0.5rem 1rem;
     margin: 1rem 0;
@@ -19,7 +15,7 @@
 }
 
 .blog-template blockquote {
-    background: var(--clr-primary-9);
+    background: _palette(txt-med);
     border-radius: _size(border-radius);
     padding: 1rem;
     line-height: 2;

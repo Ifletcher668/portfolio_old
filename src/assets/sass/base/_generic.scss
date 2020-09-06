@@ -10,8 +10,6 @@
 
 body {
     background: _palette(bg);
-
-    min-height: 100vh;
 }
 
 .center {
@@ -23,9 +21,9 @@ body {
     margin-bottom: 1rem;
 }
 
-#gatsby-focus-wrapper {
-    min-height: 100vh;
-}
+// #gatsby-focus-wrapper {
+//     min-height: 100vh;
+// }
 
 .tab {
     margin-left: 40px;
@@ -152,17 +150,19 @@ body {
     text-align: center;
     margin: 2rem auto;
 }
-
-@media (min-width: 1200px) {
+.gutter {
+    width: 90vw;
+    margin: auto;
+}
+@include breakpoint('<=large') {
     .gutter {
         width: 85vw;
-        margin: auto;
     }
 }
 
-@media (min-width: 1800px) {
+@include breakpoint('<=small') {
     .gutter {
-        width: 75vw;
+        width: 95vw;
     }
 }
 
@@ -177,7 +177,7 @@ body {
     max-width: 1170px;
 }
 
-@media screen and (min-width: 576px) {
+@include breakpoint('>=small') {
     .section-center {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
@@ -189,7 +189,7 @@ body {
     width: 10rem;
     height: 0.25rem;
     margin-bottom: 1.25rem;
-    background: _palette(txt-accent);
+    background: _palette(border);
     margin-left: auto;
     margin-right: auto;
 }

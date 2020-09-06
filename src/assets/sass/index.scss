@@ -6,7 +6,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap');
 
 // base
-
 @include breakpoints(
     (
         xlarge: (
@@ -54,52 +53,3 @@
 @import 'pages/indexPage';
 @import 'pages/blogPage';
 @import 'pages/contactPage';
-
-:root {
-    /* dark shades of primary color*/
-    --clr-primary-1: hsl(184, 91%, 17%);
-    --clr-primary-2: hsl(185, 84%, 25%);
-    --clr-primary-3: hsl(185, 81%, 29%);
-    --clr-primary-4: hsl(184, 77%, 34%);
-    --clr-primary-5: #2caeba;
-    /* lighter shades of primary color */
-    --clr-primary-6: hsl(185, 57%, 50%);
-    --clr-primary-7: hsl(184, 65%, 59%);
-    --clr-primary-8: hsl(184, 80%, 74%);
-    --clr-primary-9: hsl(185, 94%, 87%);
-    --clr-primary-10: hsl(186, 100%, 94%);
-    /* darkest grey - used for headings */
-    --clr-grey-0: hsl(198, 100%, 2%);
-    --clr-grey-1: hsl(209, 61%, 16%);
-    --clr-grey-3: hsl(209, 34%, 30%);
-    --clr-grey-4: hsl(209, 28%, 39%);
-    /* grey used for paragraphs */
-    --clr-grey-5: hsl(210, 22%, 49%);
-    --clr-grey-8: hsl(210, 31%, 80%);
-    --clr-grey-9: hsl(212, 33%, 89%);
-    --clr-grey-10: hsl(210, 36%, 96%);
-    --clr-green-dark: hsl(125, 67%, 35%);
-    --clr-red-dark: hsl(360, 67%, 44%);
-    --clr-red-light: hsl(360, 71%, 66%);
-    --clr-black: hsl(0, 0%, 0%);
-    --clr-dark: #00050a;
-    --clr-white: #fff;
-    --ff-primary: 'Cormorant Garamond', serif;
-    --ff-secondary: 'Montserrat', sans-serif;
-    /* transition styles */
-    --translateY-subtle: translateY(0.05rem) scale(1.004);
-    --transition: all 0.3s linear;
-    --spacing: 0.2rem;
-    --radius: 0.25rem;
-    --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-
-    /* screen sizes */
-    --max-width: 1170px;
-    --gutter: 75vw;
-    --screen-small: 500px;
-    --screen-small-no-gutter: 499.99px;
-
-    /* sizes */
-    --center-width: 90vw;
-}

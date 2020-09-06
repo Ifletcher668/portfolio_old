@@ -27,6 +27,7 @@ $size: (
         small: 2.5em,
     ),
     center-width: 90vw,
+    max-width: 1170px,
 );
 
 // Font.
@@ -69,11 +70,11 @@ $palette: (
     border-bg: rgba(255, 255, 255, 0.075),
     border-bg-2: rgba(255, 255, 255, 0.075),
     accent: hsl(227, 33%, 44%),
-    button: hsl(184, 65%, 59%),
+    button: hsl(184, 60%, 44%),
     button-hover: hsl(185, 81%, 29%),
     dark-red: hsl(360, 67%, 44%),
     dark-blue: hsl(210, 100, 2),
     // TODO:  Unused! content-outline: rgb(2, 3, 9),
     // TODO: unused!  txt-med: hsl(210, 22%, 49%),
-    // border2: rgba(255, 255, 255, 0.25),,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+    // border2: rgba(255, 255, 255, 0.25),,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 );
