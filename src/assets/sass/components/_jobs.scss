@@ -8,7 +8,7 @@
     background: transparent;
     border-color: transparent;
     text-transform: capitalize;
-    letter-spacing: var(--spacing);
+    letter-spacing: _font(kern-body);
     @include transition(_duration(transition));
     cursor: pointer;
     font-size: 1.25rem;
@@ -49,7 +49,7 @@
     }
 
     .job-date {
-        letter-spacing: var(--spacing);
+        letter-spacing: _font(kern-body);
     }
 
     .job-desc {

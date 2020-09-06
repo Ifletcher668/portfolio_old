@@ -1,5 +1,5 @@
 .sidebar {
-    background: var(--clr-black);
+    background: _palette(bg);
     position: fixed;
     top: 0;
     left: 0;
@@ -17,7 +17,6 @@
     transform: translateX(0);
 }
 .sidebar-header {
-    background: var(--clr-dark);
     position: fixed;
     top: 0;
     left: 0;
@@ -32,7 +31,7 @@
     text-align: left;
     text-transform: capitalize;
     color: _palette(txt-med);
-    letter-spacing: var(--spacing);
+    letter-spacing: _font(kern-body);
     margin-bottom: 0.5rem;
     font-size: 2rem;
     @include transition(_duration(transition));

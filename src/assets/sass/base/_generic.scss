@@ -102,12 +102,12 @@ body {
 }
 
 .card:not(.no-hover):hover {
-    background: _palette(txt-accent);
-    color: var(--clr-primary-9);
+    background: _palette(button-hover);
+    color: _palette(dark-red);
 }
 
 .card:hover p {
-    color: var(--clr-primary-9);
+    color: _palette(txt-dark);
 }
 
 .card-footer {
@@ -132,7 +132,7 @@ body {
     background: _palette(button);
     color: _palette(txt-light);
     padding: 0.375rem 0.75rem;
-    letter-spacing: var(--spacing);
+    letter-spacing: _font(kern-body);
     display: inline-block;
     font-weight: 700;
     @include transition(_duration(transition));
@@ -196,7 +196,4 @@ body {
 
 .title {
     text-align: center;
-}
-.bg-grey {
-    background: var(--clr-grey-10);
 }

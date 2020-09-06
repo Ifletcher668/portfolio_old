@@ -2,11 +2,9 @@
     display: block;
     margin-bottom: 2rem;
     border-radius: _size(border-radius);
-    box-shadow: var(--light-shadow);
     @include transition(_duration(transition));
 }
 .blog:hover {
-    box-shadow: var(--dark-shadow);
     transform: scale(1.02);
 }
 .blog article {
@@ -33,7 +31,7 @@
 }
 .blog-footer p:first-of-type {
     display: inline-block;
-    background: var(--clr-grey-9);
+    background: _palette(fg-light);
     color: _palette(txt-med);
     margin-right: 0.5rem;
     padding: 0.25rem 0.5rem;

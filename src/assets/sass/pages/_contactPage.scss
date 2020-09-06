@@ -41,14 +41,14 @@
     background: var(--clr-grey-10);
     border-radius: _size(border-radius);
     text-transform: uppercase;
-    letter-spacing: var(--spacing);
+    letter-spacing: _font(kern-body);
 }
 
 .form-control::placeholder {
     font-family: _font(family-heading);
     color: _palette(fg);
     text-transform: uppercase;
-    letter-spacing: var(--spacing);
+    letter-spacing: _font(kern-body);
 }
 
 .submit-btn {

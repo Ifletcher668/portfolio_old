@@ -95,7 +95,7 @@ Navbar Sub-menu
                 text-transform: capitalize;
                 color: _palette(txt-dark);
                 font-weight: bold;
-                letter-spacing: var(--spacing);
+                letter-spacing: _font(kern-body);
                 @include transition(_duration(transition));
                 // padding: 0.5rem 0;
             }
