@@ -1,6 +1,8 @@
 .hero-center {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 1fr;
+    margin-bottom: 1rem;
     .card {
         background-color: _palette(bg-accent);
         padding: 1.5rem;

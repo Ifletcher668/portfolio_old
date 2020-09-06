@@ -14,7 +14,6 @@ const Poem: React.FC<IPoetryLinks> = (props: IPoetryLinks) => {
                 break;
             }
             newTitle += title[i] as string;
-            console.log(title[i]);
         }
     } else newTitle = title;
 

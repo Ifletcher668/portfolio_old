@@ -10,7 +10,6 @@ const contact: React.FC<IProps> = (props: IProps) => {
             <section className='content-page gutter'>
                 <div className='content-page-inner'>
                     <Header title='Get in Touch' />
-
                     <article className='contact-form'>
                         <form>
                             <div className='form-group card no-hover no-placement'>

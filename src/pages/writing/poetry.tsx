@@ -16,6 +16,8 @@ export const query = graphql`
                     tag
                 }
                 slug
+                createdAt
+                updatedAt
             }
         }
     }

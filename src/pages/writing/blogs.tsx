@@ -24,6 +24,8 @@ export const query = graphql`
                     tag
                 }
                 preview
+                createdAt
+                updatedAt
             }
         }
     }

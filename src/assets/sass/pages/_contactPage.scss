@@ -37,6 +37,7 @@
     border-radius: _size(border-radius);
     letter-spacing: _font(kern-body);
 }
+
 .form-control:focus {
     background: _palette(accent);
 }
