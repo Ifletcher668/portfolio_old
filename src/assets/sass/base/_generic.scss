@@ -9,11 +9,8 @@
 }
 
 body {
-    font-family: var(--ff-secondary);
-    background: var(--clr-black);
-    color: var(--clr-grey-5);
-    line-height: 1.5;
-    // font-size: 1rem;
+    background: _palette(bg);
+
     min-height: 100vh;
 }
 
@@ -27,10 +24,7 @@ body {
 }
 
 #gatsby-focus-wrapper {
-    display: grid;
     min-height: 100vh;
-    grid-template-columns: 1fr;
-    grid-template-rows: 100px 1fr 0.01fr;
 }
 
 .tab {
@@ -55,9 +49,8 @@ body {
 
 .content-page {
     display: grid;
-    // gap: 0 100px;
     background-color: _palette(bg-accent);
-    border-radius: var(--radius);
+    border-radius: _size(border-radius);
     .paragraph {
         margin-bottom: 0.8rem;
     }
@@ -82,10 +75,9 @@ body {
 }
 
 .card {
-    background: var(--clr-grey-1);
-    border-radius: var(--radius);
-    -webkit-transition: var(--transition);
-    transition: var(--transition);
+    background: _palette(fg);
+    border-radius: _size(border-radius);
+    @include transition(_duration(transition));
 }
 
 .card:not(.no-placement) {
@@ -95,24 +87,22 @@ body {
 }
 
 .card h4 {
-    color: var(--clr-grey-1);
+    color: _palette(fg);
 }
 
 .card .underline {
     width: 3rem;
     height: 0.12rem;
-    -webkit-transition: var(--transition);
-    transition: var(--transition);
+    @include transition(_duration(transition));
 }
 
 .card p {
-    -webkit-transition: var(--transition);
-    transition: var(--transition);
+    @include transition(_duration(transition));
     margin-top: 0.5rem;
 }
 
 .card:not(.no-hover):hover {
-    background: var(--clr-primary-5);
+    background: _palette(txt-accent);
     color: var(--clr-primary-9);
 }
 
@@ -129,7 +119,7 @@ body {
 .card-footer p {
     margin: 0 5px;
     font-weight: bold;
-    color: var(--clr-grey-5);
+    color: _palette(txt-med);
 }
 
 .card-footer p::first-letter {
@@ -139,23 +129,22 @@ body {
 
 .btn {
     text-transform: uppercase;
-    background: var(--clr-primary-5);
-    color: var(--clr-primary-9);
+    background: _palette(button);
+    color: _palette(txt-light);
     padding: 0.375rem 0.75rem;
     letter-spacing: var(--spacing);
     display: inline-block;
     font-weight: 700;
-    -webkit-transition: var(--transition);
-    transition: var(--transition);
+    @include transition(_duration(transition));
     font-size: 0.875rem;
     border: 2px solid transparent;
     cursor: pointer;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-    border-radius: var(--radius);
+    border-radius: _size(border-radius);
 }
 .btn:hover {
-    color: var(--clr-primary-1);
-    background: var(--clr-primary-8);
+    color: _palette(txt-dark);
+    background: _palette(button-hover);
 }
 .center-btn {
     display: block;
@@ -183,7 +172,7 @@ body {
 }
 
 .section-center {
-    width: var(--center-width);
+    width: _size(center-width);
     margin: 0 auto;
     max-width: 1170px;
 }
@@ -200,7 +189,7 @@ body {
     width: 10rem;
     height: 0.25rem;
     margin-bottom: 1.25rem;
-    background: var(--clr-primary-5);
+    background: _palette(txt-accent);
     margin-left: auto;
     margin-right: auto;
 }

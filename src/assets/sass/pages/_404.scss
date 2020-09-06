@@ -1,11 +1,11 @@
 .error-page {
     display: grid;
     place-items: center;
-    background: var(--clr-primary-10);
+    background: _palette(txt-light);
     text-align: center;
 }
 .error-page h1 {
     text-transform: uppercase;
-    color: var(--clr-primary-1);
+    color: _palette(txt-dark);
     margin-bottom: 2rem;
 }

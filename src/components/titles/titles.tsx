@@ -1,5 +1,10 @@
 import React from 'react';
 
+export const Header: React.FC<IProps> = (props: IProps) => {
+    const { title } = props;
+    return <h1 className='center major'>{title || 'Header'}</h1>;
+};
+
 export const Title: React.FC<IProps> = (props: IProps) => {
     const { title } = props;
 

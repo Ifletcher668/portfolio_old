@@ -5,11 +5,11 @@
 
 .contact-form {
     background: var(--clr-black);
-    border-radius: var(--radius);
+    border-radius: _size(border-radius);
     text-align: center;
     box-shadow: var(--light-shadow);
-    transition: var(--transition);
-    width: var(--center-width);
+    @include transition(_duration(transition));
+    width: _size(center-width);
     max-width: 35rem;
 }
 
@@ -19,7 +19,7 @@
 
 .contact-form h3 {
     padding-top: 1.25rem;
-    color: var(--clr-grey-5);
+    color: _palette(txt-med);
 }
 
 .form-group {
@@ -39,14 +39,14 @@
     border: none;
     margin-bottom: 1.25rem;
     background: var(--clr-grey-10);
-    border-radius: var(--radius);
+    border-radius: _size(border-radius);
     text-transform: uppercase;
     letter-spacing: var(--spacing);
 }
 
 .form-control::placeholder {
-    font-family: var(--ff-primary);
-    color: var(--clr-grey-1);
+    font-family: _font(family-heading);
+    color: _palette(fg);
     text-transform: uppercase;
     letter-spacing: var(--spacing);
 }
@@ -55,8 +55,8 @@
     display: block;
     width: 100%;
     padding: 1rem;
-    border-bottom-left-radius: var(--radius);
-    border-bottom-right-radius: var(--radius);
+    border-bottom-left-radius: _size(border-radius);
+    border-bottom-right-radius: _size(border-radius);
     border-top-right-radius: 0;
     border-top-left-radius: 0;
 }

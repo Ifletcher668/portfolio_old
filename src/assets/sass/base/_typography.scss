@@ -9,10 +9,10 @@ body,
 input,
 select,
 textarea {
-    color: _palette(fg);
     font-family: _font(family);
-    font-size: 16.5pt;
     font-weight: _font(weight);
+    color: _palette(txt-med);
+    font-size: 16.5pt;
     line-height: 1.65;
 
     @include breakpoint('<=xlarge') {
@@ -28,19 +28,16 @@ textarea {
     }
 
     @include breakpoint('<=small') {
-        font-size: 12pt;
+        font-size: 11pt;
     }
 
     @include breakpoint('<=xsmall') {
-        font-size: 12pt;
+        font-size: 10pt;
     }
 }
 
 a {
-    @include vendor(
-        'transition',
-        'color #{_duration(transition)} ease-in-out, border-bottom-color #{_duration(transition)} ease-in-out'
-    );
+    @include vendor('transition', 'color #{_duration(transition)} ease-in-out, border-bottom-color #{_duration(transition)} ease-in-out');
 
     color: _palette(fg-light);
     text-decoration: none;
@@ -62,10 +59,7 @@ a {
         text-transform: uppercase;
 
         &:before {
-            @include vendor(
-                'transition',
-                'background-color `#{_duration(transition)}` ease-in-out'
-            );
+            @include vendor('transition', 'background-color `#{_duration(transition)}` ease-in-out');
             border-radius: 100%;
             border: solid 2px _palette(border);
             content: '\f105';
@@ -88,7 +82,7 @@ a {
 
         &:active {
             &:before {
-                background-color: _palette(border2-bg);
+                background-color: _palette(border-bg-2);
             }
         }
         &:visited {
@@ -119,8 +113,8 @@ h4,
 h5,
 h6 {
     color: _palette(txt-light);
-    font-family: _font(family);
-    font-weight: _font(weight-heading-bold);
+    font-family: _font(family-heading);
+    font-weight: _font(weight-bold);
     letter-spacing: _font(kern-heading);
     margin: 0 0 (_size(element-margin) * 0.1) 0;
 
@@ -135,7 +129,7 @@ h6 {
     }
 
     &.major {
-        padding-bottom: 1em;
+        margin-bottom: 1rem;
         border-bottom: solid 2px _palette(border);
     }
 }
@@ -168,12 +162,15 @@ h6 {
 }
 
 @include breakpoint('<=small') {
+    h1 {
+        font-size: 4em;
+    }
     h2 {
-        font-size: 1em;
+        font-size: 1.5em;
     }
 
     h3 {
-        font-size: 0.8em;
+        font-size: 1em;
     }
 }
 

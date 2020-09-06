@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/layout/layout';
-import { Title, SubTitle } from '../components/titles/titles';
+import { Header, Title } from '../components/titles/titles';
 import SEO from '../components/SEO/SEO';
 import Jobs from '../components/jobs/jobs';
 import MarkdownField from 'react-markdown';
@@ -32,6 +32,7 @@ export default ({ data }: { [key: string]: any }) => {
     return (
         <Layout>
             <SEO title='Software Portfolio' descFor='portfolio' />
+            <Header title='My Work' />
             <div className='content-page gutter'>
                 <div className='content-page-inner'>
                     <article
@@ -43,7 +44,6 @@ export default ({ data }: { [key: string]: any }) => {
                             return (
                                 <Fragment key={idx}>
                                     <Title title={title} />
-
                                     <MarkdownField source={body} />
                                 </Fragment>
                             );
@@ -55,7 +55,7 @@ export default ({ data }: { [key: string]: any }) => {
                         {tags.map(({ tag }, idx) => {
                             return (
                                 <Fragment key={idx}>
-                                    <span>{tag}</span>
+                                    <span>{tag.toLowerCase()}</span>
                                 </Fragment>
                             );
                         })}

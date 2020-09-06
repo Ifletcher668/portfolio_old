@@ -9,7 +9,7 @@
     display: grid;
     place-items: center;
     opacity: 0;
-    transition: var(--transition);
+    @include transition(_duration(transition));
     transform: translateY(100%);
 }
 .show-sidebar {
@@ -31,16 +31,16 @@
     display: block;
     text-align: left;
     text-transform: capitalize;
-    color: var(--clr-grey-5);
+    color: _palette(txt-med);
     letter-spacing: var(--spacing);
     margin-bottom: 0.5rem;
     font-size: 2rem;
-    transition: var(--transition);
-    border-radius: var(--radius);
+    @include transition(_duration(transition));
+    border-radius: _size(border-radius);
 }
 .sidebar-links li a:hover {
-    background: var(--clr-primary-1);
-    color: var(--clr-primary-5);
+    background: _palette(txt-dark);
+    color: _palette(txt-accent);
 }
 .close-btn {
     position: absolute;
@@ -49,7 +49,7 @@
     font-size: 2.5rem;
     background: transparent;
     border-color: transparent;
-    color: var(--clr-red-dark);
+    color: _palette(dark-red);
     cursor: pointer;
 }
 @media screen and (min-width: 992px) {
@@ -80,7 +80,7 @@ Sidebar Animation
 .sidebar-links li:nth-of-type(5) {
     animation-delay: 1.25s;
 }
-@keyframes slideRight {
+@include keyframes(slideRight) {
     0% {
         transform: translateX(-200px);
         opacity: 0;
@@ -109,7 +109,7 @@ Sidebar Animation
 .sidebar-icons li:nth-of-type(5) {
     animation-delay: 1.25s;
 }
-@keyframes slideUp {
+@include keyframes(slideUp) {
     0% {
         transform: translateY(200px);
         opacity: 0;

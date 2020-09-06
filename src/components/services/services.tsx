@@ -1,5 +1,5 @@
 import React from 'react';
-import { Title } from '../titles/titles';
+import { Header } from '../titles/titles';
 import services from '../../constants/services';
 import { Link } from 'gatsby';
 
@@ -12,7 +12,7 @@ const Services: React.FC<IServices> = (props: IServices) => {
 
     return (
         <>
-            <h1>{title || 'services'}</h1>
+            <Header title={title || 'services'} />
             <section className='section-center services-center'>
                 {services
                     .filter((service) => service.type === type)

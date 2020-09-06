@@ -7,7 +7,7 @@ $misc: (
 // Duration.
 $duration: (
     menu: 0.35s,
-    transition: 0.2s,
+    transition: all 0.2s linear,
 );
 
 // Size.
@@ -26,6 +26,7 @@ $size: (
         medium: 4.75em,
         small: 2.5em,
     ),
+    center-width: 90vw,
 );
 
 // Font.
@@ -47,31 +48,31 @@ $font: (
     weight-bold: 600,
     weight-heading: 200,
     weight-heading-bold: 700,
-    kern-heading: 0.1em,
+    kern-heading: 0.15em,
 );
 
 // Palette.
 $palette: (
     bg: hsl(0, 0%, 0%),
     bg-accent: hsl(195, 83%, 5%),
-    // --clr-black
-    // --clr-grey-0
+    bg-contrast: hsl(0, 0%, 56%),
     fg: hsl(209, 61%, 16%),
     // --clr-grey-1
     fg-light: hsl(209, 28%, 39%),
     // --clr-grey-4
     txt-dark: hsl(184, 91%, 17%),
-    // clr-primary-1
     txt-med: hsl(210, 22%, 49%),
-    // --clr-grey-5
     txt-light: hsl(186, 100%, 94%),
-    content-outline: rgb(2, 3, 9),
+    txt-accent: hsl(185, 61%, 45%),
     border: hsl(209, 34%, 30%),
-    border-bg: rgba(255, 255, 255, 0.025),
-    border2: rgba(255, 255, 255, 0.25),
-    border2-bg: rgba(255, 255, 255, 0.075),
-    accent: #4c5c96,
+    border-bg: rgba(255, 255, 255, 0.075),
+    border-bg-2: rgba(255, 255, 255, 0.075),
+    accent: hsl(227, 33%, 44%),
     button: hsl(184, 65%, 59%),
-    btn-hover: hsl(185, 81%, 29%),
-    red: hsl(360, 67%, 44%),
+    button-hover: hsl(185, 81%, 29%),
+    dark-red: hsl(360, 67%, 44%),
+    dark-blue: hsl(210, 100, 2),
+    // TODO:  Unused! content-outline: rgb(2, 3, 9),
+    // TODO: unused!  txt-med: hsl(210, 22%, 49%),
+    // border2: rgba(255, 255, 255, 0.25),,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 );

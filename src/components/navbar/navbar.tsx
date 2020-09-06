@@ -41,10 +41,7 @@ const Navbar: React.FC<IProps> = (props: IProps) => {
                             <Title title='Isiah Fletcher' />
                         </Link>
 
-                        <button
-                            type='button'
-                            className='toggle-btn'
-                            onClick={() => toggleSidebar()}>
+                        <button type='button' className='toggle-btn' onClick={() => toggleSidebar()}>
                             <FaAlignJustify />
                         </button>
                     </div>

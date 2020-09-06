@@ -10,7 +10,7 @@
     .card {
         background-color: _palette(bg-accent);
         padding: 1.5rem;
-        border-radius: var(--radius);
+        border-radius: _size(border-radius);
     }
     .card:hover {
         box-shadow: 0px 0px 4px 1px _palette(fg-light);
@@ -18,10 +18,10 @@
     }
 }
 .text-link {
-    color: var(--clr-primary-1);
+    color: _palette(txt-dark);
 }
 .text-link:hover {
-    color: red;
+    color: _palette(dark-red);
 }
 
 .hero-info {
@@ -37,7 +37,7 @@
 }
 
 .hero-info h4 {
-    color: var(--clr-grey-5);
+    color: _palette(txt-med);
     font-size: 1.5em;
 }
 
@@ -46,7 +46,7 @@
 }
 
 .hero-info h4 span {
-    color: red;
+    color: _palette(dark-red);
 }
 
 .hero-info .social-links,
@@ -79,7 +79,7 @@
     }
 
     .hero-info h4 {
-        color: var(--clr-grey-5);
+        color: _palette(txt-med);
         font-size: 2em;
     }
 }

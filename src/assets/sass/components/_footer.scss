@@ -1,25 +1,18 @@
 .footer {
-    background: linear-gradient(
-        var(--clr-black),
-        var(--clr-black),
-        var(--clr-dark),
-        var(--clr-dark),
-        var(--clr-primary-1)
-    );
+    background: linear-gradient(_palette(bg), _palette(bg), _palette(dark-blue), _palette(dark-blue), _palette(txt-dark));
     text-align: center;
     display: grid;
     place-items: center;
-    // position: absolute;
-
     min-width: 100%;
-    // height: 10rem;
 }
+
 .footer h4 {
     margin-top: 0.5rem;
     color: var(--clr-white);
     font-weight: normal;
     text-transform: uppercase;
 }
+
 .footer h4 span {
-    color: var(--clr-primary-5);
+    color: _palette(txt-accent);
 }
