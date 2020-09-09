@@ -3,13 +3,13 @@
         border-radius: _size(border-radius);
         @include transition(_duration(transition));
         margin: auto;
-        max-width: 80vw;
+        max-width: 75vw;
     }
 }
 
 @include breakpoint('>=xlarge') {
     .contact-form {
-        max-width: 60vw;
+        max-width: 42vw;
     }
 }
 .contact-form h3 {
