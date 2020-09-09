@@ -38,10 +38,11 @@ const data = [
         text: 'contact',
         url: '/contact',
     },
-    {
-        text: 'extras',
-        url: '/extras/',
-    },
+    // TODO: Add this back!
+    // {
+    //     text: 'extras',
+    //     url: '/extras/',
+    // },
 ];
 
 const primaryLinks = data.map((link, idx) => {
