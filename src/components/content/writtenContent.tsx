@@ -8,7 +8,6 @@ interface IWrittenContent extends IProps {
     poetry?: Poem[];
     showLink: boolean;
     showRecentPosts?: boolean;
-    children: React.ReactNode;
 }
 
 const mapPoetry = (poetry: Poem[]) => {
@@ -20,7 +19,7 @@ const mapBlogs = (blogs: Blog[]) => {
 };
 
 export const Blogs: React.FC<IWrittenContent> = (props: IWrittenContent) => {
-    const { blogs, poetry, title, showLink, children } = props;
+    const { blogs, poetry, title, showLink } = props;
 
     // const pastMonth = new Date().getMonth() - 1;
 
@@ -28,12 +27,12 @@ export const Blogs: React.FC<IWrittenContent> = (props: IWrittenContent) => {
         if (blogs && !poetry) return mapBlogs(blogs);
         else if (poetry && !blogs) return mapPoetry(poetry);
         else if (poetry && blogs) return mapBlogs(blogs) && mapPoetry(poetry);
+        else return '';
     };
 
     return (
         <section className=' section gutter'>
-            <h1>{title ? title : ''}</h1>
-            {children}
+            {title && <h1>{title}</h1>}
             <div className='section-center'>{handleContentType()}</div>
             {showLink && (
                 <Link to={`${blogs ? '/writing/blogs' : '/writing/poetry'}`} className='btn center-btn'>

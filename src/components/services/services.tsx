@@ -5,14 +5,16 @@ import { Link } from 'gatsby';
 
 interface IServices extends IProps {
     type: string;
+    children: React.ReactNode;
 }
 
 const Services: React.FC<IServices> = (props: IServices) => {
-    const { type, title } = props;
+    const { type, title, children } = props;
 
     return (
         <>
-            <Header title={title || 'services'} />
+            <Header title={title || 'services'} center={true} value={1} />
+            {children}
             <section className='section-center services-center'>
                 {services
                     .filter((service) => service.type === type)
