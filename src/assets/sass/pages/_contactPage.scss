@@ -7,11 +7,6 @@
     }
 }
 
-@include breakpoint('>=xlarge') {
-    .contact-form {
-        max-width: 42vw;
-    }
-}
 .contact-form h3 {
     padding-top: 1.25rem;
     color: _palette(txt-med);

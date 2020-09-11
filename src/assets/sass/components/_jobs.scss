@@ -25,7 +25,7 @@
     box-shadow: 0 2px _palette(txt-accent);
 }
 
-@media (min-width: 768px) {
+@include breakpoint('<=medium') {
     .jobs-center {
         margin: 0 auto;
         max-width: _size(max-width);
@@ -64,11 +64,9 @@
     }
 }
 
-@media screen and (min-width: 992px) {
+@include breakpoint('>=large') {
     .jobs-center {
-        width: _size(center-width);
-        display: grid;
-        grid-template-columns: 200px 1fr;
+        display: flex;
         column-gap: 4rem;
     }
     .btn-container {
@@ -83,5 +81,12 @@
     }
     .job-btn:hover {
         box-shadow: -2px 0 _palette(txt-accent);
+    }
+    .job-desc {
+        display: flex;
+        align-items: center;
+        p {
+            margin: 0 0 0 1rem;
+        }
     }
 }

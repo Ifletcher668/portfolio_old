@@ -10,6 +10,7 @@
 
 body {
     background: _palette(bg);
+    min-height: 100vh;
 }
 
 .center {
@@ -45,20 +46,6 @@ body {
 }
 //     background: _palette(content-outline);
 
-.content-page {
-    display: grid;
-    background-color: _palette(bg-accent);
-    border-radius: _size(border-radius);
-    .paragraph {
-        margin-bottom: 0.8rem;
-    }
-}
-
-.content-page-inner {
-    width: inherit;
-    padding: _size(wrapper-edges, small);
-}
-
 .tags {
     display: grid;
     grid-template-columns: repeat(auto-fit, 12rem);
@@ -70,59 +57,6 @@ body {
 .content-card {
     display: grid;
     grid-template-rows: auto 1fr auto;
-}
-
-.card {
-    background: _palette(fg);
-    border-radius: _size(border-radius);
-    @include transition(_duration(transition));
-}
-
-.card:not(.no-placement) {
-    padding: 3rem 1.5rem;
-    margin-bottom: 2rem;
-    text-align: center;
-}
-
-.card h4 {
-    color: _palette(fg);
-}
-
-.card .underline {
-    width: 3rem;
-    height: 0.12rem;
-    @include transition(_duration(transition));
-}
-
-.card p {
-    @include transition(_duration(transition));
-    margin-top: 0.5rem;
-}
-
-.card:not(.no-hover):hover {
-    background: _palette(button-hover);
-    color: _palette(dark-red);
-}
-
-.card:hover p {
-    color: _palette(txt-dark);
-}
-
-.card-footer {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
-}
-.card-footer p {
-    margin: 0 5px;
-    font-weight: bold;
-    color: _palette(txt-med);
-}
-
-.card-footer p::first-letter {
-    text-transform: uppercase;
-    font-size: 18pt;
 }
 
 .btn {
