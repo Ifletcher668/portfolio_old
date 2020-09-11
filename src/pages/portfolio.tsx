@@ -32,7 +32,7 @@ export default ({ data }: { [key: string]: any }) => {
     return (
         <Layout>
             <SEO title='Software Portfolio' descFor='portfolio' />
-            <Header title='My Work' />
+            <Header title='My Work' center={true} value={1} />
             <div className='content-page gutter'>
                 <div className='content-page-inner'>
                     <article

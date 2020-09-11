@@ -6,7 +6,7 @@ import Content from '../components/content/writtenContent';
 import { useCoverPhoto } from '../graphql/queries/images';
 
 import SEO from '../components/SEO/SEO';
-import { Title } from '../components/titles/titles';
+import { Header } from '../components/titles/titles';
 
 export const query = graphql`
     {
@@ -88,12 +88,10 @@ export default ({ data }: { [key: string]: any }) => {
                 </article>
             </div>
 
-            <Title title={`Recent Blogs`} />
+            <Header title={`Recent Blogs`} center={true} value={2} />
             <Content blogs={blogs} showLink={true} />
-            <hr className='center' />
-            <Title title={`Recent Poems`} />
+            <Header title={`Recent Poems`} center={true} value={2} />
             <Content poetry={poems} showLink={true} />
-            <hr className='center' />
         </Layout>
     );
 };
