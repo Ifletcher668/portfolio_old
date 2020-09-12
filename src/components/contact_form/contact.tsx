@@ -55,7 +55,7 @@ const ContactForm: React.FC<IProps> = (props: IProps) => {
                         <label htmlFor='name'>Name: </label>
                         <input
                             type='text'
-                            // name='name'
+                            name='name'
                             // placeholder='name'
                             className='form-control'
                             value={name}
@@ -64,7 +64,7 @@ const ContactForm: React.FC<IProps> = (props: IProps) => {
                         <label htmlFor='name'>Email: </label>
                         <input
                             type='text'
-                            // name='email'
+                            name='email'
                             // placeholder='Email'
                             className='form-control'
                             value={email}
@@ -72,7 +72,7 @@ const ContactForm: React.FC<IProps> = (props: IProps) => {
                         />
                         <label htmlFor='message'>Message: </label>
                         <textarea
-                            // name='message'
+                            name='message'
                             rows={5}
                             // placeholder='message'
                             className='form-control'
