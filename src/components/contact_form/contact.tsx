@@ -17,6 +17,7 @@ const ContactForm: React.FC<IProps> = (props: IProps) => {
     const [email, setEmail] = useState<string>('');
     const [message, setMessage] = useState<string>('');
     const [showSuccessMessage, setShowSendMessage] = useState<boolean>(false);
+    const [successMessage, setSuccessMessage] = useState<string>('Excellent! I appreciate you wanting to connect. I will get back with you shortly!');
 
     const encode = (data: any) => {
         return Object.keys(data)
@@ -54,7 +55,7 @@ const ContactForm: React.FC<IProps> = (props: IProps) => {
                         <label htmlFor='name'>Name: </label>
                         <input
                             type='text'
-                            name='name'
+                            // name='name'
                             // placeholder='name'
                             className='form-control'
                             value={name}
@@ -63,7 +64,7 @@ const ContactForm: React.FC<IProps> = (props: IProps) => {
                         <label htmlFor='name'>Email: </label>
                         <input
                             type='text'
-                            name='email'
+                            // name='email'
                             // placeholder='Email'
                             className='form-control'
                             value={email}
@@ -71,7 +72,7 @@ const ContactForm: React.FC<IProps> = (props: IProps) => {
                         />
                         <label htmlFor='message'>Message: </label>
                         <textarea
-                            name='message'
+                            // name='message'
                             rows={5}
                             // placeholder='message'
                             className='form-control'
@@ -80,9 +81,7 @@ const ContactForm: React.FC<IProps> = (props: IProps) => {
                         <button type='submit' className='submit-btn btn center'>
                             Send Message
                         </button>
-                        {showSuccessMessage && (
-                            <Header center value={5} title='Excellent! I appreciate you wanting to connect. I will get back with you shortly!' />
-                        )}
+                        {showSuccessMessage && <Header center value={5} title={successMessage} />}
                     </div>
                 </form>
             </article>
