@@ -13,17 +13,9 @@ const contact: React.FC<IProps> = (props: IProps) => {
                 title="Get in Touch"
                 descFor={config.metaDescriptions.contactPage}
             />
-            <ContentCard>
-                <>
-                    <Header
-                        title="Get in Touch"
-                        center={false}
-                        value={1}
-                        major
-                    />
-                    <ContactForm />
-                </>
-            </ContentCard>
+
+            <Header title="Get in Touch" center={false} value={1} major />
+            <ContactForm />
         </Layout>
     )
 }

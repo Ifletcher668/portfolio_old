@@ -1,17 +1,6 @@
 import React, {useState} from 'react'
 import {Header} from '../titles/titles'
 
-// type Submission = {
-//     name: string;
-//     email: string;
-//     message: string;
-// };
-
-// type Data = {
-//     'form-name': 'contact';
-//     'form-data': Submission;
-// };
-
 const ContactForm: React.FC<IProps> = (props: IProps) => {
     const [name, setName] = useState<string>('')
     const [email, setEmail] = useState<string>('')
