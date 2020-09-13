@@ -1,0 +1,18 @@
+[build]
+    publish = "public"
+
+[[plugins]]
+    package = "netlify-plugin-gatsby-cache"
+
+[[plugins]]
+    package = "netlify-plugin-submit-sitemap"
+        [plugins.inputs]
+
+        baseUrl = "https://isiahfletcher.com"
+        sitemapPath = '/sitemap.xml'
+
+        providers = [
+            "google",
+            "bing",
+            "yandex"
+        ]

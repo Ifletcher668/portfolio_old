@@ -32,8 +32,8 @@ export default () => {
                         <span>A drummer.</span> A timekeeper. A lyricist. The
                         co-founder of a band, Aterrima. An amateur audio
                         engineer. A poet. A content writer. A software
-                        connoisseur. A web developer. A software engineer. A
-                        gamer. A hiker. A bicyclist. A kayaker. A reader. A
+                        connoisseur. A software developer. A gamer. A hiker. A
+                        bicyclist. A kayaker. A reader. A
                         somewhere-between-a-taoist-and-buddhist. A learner. A
                         graduate of the University of Idaho. A graduate of the
                         Coding Dojo. On Instagram
@@ -62,6 +62,7 @@ export default () => {
                             {' '}
                             here.
                         </a>{' '}
+                        Lives in Boise, Idaho.
                     </h4>
                 </article>
             </div>
