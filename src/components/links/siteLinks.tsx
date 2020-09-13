@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'gatsby';
+import React from 'react'
+import {Link} from 'gatsby'
 
 const data = [
     {
@@ -43,29 +43,34 @@ const data = [
     //     text: 'extras',
     //     url: '/extras/',
     // },
-];
+]
 
 const primaryLinks = data.map((link, idx) => {
     return (
-        <li key={idx} className={`nav-link${link.subMenu ? ' strip-bottom' : ''}`}>
+        <li
+            key={idx}
+            className={`nav-link${link.subMenu ? ' strip-bottom' : ''}`}
+        >
             <Link to={link.url}>{link.text}</Link>
             {link.subMenu ? (
-                <ul className='sub-menu'>
+                <ul className="sub-menu">
                     {link.subMenu.map((link, idx) => {
                         return (
                             <Link key={idx} to={link.url}>
                                 <li>{link.text}</li>
                             </Link>
-                        );
+                        )
                     })}
                 </ul>
             ) : null}
         </li>
-    );
-});
+    )
+})
 
 export default (props: IProps) => {
-    const { className } = props;
-
-    return <ul className={`page-links ${className ? className : ''}`}>{primaryLinks}</ul>;
-};
+    return (
+        <ul className={`page-links ${props.className ? props.className : ''}`}>
+            {primaryLinks}
+        </ul>
+    )
+}

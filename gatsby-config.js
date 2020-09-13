@@ -1,13 +1,10 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.org/docs/gatsby-config/
- */
+const config = require('./config/website')
 
 module.exports = {
     siteMetadata: {
         title: 'Isiahfletcher.com',
-        description: 'Drummer. Web Developer. Poet. Isiah Fletcher lives in Boise, Idaho',
+        description:
+            'Drummer. Web Developer. Poet. Isiah Fletcher lives in Boise, Idaho',
         author: 'Isiah Fletcher',
         siteUrl: 'https://isiahfletcher.netlify.app',
     },
@@ -61,4 +58,4 @@ module.exports = {
             },
         },
     ],
-};
+}

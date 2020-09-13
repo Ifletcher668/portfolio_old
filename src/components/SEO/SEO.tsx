@@ -1,11 +1,11 @@
-import React from "react";
-import { Helmet } from "react-helmet";
-import { useStaticQuery, graphql } from "gatsby";
-import metaDescription from "../../constants/metaDescriptions";
+import React from 'react'
+import {Helmet} from 'react-helmet'
+import {useStaticQuery, graphql} from 'gatsby'
+import config from '../../../config/website'
 interface ISEOProps {
-    title: string;
-    htmlAttributes?: { [key: string]: string };
-    descFor?: string;
+    title: string
+    htmlAttributes?: {[key: string]: string}
+    descFor?: string
 }
 
 const query = graphql`
@@ -19,27 +19,24 @@ const query = graphql`
             }
         }
     }
-`;
+`
 
 const SEO: React.FC<ISEOProps> = (props: ISEOProps) => {
-    const { title, htmlAttributes, descFor } = props;
+    const {title, htmlAttributes, descFor} = props
     const {
-        site: { siteMetadata },
-    } = useStaticQuery(query);
+        site: {siteMetadata},
+    } = useStaticQuery(query)
 
-    const { siteAuthor, siteDescription, siteUrl, siteTitle } = siteMetadata;
+    const {siteAuthor, siteDescription, siteUrl, siteTitle} = siteMetadata
 
     return (
         <Helmet
             title={`${title} | ${siteTitle}`}
-            htmlAttributes={{ lang: "en", ...(htmlAttributes || "") }}
+            htmlAttributes={{lang: 'en', ...(htmlAttributes || '')}}
         >
-            <meta
-                name="description"
-                content={metaDescription[descFor!] || siteDescription}
-            />
+            <meta name="description" content={descFor || siteDescription} />
         </Helmet>
-    );
-};
+    )
+}
 
-export default SEO;
+export default SEO

@@ -1,6 +1,7 @@
-import React from 'react';
+import React from 'react'
+import {Link} from 'gatsby'
 interface ICardProps extends IProps {
-    children: React.ReactChild;
+    children: React.ReactChild
     // placement: boolean;
     // hover: boolean;
     // margin?: "m-1" | "m-2";
@@ -12,9 +13,9 @@ interface ICardProps extends IProps {
 // add padding prop
 
 const Card: React.FC<ICardProps> = (props: ICardProps) => {
-    const { children } = props;
+    const {children} = props
 
-    return <></>;
-};
+    return <></>
+}
 
-export default Card;
+export default Card

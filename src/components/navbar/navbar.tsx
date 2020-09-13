@@ -1,10 +1,10 @@
-import React, { useContext } from 'react';
-import logo from '../assets/logo.svg';
-import { Link, graphql, useStaticQuery } from 'gatsby';
-import { FaAlignJustify } from 'react-icons/fa';
-import PageLinks from '../../constants/links';
-import { sidebarContext } from '../layout/layout';
-import { Title } from '../titles/titles';
+import React, {useContext} from 'react'
+import logo from '../assets/logo.svg'
+import {Link, graphql, useStaticQuery} from 'gatsby'
+import {FaAlignJustify} from 'react-icons/fa'
+import {sidebarContext} from '../layout/layout'
+import {Title} from '../titles/titles'
+import Links from '../links/siteLinks'
 
 // TODO: Find a better placement for submenus. They're getting in the way
 
@@ -23,7 +23,7 @@ import { Title } from '../titles/titles';
 // `;
 
 const Navbar: React.FC<IProps> = (props: IProps) => {
-    const { toggleSidebar } = useContext(sidebarContext);
+    const {toggleSidebar} = useContext(sidebarContext)
 
     // const {
     // file: {
@@ -34,22 +34,26 @@ const Navbar: React.FC<IProps> = (props: IProps) => {
     return (
         <>
             <nav className={`navbar`}>
-                <div className='nav-center'>
-                    <div className='nav-header'>
-                        <Link to='/'>
+                <div className="nav-center">
+                    <div className="nav-header">
+                        <Link to="/">
                             {/* <img src={logo} alt='logo' /> */}
-                            <Title title='Isiah Fletcher' />
+                            <Title title="Isiah Fletcher" />
                         </Link>
 
-                        <button type='button' className='toggle-btn' onClick={() => toggleSidebar()}>
+                        <button
+                            type="button"
+                            className="toggle-btn"
+                            onClick={() => toggleSidebar()}
+                        >
                             <FaAlignJustify />
                         </button>
                     </div>
-                    <PageLinks className='nav-links' />
+                    <Links className="nav-links" />
                 </div>
             </nav>
         </>
-    );
-};
+    )
+}
 
-export default Navbar;
+export default Navbar

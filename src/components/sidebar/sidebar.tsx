@@ -1,25 +1,25 @@
-import React, { useContext } from 'react';
-import Links from '../../constants/links';
-import SocialLinks from '../social_links/socialLinks';
-import { FaTimes } from 'react-icons/fa';
-import { sidebarContext } from '../layout/layout';
+import React, {useContext} from 'react'
+import Links from '../../components/links/siteLinks'
+import SocialLinks from '../links/socialLinks'
+import {FaTimes} from 'react-icons/fa'
+import {sidebarContext} from '../layout/layout'
 
 const Sidebar: React.FC<IProps> = () => {
-    const { isSidebarOpen, toggleSidebar } = useContext(sidebarContext);
+    const {isSidebarOpen, toggleSidebar} = useContext(sidebarContext)
 
     return (
         <aside className={`sidebar ${isSidebarOpen ? 'show-sidebar' : ''}`}>
-            <div className='sidebar-header'>
-                <button className='close-btn' onClick={() => toggleSidebar()}>
+            <div className="sidebar-header">
+                <button className="close-btn" onClick={() => toggleSidebar()}>
                     <FaTimes />
                 </button>
             </div>
-            <div className='side-container'>
+            <div className="side-container">
                 <Links className={isSidebarOpen ? 'sidebar-links' : ''} />
                 <SocialLinks className={isSidebarOpen ? 'sidebar-icons' : ''} />
             </div>
         </aside>
-    );
-};
+    )
+}
 
-export default Sidebar;
+export default Sidebar
