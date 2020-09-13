@@ -11,6 +11,10 @@ const data = [
                 url: `/music/aterrima/`,
             },
             {
+                text: 'Weald and Woe',
+                url: `/music/weald-and-woe/`,
+            },
+            {
                 text: 'transcripts',
                 url: `/music/transcripts/`,
             },

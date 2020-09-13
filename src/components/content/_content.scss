@@ -14,7 +14,7 @@
     padding: _size(wrapper-edges, small);
     display: flex;
     flex-flow: column nowrap;
-    align-items: center;
+    // align-items: center; this hides the images for some reason
 }
 
 @include breakpoint('<=xlarge') {
