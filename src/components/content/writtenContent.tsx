@@ -1,6 +1,6 @@
 import React, { ReactChildren } from 'react';
-import Blog from '../blog/blog';
-import Poem from '../poem/poem';
+import Blog from '../cards/blog';
+import Poem from '../cards/poem';
 import { Link } from 'gatsby';
 
 interface IWrittenContent extends IProps {

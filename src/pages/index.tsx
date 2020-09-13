@@ -1,7 +1,6 @@
 import React from 'react';
 import Image from 'gatsby-image';
 import Layout from '../components/layout/layout';
-import { graphql } from 'gatsby';
 import Content from '../components/content/writtenContent';
 import { useImageQuery } from '../graphql/queries/images';
 import { useStrapiContent } from '../graphql/queries/strapi';
@@ -22,7 +21,7 @@ export default () => {
             <SEO title='Home' descFor='homepage' />
             <div className='hero-center gutter'>
                 <Image fluid={coverImage.childImageSharp.fluid} className='hero-img' />
-                <article className='hero-info card no-hover no-placement'>
+                <article className='hero-info '>
                     <h1>I am Isiah</h1>
                     <h4>I'm:</h4>
                     <h4>

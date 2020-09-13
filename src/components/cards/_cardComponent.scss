@@ -1,7 +1,6 @@
 .card {
     background: _palette(fg);
     border-radius: _size(border-radius);
-    // @include transition(_duration(transition));
 
     &:not(.no-placement) {
         padding: 2rem;
@@ -9,29 +8,14 @@
         text-align: center;
     }
 
-    // & h4 {
-    //     color: _palette(fg);
-    // }
-
     & .underline {
         width: 3rem;
         height: 0.12rem;
-        // @include transition(_duration(transition));
     }
 
     & p {
-        // @include transition(_duration(transition));
         margin-top: 0.5rem;
     }
-
-    // &:not(.no-hover):hover {
-    //     background: _palette(button-hover);
-    //     color: _palette(dark-red);
-    // }
-
-    // &:hover p {
-    //     color: _palette(txt-dark);
-    // }
 
     .card-footer {
         display: flex;
@@ -62,10 +46,6 @@
 
         & p {
             @include transition(_duration(transition));
-        }
-
-        & h4 {
-            color: _palette(fg);
         }
 
         &:not(.no-hover):hover {
