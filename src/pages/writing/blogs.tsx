@@ -1,40 +1,13 @@
 import React from 'react';
 import Layout from '../../components/layout/layout';
-import { graphql } from 'gatsby';
 import Content from '../../components/content/writtenContent';
 import SEO from '../../components/SEO/SEO';
+import { useStrapiContent } from '../../graphql/queries/strapi';
 
-export const query = graphql`
-    {
-        allStrapiBlogs {
-            nodes {
-                title
-                image {
-                    childImageSharp {
-                        fluid {
-                            ...GatsbyImageSharpFluid
-                        }
-                    }
-                }
-                body
-                author
-                published(formatString: "DD MMM, YYYY")
-                slug
-                tags {
-                    tag
-                }
-                preview
-                createdAt
-                updatedAt
-            }
-        }
-    }
-`;
-
-export default ({ data }: { [key: string]: any }) => {
+export default () => {
     const {
-        allStrapiBlogs: { nodes: blogs },
-    }: { allStrapiBlogs: { [key: string]: Blog[] } } = data;
+        allStrapiBlogs: { blogs },
+    } = useStrapiContent();
 
     return (
         <Layout>

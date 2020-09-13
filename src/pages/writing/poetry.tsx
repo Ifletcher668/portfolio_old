@@ -1,32 +1,13 @@
 import React from 'react';
 import Layout from '../../components/layout/layout';
-import { graphql } from 'gatsby';
 import Content from '../../components/content/writtenContent';
 import SEO from '../../components/SEO/SEO';
+import { useStrapiContent } from '../../graphql/queries/strapi';
 
-export const query = graphql`
-    {
-        allPoetry: allStrapiPoems {
-            poems: nodes {
-                title
-                body
-                author
-                published
-                tags {
-                    tag
-                }
-                slug
-                createdAt
-                updatedAt
-            }
-        }
-    }
-`;
-
-export default ({ data }: { [key: string]: any }) => {
+export default () => {
     const {
-        allPoetry: { poems },
-    }: { allPoetry: { [key: string]: Poem[] } } = data;
+        allStrapiPoems: { poems },
+    } = useStrapiContent();
 
     return (
         <Layout>

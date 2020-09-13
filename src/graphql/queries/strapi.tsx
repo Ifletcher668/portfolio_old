@@ -1,7 +1,7 @@
-import { graphql } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 
-export const useStrapiPoems = () => {
-    const data = graphql`
+export const useStrapiContent = () => {
+    const data = useStaticQuery(graphql`
         {
             allStrapiBlogs {
                 blogs: nodes {
@@ -25,7 +25,22 @@ export const useStrapiPoems = () => {
                     updatedAt
                 }
             }
+
+            allStrapiPoems {
+                poems: nodes {
+                    title
+                    body
+                    author
+                    published
+                    tags {
+                        tag
+                    }
+                    slug
+                    createdAt
+                    updatedAt
+                }
+            }
         }
-    `;
+    `);
     return data;
 };

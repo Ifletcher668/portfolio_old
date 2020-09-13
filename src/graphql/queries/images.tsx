@@ -1,4 +1,4 @@
-import { graphql, useStaticQuery } from "gatsby";
+import { graphql, useStaticQuery } from 'gatsby';
 
 export const ImageFragment = graphql`
     fragment FluidImage on File {
@@ -10,27 +10,18 @@ export const ImageFragment = graphql`
     }
 `;
 
-export const MediumImageFragment = graphql`
-    fragment MediumFluidImage on File {
-        childImageSharp {
-            fluid(maxWidth: 200, maxHeight: 200) {
-                ...GatsbyImageSharpFluid
-            }
-        }
-    }
-`;
-
-// allow variable so there's only one hook
-
 // hero image
-export const useCoverPhoto = () => {
-    const ImageData = useStaticQuery(graphql`
+export const useImageQuery = () => {
+    const data = useStaticQuery(graphql`
         query {
             coverImage: file(relativePath: { eq: "cover-photo.png" }) {
                 ...FluidImage
             }
+
+            teaImage: file(relativePath: { eq: "oriento-unsplash.jpg" }) {
+                ...FluidImage
+            }
         }
     `);
-
-    return ImageData;
+    return data;
 };
