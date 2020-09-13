@@ -1,27 +1,28 @@
 import React, { useEffect } from 'react';
 import { Link } from 'gatsby';
+import { Header } from '../titles/titles';
 
 const Poem: React.FC<IPoetryLinks> = (props: IPoetryLinks) => {
     const { title, author, published, slug, tags } = props;
 
-    let maxLen = 20;
-    let newTitle = '';
+    let maxLen = 30;
+    let sizedTitle = '';
 
     if (title.length > maxLen) {
         for (let i = 0; i < maxLen; i++) {
             if (i === maxLen - 1) {
-                newTitle += '...';
+                sizedTitle += '...';
                 break;
             }
-            newTitle += title[i] as string;
+            sizedTitle += title[i] as string;
         }
-    } else newTitle = title;
+    } else sizedTitle = title;
 
     return (
         <Link to={`/writing/poetry/${slug}`} key={title} className='blog'>
             <article>
-                <div className='card content-card'>
-                    <h2>{newTitle}</h2>
+                <div className='card'>
+                    <Header value={3} title={sizedTitle} center={false} />
                     <h4>by {author}</h4>
                     <div className='card-footer'>
                         {tags.map(({ tag }, idx) => {

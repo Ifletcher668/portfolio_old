@@ -7,6 +7,7 @@
 .blog:hover {
     transform: scale(1.02);
 }
+
 .blog article {
     height: 100%;
     display: grid;
@@ -40,12 +41,13 @@
     letter-spacing: 2px;
     font-size: 0.85rem;
 }
-@media screen and (min-width: 576px) {
+
+@include breakpoint('>=medium') {
     .blog-img {
         height: 17.5rem;
     }
 }
-@media screen and (min-width: 850px) {
+@include breakpoint('>=large') {
     .blog-img {
         height: 13.75rem;
     }

@@ -1,33 +1,33 @@
-.content-page {
+.content-card {
     display: grid;
     background-color: _palette(bg-accent);
     border-radius: _size(border-radius);
     width: 50vw;
-    margin: auto;
+    margin: 2em auto;
     .paragraph {
         margin-bottom: 0.8rem;
     }
 }
 
-.content-page-inner {
+.content-card-inner {
     width: inherit;
     padding: _size(wrapper-edges, small);
 }
 
 @include breakpoint('<=xlarge') {
-    .content-page {
+    .content-card {
         width: 70vw;
     }
 }
 
 @include breakpoint('<=medium') {
-    .content-page {
+    .content-card {
         width: 80vw;
     }
 }
 
 @include breakpoint('<=xsmall') {
-    .content-page {
+    .content-card {
         width: 90vw;
     }
 }

@@ -46,10 +46,7 @@ const Jobs: React.FC<IProps> = (props: IProps) => {
                 <div className='btn-container'>
                     {projects.map(({ project }, idx) => {
                         return (
-                            <button
-                                key={idx}
-                                className={`job-btn ${idx === value && 'active-btn'}`}
-                                onClick={() => setValue(idx)}>
+                            <button key={idx} className={`job-btn ${idx === value && 'active-btn'}`} onClick={() => setValue(idx)}>
                                 {project}
                             </button>
                         );

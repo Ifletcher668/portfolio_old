@@ -5,6 +5,7 @@ import { Header, Title } from '../components/titles/titles';
 import SEO from '../components/SEO/SEO';
 import Jobs from '../components/jobs/jobs';
 import MarkdownField from 'react-markdown';
+import ContentCard from '../components/content/content';
 
 export const query = graphql`
     {
@@ -33,8 +34,8 @@ export default ({ data }: { [key: string]: any }) => {
         <Layout>
             <SEO title='Software Portfolio' descFor='portfolio' />
             <Header title='My Work' center={true} value={1} />
-            <div className='content-page gutter'>
-                <div className='content-page-inner'>
+            <ContentCard>
+                <>
                     <article
                         style={{
                             display: 'flex',
@@ -61,8 +62,8 @@ export default ({ data }: { [key: string]: any }) => {
                         })}
                     </section>
                     <hr className='mb-small' />
-                </div>
-            </div>
+                </>
+            </ContentCard>
         </Layout>
     );
 };

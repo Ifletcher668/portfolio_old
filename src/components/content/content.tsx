@@ -6,10 +6,11 @@ interface IContentProps extends IProps {
 
 //
 const Content: React.FC<IContentProps> = (props: IContentProps) => {
+    const { children } = props;
     return (
         <>
-            <section className='content '>
-                <div className='content-inner'>{props.children}</div>
+            <section className='content-card'>
+                <div className='content-card-inner'>{children}</div>
             </section>
         </>
     );

@@ -4,6 +4,7 @@ import Layout from '../components/layout/layout';
 import BackButton from '../components/back_button/backButton';
 import SEO from '../components/SEO/SEO';
 import MarkdownField from 'react-markdown';
+import ContentCard from '../components/content/content';
 
 export const query = graphql`
     query GetSinglePoem($slug: String) {
@@ -29,8 +30,8 @@ export default ({ data }: { [key: string]: any }) => {
     return (
         <Layout>
             <SEO title={`${title}, by ${author}`} />
-            <div className='content-page gutter'>
-                <div className='content-page-inner'>
+            <ContentCard>
+                <>
                     <hr className='center mb-small' />
                     <div className='title'>
                         <h2>{title}</h2>
@@ -56,8 +57,8 @@ export default ({ data }: { [key: string]: any }) => {
                         })}
                     </div>
                     <BackButton />
-                </div>
-            </div>
+                </>
+            </ContentCard>
         </Layout>
     );
 };

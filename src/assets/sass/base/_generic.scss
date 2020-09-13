@@ -54,11 +54,6 @@ body {
     text-align: center;
 }
 
-.content-card {
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-}
-
 .btn {
     text-transform: uppercase;
     background: _palette(button);
