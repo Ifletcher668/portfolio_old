@@ -12,7 +12,7 @@ export const Header: React.FC<IHeaderProps> = (props: IHeaderProps) => {
     if (value === 1) {
         return (
             <h1
-                className={`${center ? 'center ' : ''}${major ? major : ''}`}
+                className={`${center ? 'center ' : ''}${major ? 'major' : ''}`}
                 style={{textAlign: 'center'}}
             >
                 {title || 'Header'}
@@ -21,7 +21,7 @@ export const Header: React.FC<IHeaderProps> = (props: IHeaderProps) => {
     } else if (value === 2) {
         return (
             <h2
-                className={`${center ? 'center ' : ''}${major ? major : ''}`}
+                className={`${center ? 'center ' : ''}${major ? 'major' : ''}`}
                 style={{textAlign: 'center'}}
             >
                 {title || 'Header'}
@@ -30,7 +30,7 @@ export const Header: React.FC<IHeaderProps> = (props: IHeaderProps) => {
     } else if (value === 3) {
         return (
             <h3
-                className={`${center ? 'center ' : ''}${major ? major : ''}`}
+                className={`${center ? 'center ' : ''}${major ? 'major' : ''}`}
                 style={{textAlign: 'center'}}
             >
                 {title || 'Header'}
@@ -39,7 +39,7 @@ export const Header: React.FC<IHeaderProps> = (props: IHeaderProps) => {
     } else if (value === 4) {
         return (
             <h4
-                className={`${center ? 'center ' : ''}${major ? major : ''}`}
+                className={`${center ? 'center ' : ''}${major ? 'major' : ''}`}
                 style={{textAlign: 'center'}}
             >
                 {title || 'Header'}
@@ -48,7 +48,7 @@ export const Header: React.FC<IHeaderProps> = (props: IHeaderProps) => {
     } else if (value === 5) {
         return (
             <h5
-                className={`${center ? 'center ' : ''}${major ? major : ''}`}
+                className={`${center ? 'center ' : ''}${major ? 'major' : ''}`}
                 style={{textAlign: 'center'}}
             >
                 {title || 'Header'}
@@ -58,7 +58,7 @@ export const Header: React.FC<IHeaderProps> = (props: IHeaderProps) => {
         // if (value === 6)
         return (
             <h6
-                className={`${center ? 'center ' : ''}${major ? major : ''}`}
+                className={`${center ? 'center ' : ''}${major ? 'major' : ''}`}
                 style={{textAlign: 'center'}}
             >
                 {title || 'Header'}
