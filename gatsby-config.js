@@ -1,4 +1,3 @@
-const config = require('./config/website.tsx')
 module.exports = {
     siteMetadata: {
         title: 'Isiahfletcher.com',
