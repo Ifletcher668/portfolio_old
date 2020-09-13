@@ -36,7 +36,7 @@ export default ({data}: {[key: string]: any}) => {
                 title="Software Portfolio"
                 descFor={config.metaDescriptions.portfolio}
             />
-            <Header title="My Work" center={true} value={1} />
+            <Header title="My Work" center={true} value={1} major />
             <ContentCard>
                 <>
                     <article

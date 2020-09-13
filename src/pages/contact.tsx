@@ -15,7 +15,12 @@ const contact: React.FC<IProps> = (props: IProps) => {
             />
             <ContentCard>
                 <>
-                    <Header title="Get in Touch" center={false} value={1} />
+                    <Header
+                        title="Get in Touch"
+                        center={false}
+                        value={1}
+                        major
+                    />
                     <ContactForm />
                 </>
             </ContentCard>

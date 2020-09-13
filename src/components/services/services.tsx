@@ -52,7 +52,7 @@ const Services: React.FC<IServices> = (props: IServices) => {
 
     return (
         <>
-            <Header title={title || 'services'} center={true} value={1} />
+            <Header title={title || 'services'} center={true} value={1} major />
             {children}
             <section className="section-center services-center">
                 {services

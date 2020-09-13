@@ -8,6 +8,10 @@
 // base
 @include breakpoints(
     (
+        xxlarge: (
+            1400px,
+            1900px,
+        ),
         xlarge: (
             1281px,
             1680px,

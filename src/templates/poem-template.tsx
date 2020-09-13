@@ -5,6 +5,7 @@ import BackButton from '../components/back_button/backButton'
 import SEO from '../components/SEO/SEO'
 import MarkdownField from 'react-markdown'
 import ContentCard from '../components/content/content'
+import {Header} from '../components/titles/titles'
 
 export const query = graphql`
     query GetSinglePoem($slug: String) {
@@ -21,8 +22,6 @@ export const query = graphql`
 `
 
 export default ({data}: {[key: string]: any}) => {
-    const [center, setCenter] = useState<string>('center')
-
     const {
         poem: {title, body, author, published, tags},
     }: {[key: string]: Poem} = data
@@ -32,22 +31,23 @@ export default ({data}: {[key: string]: any}) => {
             <SEO title={`${title}, by ${author}`} />
             <ContentCard>
                 <>
-                    <hr className="center mb-small" />
-                    <div className="title">
-                        <h2>{title}</h2>
-                    </div>
-                    <div className={`${center} mb-small`}>
+                    <Header value={2} center={false} title={title} major />
+                    <article className="poem-text">
                         <MarkdownField source={body} />
-                    </div>
-                    <div className="title">
-                        <h3>
-                            By {author}, {published}
-                        </h3>
-                    </div>
-                    <div>
-                        <hr className="center mb-small" />
-                    </div>
-                    <div className="tags">
+                    </article>
+                    <Header
+                        value={4}
+                        center={false}
+                        title={`By ${author}, ${published}`}
+                        major
+                    />
+                    <Header
+                        value={6}
+                        center={false}
+                        title={`tags`}
+                        major={false}
+                    />
+                    <section className="tags">
                         {tags.map(({tag}, idx) => {
                             return (
                                 <React.Fragment key={idx}>
@@ -55,7 +55,7 @@ export default ({data}: {[key: string]: any}) => {
                                 </React.Fragment>
                             )
                         })}
-                    </div>
+                    </section>
                     <BackButton />
                 </>
             </ContentCard>

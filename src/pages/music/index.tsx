@@ -19,7 +19,12 @@ export default (props: IProps) => {
             <Services type="music" title={`My Music`}>
                 <ContentCard>
                     <>
-                        <Header value={3} center title="Drummer | Lyricist" />
+                        <Header
+                            value={3}
+                            center
+                            title="Drummer | Lyricist"
+                            major
+                        />
                         <Image
                             fluid={drummingCloseupImage.childImageSharp.fluid}
                             style={{width: '600px', height: '450px'}}

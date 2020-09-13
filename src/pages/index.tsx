@@ -67,9 +67,9 @@ export default () => {
                 </article>
             </div>
 
-            <Header title={`Recent Blogs`} center={true} value={2} />
+            <Header title={`Recent Blogs`} center={true} value={2} major />
             <Content blogs={blogs} showLink={true} />
-            <Header title={`Recent Poems`} center={true} value={2} />
+            <Header title={`Recent Poems`} center={true} value={2} major />
             <Content poetry={poems} showLink={true} />
         </Layout>
     )

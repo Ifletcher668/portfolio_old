@@ -12,6 +12,9 @@
 .content-card-inner {
     width: inherit;
     padding: _size(wrapper-edges, small);
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
 }
 
 @include breakpoint('<=xlarge') {
