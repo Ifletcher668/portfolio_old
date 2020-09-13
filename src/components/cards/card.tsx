@@ -1,5 +1,4 @@
 import React from 'react';
-
 interface ICardProps extends IProps {
     children: React.ReactChild;
     // placement: boolean;
