@@ -1,3 +1,4 @@
-# Strapi application
+# A Strapi Built CMS
 
-A quick description of your strapi application
+A Content Management Service I build and maintain to write and organize my blogs
+and poetry.
