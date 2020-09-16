@@ -53,3 +53,9 @@
         max-width: 65vw;
     }
 }
+
+@include breakpoint('>=xlarge') {
+    .contact-form {
+        max-width: 50vw;
+    }
+}

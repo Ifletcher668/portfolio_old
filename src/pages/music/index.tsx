@@ -52,7 +52,10 @@ export default (props: IProps) => {
                             The drums have always been a signal, a primal
                             communicator, the original telephone. As both a
                             musician and{' '}
-                            <Link to={config.routes.writing}>writer</Link>
+                            <Link to={config.routes.writing}>writer</Link>, I
+                            value crafting a narrative. I believe that strong
+                            narration, told through the drum set, is the best
+                            way to bring value into this world.
                         </p>
                     </>
                 </ContentCard>
