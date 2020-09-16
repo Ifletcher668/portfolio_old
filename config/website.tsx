@@ -43,4 +43,17 @@ export default {
         extrasPage:
             'Isiah collects stories from his travels around the world (and internet), and stores them here to share. An avid reader, Isiah believes in amassing a list of influential things, showing off random projects, and sharing links to things of interest.',
     },
+
+    routes: {
+        base: '/',
+        music: '/music',
+        aterrima: '/music/aterrima',
+        wealdAndWoe: '/music/weald-and-woe/',
+        transcripts: '/music/transcripts/',
+        writing: '/writing',
+        poetry: '/writing/poetry/',
+        blogs: '/writing/blogs/',
+        portfolio: '/portfolio',
+        contact: '/contact',
+    },
 }
