@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_resume_section_descriptions",
+  "info": {
+    "name": "description",
+    "icon": "air-freshener"
+  },
+  "options": {},
+  "attributes": {
+    "sentence": {
+      "type": "string"
+    }
+  }
+}

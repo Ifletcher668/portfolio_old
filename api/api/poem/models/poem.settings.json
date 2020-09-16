@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "Poetry",
+  "info": {
+    "name": "Poem"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "body": {
+      "type": "richtext",
+      "required": true
+    },
+    "author": {
+      "type": "string",
+      "required": true
+    },
+    "published": {
+      "type": "date",
+      "required": true,
+      "default": "2020-08-18T06:00:00.000Z"
+    },
+    "tags": {
+      "type": "component",
+      "repeatable": true,
+      "component": "content.tags"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    }
+  }
+}

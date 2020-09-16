@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_content_tags",
+  "info": {
+    "name": "tags",
+    "icon": "crow"
+  },
+  "options": {},
+  "attributes": {
+    "tag": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

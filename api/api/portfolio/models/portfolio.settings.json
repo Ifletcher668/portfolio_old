@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "portfolios",
+  "info": {
+    "name": "portfolio"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "section": {
+      "type": "component",
+      "repeatable": true,
+      "component": "resume-section.section"
+    },
+    "tags": {
+      "type": "component",
+      "repeatable": true,
+      "component": "content.tags"
+    }
+  }
+}
