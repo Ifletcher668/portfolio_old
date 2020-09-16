@@ -11,6 +11,11 @@ import {Link} from 'gatsby'
 
 export default (props: IProps) => {
     const {drummingCloseupImage} = useImageQuery()
+
+    const startedDrumming = 2007
+    const today = new Date().getFullYear()
+    const yearsSinceIStartedDrumming = today - startedDrumming
+
     return (
         <Layout>
             <SEO
@@ -33,10 +38,10 @@ export default (props: IProps) => {
                         />
                         <p>
                             Music is an enrichment to my life, and throughout
-                            the past 14 years, I have sought after the best
-                            methods to enhance the lives of others with my
-                            music. I'm a drummer and play in two metal bands:
-                            Aterrima and Weald & Woe.
+                            the past {yearsSinceIStartedDrumming} years, I have
+                            sought after the best methods to enhance the lives
+                            of others with my music. I'm a drummer and play in
+                            two metal bands: Aterrima and Weald & Woe.
                         </p>
                         <p>
                             Progress, to me, means the embracement and voracious
