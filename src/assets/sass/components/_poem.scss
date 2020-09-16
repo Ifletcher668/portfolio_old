@@ -12,9 +12,9 @@
     }
 }
 
-@include breakpoint('<=large') {
+@include breakpoint('<=xsmall') {
     .poem-text {
-        margin-left: 2rem;
-        width: inherit;
+        font-size: 0.7rem;
+        white-space: nowrap;
     }
 }
