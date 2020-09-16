@@ -12,8 +12,9 @@ body {
     background: _palette(bg);
     min-height: 100vh;
 }
-img {
-    margin-bottom: 1rem;
+
+.gatsby-image-wrapper {
+    margin-bottom: 2rem;
 }
 .center {
     width: 50%;
