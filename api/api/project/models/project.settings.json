@@ -21,6 +21,10 @@
       "repeatable": true,
       "component": "resume-section.description",
       "required": true
+    },
+    "link_to_project": {
+      "type": "string",
+      "required": true
     }
   }
 }

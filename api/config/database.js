@@ -1,55 +1,55 @@
-module.exports = ({ env }) => {
-    if (env("NODE_ENV") === "development") {
+module.exports = ({env}) => {
+    if (env('NODE_ENV') === 'development') {
         return {
-            defaultConnection: "default",
+            defaultConnection: 'default',
             connections: {
                 default: {
-                    connector: "mongoose",
+                    connector: 'mongoose',
                     settings: {
-                        client: "mongo",
-                        host: env("DATABASE_HOST", "localhost"),
-                        srv: env.bool("DATABASE_SRV", false),
-                        port: env.int("DATABASE_PORT", 27017),
-                        database: env("DATABASE_NAME", "production"),
-                        username: env("DATABASE_USERNAME", ""),
-                        password: env("DATABASE_PASSWORD", ""),
-                        uri: env("DATABASE_URI"),
+                        client: 'mongo',
+                        host: env('DATABASE_HOST', 'localhost'),
+                        srv: env.bool('DATABASE_SRV', false),
+                        port: env.int('DATABASE_PORT', 27017),
+                        database: env('DATABASE_NAME', 'production'),
+                        username: env('DATABASE_USERNAME'),
+                        password: env('DATABASE_PASSWORD'),
+                        uri: env('DATABASE_URI'),
                     },
                     options: {
                         authenticationDatabase: env(
-                            "AUTHENTICATION_DATABASE",
-                            null
+                            'AUTHENTICATION_DATABASE',
+                            null,
                         ),
-                        ssl: env("DATABASE_SSL", true),
+                        ssl: env('DATABASE_SSL', true),
                     },
                 },
             },
-        };
-    } else if (env("NODE_ENV") === "production") {
+        }
+    } else if (env('NODE_ENV') === 'production') {
         return {
-            defaultConnection: "default",
+            defaultConnection: 'default',
             connections: {
                 default: {
-                    connector: "mongoose",
+                    connector: 'mongoose',
                     settings: {
-                        client: "mongo",
-                        host: env("DATABASE_HOST", "localhost"),
-                        srv: env.bool("DATABASE_SRV", false),
-                        port: env.int("DATABASE_PORT", 27017),
-                        database: env("DATABASE_NAME", "production"),
-                        username: env("DATABASE_USERNAME", ""),
-                        password: env("DATABASE_PASSWORD", ""),
-                        uri: env("DATABASE_URI"),
+                        client: 'mongo',
+                        host: env('DATABASE_HOST', 'localhost'),
+                        srv: env.bool('DATABASE_SRV', false),
+                        port: env.int('DATABASE_PORT', 27017),
+                        database: env('DATABASE_NAME', 'production'),
+                        username: env('DATABASE_USERNAME', ''),
+                        password: env('DATABASE_PASSWORD', ''),
+                        uri: env('DATABASE_URI'),
                     },
                     options: {
                         authenticationDatabase: env(
-                            "AUTHENTICATION_DATABASE",
-                            null
+                            'AUTHENTICATION_DATABASE',
+                            null,
                         ),
-                        ssl: env("DATABASE_SSL", true),
+                        ssl: env('DATABASE_SSL', true),
                     },
                 },
             },
-        };
+        }
     }
-};
+}
