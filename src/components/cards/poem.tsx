@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import {Link} from 'gatsby'
 import {Header} from '../titles/titles'
 
@@ -19,18 +19,25 @@ const Poem: React.FC<IPoetryLinks> = (props: IPoetryLinks) => {
     } else sizedTitle = title
 
     return (
-        <Link to={`/writing/poetry/${slug}`} key={title} className="blog">
-            <article>
-                <div className="card">
-                    <Header value={3} title={sizedTitle} center={false} major />
-                    <h4>by {author}</h4>
-                    <div className="card-footer">
-                        {tags.map(({tag}, idx) => {
-                            return <p key={idx}>{tag}</p>
-                        })}
-                    </div>
-                    <p>{published}</p>
+        <Link
+            to={`/writing/poetry/${slug}`}
+            key={title}
+            className="card-wrapper"
+        >
+            <article className="card">
+                <Header
+                    value={3}
+                    title={sizedTitle}
+                    center={false}
+                    major={false}
+                />
+                <h4>by {author}</h4>
+                <div className="card-footer">
+                    {tags.map(({tag}, idx) => {
+                        return <p key={idx}>{tag}</p>
+                    })}
                 </div>
+                <p>{published}</p>
             </article>
         </Link>
     )

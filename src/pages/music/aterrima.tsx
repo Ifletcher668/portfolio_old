@@ -15,7 +15,7 @@ export default (props: IProps) => {
                 title="Aterrima"
                 descFor={config.metaDescriptions.aterrimaPage}
             />
-            <ContentCard>
+            <ContentCard background>
                 <>
                     <Header value={1} center title={`Aterrima`} major />
                     <Image fluid={aterrimaOnStageImage.childImageSharp.fluid} />

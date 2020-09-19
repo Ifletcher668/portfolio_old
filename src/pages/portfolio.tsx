@@ -37,7 +37,7 @@ export default ({data}: {[key: string]: any}) => {
                 descFor={config.metaDescriptions.portfolio}
             />
             <Header title="My Work" center={true} value={1} major />
-            <ContentCard>
+            <ContentCard background>
                 <>
                     <article
                         style={{

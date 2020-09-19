@@ -29,7 +29,7 @@ export default ({data}: {[key: string]: any}) => {
     return (
         <Layout>
             <SEO title={`${title}, by ${author}`} />
-            <ContentCard>
+            <ContentCard background>
                 <>
                     <Header value={2} center={false} title={title} major />
                     <article className="poem-text">

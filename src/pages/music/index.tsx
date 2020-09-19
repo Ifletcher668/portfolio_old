@@ -23,7 +23,7 @@ export default (props: IProps) => {
                 descFor={config.metaDescriptions.musicPage}
             />
             <Services type="music" title={`My Music`}>
-                <ContentCard>
+                <ContentCard background>
                     <>
                         <Header
                             value={3}

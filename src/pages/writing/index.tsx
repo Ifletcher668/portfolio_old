@@ -18,7 +18,7 @@ export default (props: IProps) => {
             />
 
             <Services type="writing" title={`My Writing`}>
-                <ContentCard>
+                <ContentCard background>
                     <>
                         <Image
                             fluid={teaImage.childImageSharp.fluid}

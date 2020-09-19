@@ -1,3 +1,13 @@
+.card-wrapper {
+    height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    @include transition(_duration(transition));
+    &:hover {
+        transform: scale(1.02);
+    }
+}
+
 .card {
     background: _palette(fg);
     border-radius: _size(border-radius);
@@ -12,8 +22,7 @@
         width: 3rem;
         height: 0.12rem;
     }
-
-    & p {
+    0 & p {
         margin-top: 0.5rem;
     }
 
@@ -22,23 +31,24 @@
         flex-flow: row wrap;
         justify-content: center;
         align-items: center;
-    }
 
-    .card-footer p {
-        margin: 0 5px;
-        font-weight: bold;
-        color: _palette(txt-med);
-    }
+        & p {
+            margin: 0 5px;
+            font-weight: bold;
+            color: _palette(txt-med);
+        }
 
-    .card-footer p::first-letter {
-        text-transform: uppercase;
-        font-size: 16pt;
+        & p::first-letter {
+            text-transform: uppercase;
+            font-size: 16pt;
+        }
     }
 }
 
 @include breakpoint('>=xlarge') {
     .card {
         @include transition(_duration(transition));
+        max-height: 300px;
 
         & .underline {
             @include transition(_duration(transition));
@@ -67,5 +77,22 @@
         & h3 {
             font-size: 1.5rem;
         }
+    }
+}
+
+.card-img {
+    border-radius: _size(border-radius);
+    height: 15rem;
+    margin: 0;
+}
+
+@include breakpoint('>=medium') {
+    .card-img {
+        height: 17.5rem;
+    }
+}
+@include breakpoint('>=large') {
+    .card-img {
+        height: 13.75rem;
     }
 }

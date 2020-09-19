@@ -46,6 +46,44 @@
     }
 }
 
+.form-group {
+    padding: 1rem 1.5rem;
+    text-align: left;
+    display: grid;
+
+    & label {
+        font-size: 1.6rem;
+        margin-bottom: 0.8rem;
+    }
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.5rem;
+    border: none;
+    margin-bottom: 1.25rem;
+    background: _palette(txt-light);
+    border-radius: _size(border-radius);
+    letter-spacing: _font(kern-body);
+
+    &:focus {
+        background: _palette(accent);
+    }
+
+    &::placeholder {
+        font-family: _font(family-heading);
+        color: _palette(fg);
+        text-transform: uppercase;
+        letter-spacing: _font(kern-body);
+    }
+}
+
+.submit-btn {
+    width: 50%;
+    padding: 1rem;
+    border-radius: _size(border-radius);
+}
+
 @include breakpoint('>=small') {
     .contact-form {
         border-radius: _size(border-radius);

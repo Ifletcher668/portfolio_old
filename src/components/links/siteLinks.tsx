@@ -1,7 +1,19 @@
 import React from 'react'
 import {Link} from 'gatsby'
+import {FaSortDown} from 'react-icons/fa'
 
-const data = [
+type SubMenuData = {
+    text: string
+    url: string
+}
+
+type Data = {
+    text: string
+    url: string
+    subMenu?: SubMenuData[]
+}
+
+const data: Data[] = [
     {
         text: 'music',
         url: `/music/`,
@@ -49,32 +61,46 @@ const data = [
     // },
 ]
 
-const primaryLinks = data.map((link, idx) => {
-    return (
-        <li
-            key={idx}
-            className={`nav-link${link.subMenu ? ' strip-bottom' : ''}`}
-        >
-            <Link to={link.url}>{link.text}</Link>
-            {link.subMenu ? (
-                <ul className="sub-menu">
-                    {link.subMenu.map((link, idx) => {
-                        return (
-                            <Link key={idx} to={link.url}>
-                                <li>{link.text}</li>
-                            </Link>
-                        )
-                    })}
-                </ul>
-            ) : null}
-        </li>
-    )
-})
+interface ISubMenuProps {
+    subMenu: SubMenuData[]
+}
 
-export default (props: IProps) => {
+const SubMenu: React.FC<ISubMenuProps> = ({subMenu}) => {
     return (
-        <ul className={`page-links ${props.className ? props.className : ''}`}>
-            {primaryLinks}
+        <ul className="sub-menu">
+            {subMenu.map((link, idx) => {
+                const {url, text} = link
+                return (
+                    <Link key={idx} to={url}>
+                        <li>{text}</li>
+                    </Link>
+                )
+            })}
         </ul>
     )
 }
+
+const Menu = (props: IProps) => {
+    return (
+        <ul className={`page-links ${props.className ? props.className : ''}`}>
+            {data.map((link, idx) => {
+                const {subMenu, url, text} = link
+
+                return (
+                    <li
+                        key={idx}
+                        className={`nav-link${subMenu ? ' strip-bottom' : ''}`}
+                    >
+                        <Link key={text} to={url}>
+                            {text}
+                            {subMenu ? <FaSortDown /> : ''}
+                        </Link>
+                        {subMenu ? <SubMenu subMenu={subMenu} /> : null}
+                    </li>
+                )
+            })}
+        </ul>
+    )
+}
+
+export default Menu

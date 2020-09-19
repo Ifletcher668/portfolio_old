@@ -10,7 +10,7 @@ export default (props: IProps) => {
                 title="Drum Transcripts"
                 descFor={config.metaDescriptions.transcriptsPage}
             />
-            <ContentCard>
+            <ContentCard background>
                 <>
                     <article className="title">
                         <h1>No Transcripts Available At This Time</h1>

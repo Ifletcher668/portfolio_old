@@ -1,28 +1,47 @@
-import React from 'react';
-import Image from 'gatsby-image';
-import { Link } from 'gatsby';
+import React from 'react'
+import Image from 'gatsby-image'
+import {Link} from 'gatsby'
+import {Header} from '../titles/titles'
 
 const Blog: React.FC<IBlogLinks> = (props: IBlogLinks) => {
-    const { title, author, preview, published, slug, image, tags } = props;
+    const {title, author, preview, published, slug, image, tags} = props
 
     return (
-        <Link to={`/writing/blogs/${slug}`} key={title} className='blog'>
+        <Link
+            to={`/writing/blogs/${slug}`}
+            key={title}
+            className="card-wrapper"
+        >
             <article>
-                <Image fluid={image.childImageSharp.fluid} className='blog-img' />
-                <div className='card '>
-                    <h4>{title}</h4>
-                    <h5>{author}</h5>
+                <Image
+                    fluid={image.childImageSharp.fluid}
+                    className="card-img"
+                />
+                <div className="card">
+                    <Header
+                        value={3}
+                        title={title}
+                        center={false}
+                        major={false}
+                    />
+                    <Header
+                        value={5}
+                        title={author}
+                        center={false}
+                        major={false}
+                    />
                     <p>{preview}</p>
-                    <div className='blog-footer'>
-                        {tags.map(({ tag }, idx) => {
-                            return <p key={idx}>{tag}</p>;
+                    <div className="card-footer">
+                        {tags.map(({tag}, idx) => {
+                            // TODO: Add a check to only allow, say, 5 tags?
+                            return <p key={idx}>{tag}</p>
                         })}
                         <p>{published}</p>
                     </div>
                 </div>
             </article>
         </Link>
-    );
-};
+    )
+}
 
-export default Blog;
+export default Blog

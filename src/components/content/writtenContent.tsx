@@ -1,8 +1,9 @@
-import React, {ReactChildren} from 'react'
+import React from 'react'
 import Blog from '../cards/blog'
 import Poem from '../cards/poem'
 import {Link} from 'gatsby'
 import {Header} from '../titles/titles'
+import ContentCard from '../content/content'
 
 interface IWrittenContent extends IProps {
     blogs?: Blog[]
@@ -32,7 +33,7 @@ export const Blogs: React.FC<IWrittenContent> = (props: IWrittenContent) => {
     }
 
     return (
-        <section className=" section gutter">
+        <section>
             {title && <Header value={1} center major title={title} />}
             <div className="section-center">{handleContentType()}</div>
             {showLink && (
@@ -46,4 +47,5 @@ export const Blogs: React.FC<IWrittenContent> = (props: IWrittenContent) => {
         </section>
     )
 }
+
 export default Blogs
