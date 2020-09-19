@@ -51,7 +51,6 @@ a {
     }
 
     &.special:not(.button) {
-        @include icon;
         border-bottom: 0;
         display: block;
         font-family: _font(family-heading);

@@ -44,18 +44,20 @@
 @import 'base/generic';
 
 // components
-@import 'components/socialLinks';
-@import 'components/blog';
-@import 'components/footer';
-@import 'components/navbar';
-@import 'components/sidebar';
-@import 'components/services';
-@import 'components/jobs';
-@import 'components/poem';
+@import '../../components/links/socialLinks';
+@import '../../components/footer/footer';
+@import '../../components/navbar/navbar';
+@import '../../components/sidebar/sidebar';
+@import '../../components/services/services';
+@import '../../components/jobs/jobs';
 @import '../../components/cards/cardComponent';
 @import '../../components/content/content';
 @import '../../components/contact_form/contact-form';
 
 // pages
 @import 'pages/indexPage';
-@import 'pages/blogPage';
+@import 'pages/404';
+
+// templates
+@import '../../templates/blog';
+@import '../../templates/poem';
