@@ -16,9 +16,7 @@ export default () => {
                 title={config.metaDescriptions.journal.title}
                 descFor={config.metaDescriptions.journal.description}
             />
-            <section className="blog-page">
-                <Content blogs={blogs} title="Journal" showLink={false} />
-            </section>
+            <Content blogs={blogs} title="Journal" showLink={false} />
         </Layout>
     )
 }

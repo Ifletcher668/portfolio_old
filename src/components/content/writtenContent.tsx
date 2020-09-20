@@ -21,8 +21,6 @@ const mapBlogs = (blogs: Blog[]) =>
 export const Blogs: React.FC<IWrittenContent> = (props: IWrittenContent) => {
     const {blogs, poetry, title, showLink} = props
 
-    // const pastMonth = new Date().getMonth() - 1;
-
     const displayContent = () => {
         if (blogs && !poetry) return mapBlogs(blogs)
         else if (poetry && !blogs) return mapPoetry(poetry)

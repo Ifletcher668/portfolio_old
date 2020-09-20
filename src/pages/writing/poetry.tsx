@@ -16,9 +16,7 @@ export default () => {
                 title={config.metaDescriptions.poetry.title}
                 descFor={config.metaDescriptions.poetry.description}
             />
-            <section className="blog-page">
-                <Content poetry={poems} title="poetry" showLink={false} />
-            </section>
+            <Content poetry={poems} title="poetry" showLink={false} />
         </Layout>
     )
 }
