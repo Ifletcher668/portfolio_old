@@ -68,33 +68,39 @@ interface ISubMenuProps {
 
 const SubMenu: React.FC<ISubMenuProps> = ({subMenu}) => {
     return (
-        <ul className="sub-menu">
+        <ul className={`sub-menu`}>
             {subMenu.map((link, idx) => {
                 const {url, text} = link
                 return (
-                    <Link key={idx} to={url}>
-                        <li>{text}</li>
-                    </Link>
+                    <li key={idx}>
+                        <Link key={idx} to={url}>
+                            {text}
+                        </Link>
+                    </li>
                 )
             })}
         </ul>
     )
 }
 
-const Menu = (props: IProps) => {
+const Menu = ({className}: IProps) => {
     return (
-        <ul className={`page-links ${props.className ? props.className : ''}`}>
+        <ul className={`page-links ${className ? className : ''}`}>
             {data.map((link, idx) => {
                 const {subMenu, url, text} = link
-
                 return (
                     <li
                         key={idx}
-                        className={`nav-link${subMenu ? ' strip-bottom' : ''}`}
+                        className={`nav-link ${subMenu ? 'strip-bottom' : ''}`}
                     >
                         <Link key={text} to={url}>
                             {text}
-                            {subMenu ? <FaSortDown /> : ''}
+                            {subMenu &&
+                            !className?.includes('sidebar-links') ? (
+                                <FaSortDown />
+                            ) : (
+                                ''
+                            )}
                         </Link>
                         {subMenu ? <SubMenu subMenu={subMenu} /> : null}
                     </li>

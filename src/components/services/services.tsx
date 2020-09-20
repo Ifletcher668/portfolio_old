@@ -67,11 +67,16 @@ const Services: React.FC<IServices> = (props: IServices) => {
                                         ? `${config.routes.writing}`
                                         : `${config.routes.music}`
                                 }${url}`}
+                                key={idx}
                             >
-                                <article key={idx} className="card">
+                                <article className="card">
                                     {icon}
-                                    <h4>{title}</h4>
-                                    <div className="underline"></div>
+                                    <Header
+                                        value={4}
+                                        center
+                                        major
+                                        title={title}
+                                    />
                                     <p>{text}</p>
                                 </article>
                             </Link>
