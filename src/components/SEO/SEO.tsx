@@ -6,35 +6,44 @@ interface ISEOProps {
     title: string
     htmlAttributes?: {[key: string]: string}
     descFor?: string
+    // meta: any[]
 }
 
-const query = graphql`
-    {
-        site {
-            siteMetadata {
-                siteAuthor: author
-                siteDescription: description
-                siteUrl
-                siteTitle: title
-            }
-        }
-    }
-`
-
-const SEO: React.FC<ISEOProps> = (props: ISEOProps) => {
-    const {title, htmlAttributes, descFor} = props
-    const {
-        site: {siteMetadata},
-    } = useStaticQuery(query)
-
-    const {siteAuthor, siteDescription, siteUrl, siteTitle} = siteMetadata
-
+const SEO: React.FC<ISEOProps> = ({
+    title,
+    htmlAttributes,
+    descFor,
+}: // meta,
+ISEOProps) => {
     return (
         <Helmet
-            title={`${title} | ${siteTitle}`}
-            htmlAttributes={{lang: 'en', ...(htmlAttributes || '')}}
+            title={title}
+            titleTemplate={`%s | ${config.siteTitle}`}
+            htmlAttributes={{
+                lang: `${config.lang}`,
+                ...(htmlAttributes || ''),
+            }}
+            meta={[
+                {
+                    name: `description`,
+                    content: descFor || config.siteDescription,
+                },
+                {
+                    name: `charSet`,
+                    content: 'utf-8',
+                },
+                {
+                    property: `og:title`,
+                    content: `${config.siteTitle}: ${config.siteTitleAlt}`,
+                },
+                {
+                    property: `og:type`,
+                    content: `website`,
+                },
+            ]}
         >
-            <meta name="description" content={descFor || siteDescription} />
+            {/* <meta charSet="utf-8" /> */}
+            {/* <meta name="description" content={descFor || siteDescription} /> */}
         </Helmet>
     )
 }

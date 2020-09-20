@@ -1,3 +1,10 @@
+const path = require('path')
+const config = require('./config/site')
+
+require('dotenv').config({
+    path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
     siteMetadata: {
         title: 'Isiahfletcher.com',
@@ -19,7 +26,7 @@ module.exports = {
                 name: 'isiahfletcher.com',
                 short_name: 'Isiah Fletcher',
                 start_url: '/',
-                // icon: './src/assets/logo.ico', //TODO: not working
+                icon: './static/images/logo.png',
             },
         },
 

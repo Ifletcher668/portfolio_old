@@ -1,11 +1,11 @@
-const path = require('path');
+const path = require('path')
 
 require('dotenv').config({
     path: `.env.${process.env.NODE_ENV}`,
-});
+})
 
-exports.createPages = async ({ graphql, actions, reporter }) => {
-    const { createPage } = actions;
+exports.createPages = async ({graphql, actions, reporter}) => {
+    const {createPage} = actions
 
     const result = await graphql(
         `
@@ -21,28 +21,29 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                     }
                 }
             }
-        `
-    );
+        `,
+    )
 
-    if (result.errors) return reporter.panicOnBuild(`Error while running GraphQl query`);
+    if (result.errors)
+        return reporter.panicOnBuild(`Error while running GraphQl query`)
 
-    result.data.blogs.nodes.forEach((blog) => {
+    result.data.blogs.nodes.forEach(blog => {
         createPage({
-            path: `/writing/blogs/${blog.slug}`,
+            path: `/writing/journal/${blog.slug}`,
             component: path.resolve(`./src/templates/blog-template.tsx`), // the template
             context: {
                 slug: blog.slug,
             },
-        });
-    });
+        })
+    })
 
-    result.data.poems.nodes.forEach((poem) => {
+    result.data.poems.nodes.forEach(poem => {
         createPage({
             path: `/writing/poetry/${poem.slug}`,
             component: path.resolve(`./src/templates/poem-template.tsx`),
             context: {
                 slug: poem.slug,
             },
-        });
-    });
-};
+        })
+    })
+}

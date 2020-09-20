@@ -12,7 +12,10 @@ export default () => {
 
     return (
         <Layout>
-            <SEO title="Poetry" descFor={config.metaDescriptions.poetryPage} />
+            <SEO
+                title={config.metaDescriptions.poetry.title}
+                descFor={config.metaDescriptions.poetry.description}
+            />
             <section className="blog-page">
                 <Content poetry={poems} title="poetry" showLink={false} />
             </section>

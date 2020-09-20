@@ -19,8 +19,8 @@ export default (props: IProps) => {
     return (
         <Layout>
             <SEO
-                title="Music Resources"
-                descFor={config.metaDescriptions.musicPage}
+                title={config.metaDescriptions.music.title}
+                descFor={config.metaDescriptions.music.description}
             />
             <Services type="music" title={`My Music`}>
                 <ContentCard background>

@@ -3,6 +3,7 @@ import {Header} from '../titles/titles'
 import {Link} from 'gatsby'
 import {GiBookshelf, GiTiedScroll, GiDrum} from 'react-icons/gi'
 import {BsMusicNoteBeamed} from 'react-icons/bs'
+import config from '../../../config/website'
 
 const services: Service[] = [
     {
@@ -62,7 +63,9 @@ const Services: React.FC<IServices> = (props: IServices) => {
                         return (
                             <Link
                                 to={`${
-                                    type === 'writing' ? /writing/ : /music/
+                                    type === 'writing'
+                                        ? `${config.routes.writing}`
+                                        : `${config.routes.music}`
                                 }${url}`}
                             >
                                 <article key={idx} className="card">

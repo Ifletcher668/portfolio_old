@@ -19,7 +19,10 @@ export default () => {
 
     return (
         <Layout id="index-page" className="hero">
-            <SEO title="Home" descFor={config.metaDescriptions.homepage} />
+            <SEO
+                title={config.metaDescriptions.homepage.title}
+                descFor={config.metaDescriptions.homepage.description}
+            />
             <div className="hero-center gutter">
                 <Image
                     fluid={coverImage.childImageSharp.fluid}

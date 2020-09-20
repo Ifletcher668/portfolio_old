@@ -10,8 +10,8 @@ const contact: React.FC<IProps> = (props: IProps) => {
     return (
         <Layout>
             <SEO
-                title="Get in Touch"
-                descFor={config.metaDescriptions.contactPage}
+                title={config.metaDescriptions.contact.title}
+                descFor={config.metaDescriptions.contact.description}
             />
             <Header title="Get in Touch" center={false} value={1} major />
             <ContactForm />

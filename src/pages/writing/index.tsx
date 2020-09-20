@@ -13,8 +13,8 @@ export default (props: IProps) => {
     return (
         <Layout>
             <SEO
-                title="Writing Resources"
-                descFor={config.metaDescriptions.writingPage}
+                title={config.metaDescriptions.writing.title}
+                descFor={config.metaDescriptions.writing.description}
             />
 
             <Services type="writing" title={`My Writing`}>

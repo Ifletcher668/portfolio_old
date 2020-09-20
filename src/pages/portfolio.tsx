@@ -7,6 +7,7 @@ import Jobs from '../components/jobs/jobs'
 import MarkdownField from 'react-markdown'
 import ContentCard from '../components/content/content'
 import config from '../../config/website'
+
 export const query = graphql`
     {
         portfolio: allStrapiPortfolio {
@@ -33,8 +34,8 @@ export default ({data}: {[key: string]: any}) => {
     return (
         <Layout>
             <SEO
-                title="Software Portfolio"
-                descFor={config.metaDescriptions.portfolio}
+                title={config.metaDescriptions.portfolio.title}
+                descFor={config.metaDescriptions.portfolio.description}
             />
             <Header title="My Work" center={true} value={1} major />
             <ContentCard background>

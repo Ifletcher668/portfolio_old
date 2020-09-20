@@ -12,9 +12,12 @@ export default () => {
 
     return (
         <Layout>
-            <SEO title="Blogs" descFor={config.metaDescriptions.blogPage} />
+            <SEO
+                title={config.metaDescriptions.journal.title}
+                descFor={config.metaDescriptions.journal.description}
+            />
             <section className="blog-page">
-                <Content blogs={blogs} title="blog" showLink={false} />
+                <Content blogs={blogs} title="Journal" showLink={false} />
             </section>
         </Layout>
     )

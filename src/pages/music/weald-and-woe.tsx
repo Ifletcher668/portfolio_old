@@ -12,8 +12,8 @@ export default (props: IProps) => {
     return (
         <Layout>
             <SEO
-                title="Aterrima"
-                descFor={config.metaDescriptions.aterrimaPage}
+                title={config.metaDescriptions.wealdAndWoe.title}
+                descFor={config.metaDescriptions.wealdAndWoe.description}
             />
             <ContentCard background>
                 <>

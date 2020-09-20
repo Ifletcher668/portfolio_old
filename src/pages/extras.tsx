@@ -6,7 +6,10 @@ import config from '../../config/website'
 export default (props: any) => {
     return (
         <Layout>
-            <SEO title="Extras" descFor={config.metaDescriptions.extrasPage} />
+            <SEO
+                title={config.metaDescriptions.extrasPage.title}
+                descFor={config.metaDescriptions.extrasPage.description}
+            />
             <h1>poem tree</h1>
             <h2>book recommendations</h2>
             <h3>favorite albums</h3>

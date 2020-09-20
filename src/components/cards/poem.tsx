@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link} from 'gatsby'
 import {Header} from '../titles/titles'
+import config from '../../../config/website'
 
 const Poem: React.FC<IPoetryLinks> = (props: IPoetryLinks) => {
     const {title, author, published, slug, tags} = props
@@ -20,7 +21,7 @@ const Poem: React.FC<IPoetryLinks> = (props: IPoetryLinks) => {
 
     return (
         <Link
-            to={`/writing/poetry/${slug}`}
+            to={`${config.routes.poetry}${slug}`}
             key={title}
             className="card-wrapper"
         >

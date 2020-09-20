@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link} from 'gatsby'
 import {FaSortDown} from 'react-icons/fa'
+import config from '../../../config/website'
 
 type SubMenuData = {
     text: string
@@ -16,43 +17,43 @@ type Data = {
 const data: Data[] = [
     {
         text: 'music',
-        url: `/music/`,
+        url: `${config.routes.music}`,
         subMenu: [
             {
                 text: 'aterrima',
-                url: `/music/aterrima/`,
+                url: `${config.routes.aterrima}`,
             },
             {
                 text: 'Weald and Woe',
-                url: `/music/weald-and-woe/`,
+                url: `${config.routes.wealdAndWoe}`,
             },
             {
                 text: 'transcripts',
-                url: `/music/transcripts/`,
+                url: `${config.routes.transcripts}`,
             },
         ],
     },
     {
         text: 'writing',
-        url: `/writing/`,
+        url: `${config.routes.writing}`,
         subMenu: [
             {
                 text: 'poetry',
-                url: `/writing/poetry/`,
+                url: `${config.routes.poetry}`,
             },
             {
-                text: 'blogs',
-                url: `/writing/blogs/`,
+                text: 'Journal',
+                url: `${config.routes.journal}`,
             },
         ],
     },
     {
         text: 'Web Developer',
-        url: '/portfolio',
+        url: `${config.routes.portfolio}`,
     },
     {
         text: 'contact',
-        url: '/contact',
+        url: `${config.routes.contact}`,
     },
     // TODO: Add this back!
     // {

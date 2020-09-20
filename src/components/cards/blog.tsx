@@ -2,13 +2,14 @@ import React from 'react'
 import Image from 'gatsby-image'
 import {Link} from 'gatsby'
 import {Header} from '../titles/titles'
+import config from '../../../config/website'
 
 const Blog: React.FC<IBlogLinks> = (props: IBlogLinks) => {
     const {title, author, preview, published, slug, image, tags} = props
 
     return (
         <Link
-            to={`/writing/blogs/${slug}`}
+            to={`${config.routes.journal}${slug}`}
             key={title}
             className="card-wrapper"
         >

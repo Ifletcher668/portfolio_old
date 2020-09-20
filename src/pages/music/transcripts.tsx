@@ -7,8 +7,8 @@ export default (props: IProps) => {
     return (
         <Layout>
             <SEO
-                title="Drum Transcripts"
-                descFor={config.metaDescriptions.transcriptsPage}
+                title={config.metaDescriptions.transcripts.title}
+                descFor={config.metaDescriptions.transcripts.description}
             />
             <ContentCard background>
                 <>
