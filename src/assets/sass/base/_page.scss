@@ -19,8 +19,19 @@ body {
 html {
     box-sizing: border-box;
     scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: #044e53 #000000;
 }
-
+body::-webkit-scrollbar {
+    width: 0.5em;
+}
+body::-webkit-scrollbar-thumb {
+    background: #044e53;
+    border-radius: 0.5rem;
+}
+body::-webkit-scrollbar-track {
+    background: #000000;
+}
 *,
 *:before,
 *:after {

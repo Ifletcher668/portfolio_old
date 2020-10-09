@@ -1,49 +1,86 @@
+const {createRemoteFileNode} = require('gatsby-source-filesystem')
+const {resolve} = require('path')
 const path = require('path')
+const moment = require('moment')
 
 require('dotenv').config({
     path: `.env.${process.env.NODE_ENV}`,
 })
 
-exports.createPages = async ({graphql, actions, reporter}) => {
+exports.createPages = async ({actions, graphql, reporter}) => {
     const {createPage} = actions
-
-    const result = await graphql(
+    const {error, data} = await graphql(
         `
-            {
-                blogs: allStrapiBlogs {
-                    nodes {
+            query {
+                strapi {
+                    blogs {
+                        id
                         slug
+                        published
                     }
-                }
-                poems: allStrapiPoems {
-                    nodes {
+                    poems {
+                        id
                         slug
+                        published
                     }
                 }
             }
         `,
     )
 
-    if (result.errors)
-        return reporter.panicOnBuild(`Error while running GraphQl query`)
+    if (error)
+        return reporter.panicOnBuild(`Error while running GraphQL query!`)
 
-    result.data.blogs.nodes.forEach(blog => {
+    data.strapi.blogs.forEach(({slug, id, published}) => {
+        const formattedDatePublished = moment(published).format('DD MMM, YYYY')
         createPage({
-            path: `/writing/journal/${blog.slug}`,
+            // path: `/writing/journal/${formattedDatePublished}/${slug}`,
+            path: `/writing/journal/${slug}`,
             component: path.resolve(`./src/templates/blog-template.tsx`), // the template
             context: {
-                slug: blog.slug,
+                id: id,
             },
         })
     })
 
-    result.data.poems.nodes.forEach(poem => {
+    data.strapi.poems.forEach(({slug, id, published}) => {
+        const formattedDatePublished = moment(published).format('DD MMM, YYYY')
         createPage({
-            path: `/writing/poetry/${poem.slug}`,
+            // path: `/writing/poetry/${formattedDatePublished}/${slug}`,
+            path: `/writing/poetry/${slug}`,
             component: path.resolve(`./src/templates/poem-template.tsx`),
             context: {
-                slug: poem.slug,
+                id: id,
             },
         })
+    })
+}
+
+exports.createResolvers = async ({
+    actions,
+    cache,
+    createNodeId,
+    createResolvers,
+    store,
+    reporter,
+}) => {
+    const {createNode} = actions
+    await createResolvers({
+        STRAPI_UploadFile: {
+            imageFile: {
+                type: 'File',
+                async resolve(source) {
+                    // need to find source (I think it's the heroku )
+                    return await createRemoteFileNode({
+                        url: source.url,
+                        store,
+                        cache,
+                        createNode,
+                        createNodeId,
+                        reporter,
+                    })
+                },
+            },
+        },
     })
 }

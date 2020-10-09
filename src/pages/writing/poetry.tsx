@@ -7,7 +7,7 @@ import config from '../../../config/website'
 
 export default () => {
     const {
-        allStrapiPoems: {poems},
+        strapi: {poetry},
     } = useStrapiContent()
 
     return (
@@ -16,7 +16,7 @@ export default () => {
                 title={config.metaDescriptions.poetry.title}
                 descFor={config.metaDescriptions.poetry.description}
             />
-            <Content poetry={poems} title="poetry" showLink={false} />
+            <Content poetry={poetry} title="poetry" showLink={false} />
         </Layout>
     )
 }

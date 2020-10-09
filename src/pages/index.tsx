@@ -10,10 +10,10 @@ import config from '../../config/website'
 import {Header} from '../components/titles/titles'
 
 export default () => {
-    const {
-        allStrapiBlogs: {blogs},
-        allStrapiPoems: {poems},
-    } = useStrapiContent()
+    // const {
+    //     allStrapiBlogs: {blogs},
+    //     allStrapiPoems: {poems},
+    // } = useStrapiContent()
 
     const {coverImage} = useImageQuery()
 
@@ -71,9 +71,9 @@ export default () => {
             </div>
 
             <Header title={`Recent Blogs`} center={true} value={2} major />
-            <Content blogs={blogs} showLink={true} />
+            {/* <Content blogs={blogs} showLink={true} /> */}
             <Header title={`Recent Poems`} center={true} value={2} major />
-            <Content poetry={poems} showLink={true} />
+            {/* <Content poetry={poems} showLink={true} /> */}
         </Layout>
     )
 }

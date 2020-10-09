@@ -14,10 +14,10 @@ const Blog: React.FC<IBlogLinks> = (props: IBlogLinks) => {
             className="card-wrapper"
         >
             <article>
-                <Image
+                {/* <Image
                     fluid={image.childImageSharp.fluid}
                     className="card-img"
-                />
+                /> */}
                 <div className="card">
                     <Header
                         value={3}

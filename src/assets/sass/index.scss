@@ -42,6 +42,7 @@
 @import 'base/_reset';
 @import 'base/typography';
 @import 'base/generic';
+@import 'base/page';
 
 // components
 @import '../../components/links/socialLinks';
@@ -49,7 +50,7 @@
 @import '../../components/navbar/navbar';
 @import '../../components/sidebar/sidebar';
 @import '../../components/services/services';
-@import '../../components/jobs/jobs';
+@import '../../components/projects/projects';
 @import '../../components/cards/cardComponent';
 @import '../../components/content/content';
 @import '../../components/contact_form/contact-form';

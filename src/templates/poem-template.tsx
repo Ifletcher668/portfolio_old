@@ -6,16 +6,19 @@ import SEO from '../components/SEO/SEO'
 import MarkdownField from 'react-markdown'
 import ContentCard from '../components/content/content'
 import {Header} from '../components/titles/titles'
+import moment from 'moment'
 
 export const query = graphql`
-    query GetSinglePoem($slug: String) {
-        poem: strapiPoems(slug: {eq: $slug}) {
-            title
-            body
-            author
-            published(formatString: "DD MMMM, YYYY")
-            tags {
-                tag
+    query GET_POEM($id: ID!) {
+        strapi {
+            poem(id: $id) {
+                title
+                body
+                author
+                published
+                tags {
+                    tag
+                }
             }
         }
     }
@@ -23,8 +26,12 @@ export const query = graphql`
 
 export default ({data}: {[key: string]: any}) => {
     const {
-        poem: {title, body, author, published, tags},
-    }: {[key: string]: Poem} = data
+        strapi: {
+            poem: {title, body, author, published, tags},
+        },
+    }: {[key: string]: {[key: string]: Poem}} = data
+
+    const formattedDatePublished = moment(published).format('DD MMM, YYYY')
 
     return (
         <Layout>
@@ -38,7 +45,7 @@ export default ({data}: {[key: string]: any}) => {
                     <Header
                         value={4}
                         center={false}
-                        title={`By ${author}, ${published}`}
+                        title={`By ${author}, ${formattedDatePublished}`}
                         major
                     />
                     <Header

@@ -4,12 +4,12 @@ import {FaAngleDoubleRight} from 'react-icons/fa'
 import {graphql, useStaticQuery} from 'gatsby'
 
 const query = graphql`
-    {
-        allStrapiProjects(sort: {fields: strapiId, order: DESC}) {
-            nodes {
+    query GET_PROJECTS {
+        strapi {
+            projects(sort: "date:desc") {
                 project
-                date
                 link_to_project
+                date
                 description {
                     sentence
                 }
@@ -29,14 +29,13 @@ type Node = {
     date: string
 }
 
-const Jobs: React.FC<IProps> = (props: IProps) => {
+const Jobs = () => {
     const [value, setValue] = useState<number>(0)
 
     const data = useStaticQuery(query)
-
     const {
-        allStrapiProjects: {nodes: projects},
-    }: {allStrapiProjects: {[key: string]: Node[]}} = data
+        strapi: {projects},
+    }: {[key: string]: {[key: string]: Node[]}} = data
 
     const {project, description, date, link_to_project} = projects[value]
 

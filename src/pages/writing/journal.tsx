@@ -7,7 +7,7 @@ import config from '../../../config/website'
 
 export default () => {
     const {
-        allStrapiBlogs: {blogs},
+        strapi: {blogs},
     } = useStrapiContent()
 
     return (

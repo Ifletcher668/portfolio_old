@@ -8,10 +8,10 @@ import config from '../../../config/website'
 const services: Service[] = [
     {
         icon: <GiBookshelf className="service-icon" />,
-        title: 'Blogs',
+        title: 'Journal',
         text: `Musings and short updates on my life, my philosophy, my humble understanding.`,
         type: 'writing',
-        url: 'blogs/',
+        url: 'journal/',
     },
     {
         icon: <GiTiedScroll className="service-icon" />,

@@ -13,20 +13,14 @@
       "type": "string",
       "required": true
     },
-    "image": {
+    "cover_image": {
       "model": "file",
       "via": "related",
-      "allowedTypes": ["images"],
+      "allowedTypes": [
+        "images"
+      ],
       "plugin": "upload",
       "required": false
-    },
-    "body": {
-      "type": "richtext",
-      "required": true
-    },
-    "author": {
-      "type": "string",
-      "required": true
     },
     "published": {
       "type": "date",
@@ -46,6 +40,35 @@
       "type": "string",
       "required": true,
       "default": "a newly published blog "
+    },
+    "authors": {
+      "plugin": "users-permissions",
+      "collection": "user",
+      "via": "blog"
+    },
+    "quote": {
+      "type": "component",
+      "repeatable": true,
+      "component": "content.quote"
+    },
+    "link_to_biography": {
+      "type": "string",
+      "required": true,
+      "default": "isiahfletcher.com"
+    },
+    "slider": {
+      "type": "component",
+      "repeatable": false,
+      "component": "content.slider"
+    },
+    "content": {
+      "type": "dynamiczone",
+      "components": [
+        "content.quote",
+        "content.slider",
+        "content.body-text",
+        "content.media"
+      ]
     }
   }
 }

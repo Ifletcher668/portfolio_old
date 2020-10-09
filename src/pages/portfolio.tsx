@@ -3,15 +3,15 @@ import {graphql} from 'gatsby'
 import Layout from '../components/layout/layout'
 import {Header, Title} from '../components/titles/titles'
 import SEO from '../components/SEO/SEO'
-import Jobs from '../components/jobs/jobs'
+import Jobs from '../components/projects/projects'
 import MarkdownField from 'react-markdown'
 import ContentCard from '../components/content/content'
 import config from '../../config/website'
 
 export const query = graphql`
-    {
-        portfolio: allStrapiPortfolio {
-            content: nodes {
+    query GET_PORTFOLIO {
+        strapi {
+            portfolio {
                 section {
                     title
                     body
@@ -26,10 +26,10 @@ export const query = graphql`
 
 export default ({data}: {[key: string]: any}) => {
     const {
-        portfolio: {content},
-    }: {[key: string]: {[key: string]: Portfolio[]}} = data
-
-    const {section, tags} = content[0]
+        strapi: {
+            portfolio: {section, tags},
+        },
+    }: {[key: string]: {[key: string]: Portfolio}} = data
 
     return (
         <Layout>
