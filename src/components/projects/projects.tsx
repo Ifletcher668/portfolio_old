@@ -40,15 +40,15 @@ const Jobs = () => {
     const {project, description, date, link_to_project} = projects[value]
 
     return (
-        <section className="section jobs">
+        <section className="section project">
             <Title title="projects" />
-            <div className="jobs-center">
+            <div className="projects-center">
                 <div className="btn-container">
                     {projects.map(({project}, idx) => {
                         return (
                             <button
                                 key={idx}
-                                className={`job-btn ${
+                                className={`project-btn ${
                                     idx === value && 'active-btn'
                                 }`}
                                 onClick={() => setValue(idx)}
@@ -58,16 +58,16 @@ const Jobs = () => {
                         )
                     })}
                 </div>
-                <article className="job-info">
+                <article className="project-info">
                     <a href={link_to_project} target="_blank">
                         <h3>{project}</h3>
                     </a>
 
-                    <p className="job-date">{date}</p>
+                    <p className="project-date">{date}</p>
                     {description.map(({sentence}, idx) => {
                         return (
-                            <div key={idx} className="job-desc">
-                                <FaAngleDoubleRight className="job-icon" />
+                            <div key={idx} className="project-desc">
+                                <FaAngleDoubleRight className="project-icon" />
                                 <p>{sentence}</p>
                             </div>
                         )

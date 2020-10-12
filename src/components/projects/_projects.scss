@@ -4,7 +4,7 @@
     justify-content: center;
 }
 
-.job-btn {
+.project-btn {
     background: transparent;
     border-color: transparent;
     text-transform: capitalize;
@@ -15,18 +15,19 @@
     margin: 0.5rem;
     padding: 0.25rem 0;
     line-height: 1;
+    &.active-btn {
+        color: _palette(txt-accent);
+        box-shadow: 0 2px _palette(txt-accent);
+    }
 }
-.job-btn:hover {
+.project-btn:hover {
     color: _palette(txt-accent);
     box-shadow: 0 2px _palette(txt-accent);
-}
-.active-btn {
-    color: _palette(txt-accent);
-    box-shadow: 0 2px _palette(txt-accent);
+    @include transition(_duration(transition));
 }
 
 @include breakpoint('<=medium') {
-    .jobs-center {
+    .projects-center {
         margin: 0 auto;
         max-width: _size(max-width);
     }
@@ -34,7 +35,7 @@
         margin-bottom: 2rem;
     }
 
-    .job-info {
+    .project-info {
         h3 {
             font-weight: 400;
             color: _palette(txt-med);
@@ -43,11 +44,11 @@
         }
     }
 
-    .job-date {
+    .project-date {
         letter-spacing: _font(kern-body);
     }
 
-    .job-desc {
+    .project-desc {
         display: grid;
         grid-template-columns: auto 1fr;
         column-gap: 2rem;
@@ -55,17 +56,17 @@
         margin-bottom: 1.25rem;
     }
 
-    .job-desc p {
+    .project-desc p {
         margin: 0;
     }
 
-    .job-icon {
+    .project-icon {
         color: _palette(txt-accent);
     }
 }
 
 @include breakpoint('>=large') {
-    .jobs-center {
+    .projects-center {
         display: flex;
         column-gap: 4rem;
     }
@@ -73,16 +74,17 @@
         flex-direction: column;
         justify-content: flex-start;
     }
-    .job-btn {
+    .project-btn {
         margin-bottom: 1rem;
+        &:hover {
+            box-shadow: -2px 0 _palette(txt-accent);
+        }
     }
     .active-btn {
         box-shadow: -2px 0 _palette(txt-accent);
     }
-    .job-btn:hover {
-        box-shadow: -2px 0 _palette(txt-accent);
-    }
-    .job-desc {
+
+    .project-desc {
         display: flex;
         align-items: center;
         p {
