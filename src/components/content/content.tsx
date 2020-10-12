@@ -1,4 +1,5 @@
 import React, {ReactChild} from 'react'
+import BackButton from '../back_button/backButton'
 
 interface IContentProps extends IProps {
     children: ReactChild
@@ -14,6 +15,7 @@ const Content: React.FC<IContentProps> = ({
         <>
             <section className={`content-card ${background ? '' : 'strip-bg'}`}>
                 <div className="content-card-inner">{children}</div>
+                <BackButton />
             </section>
         </>
     )

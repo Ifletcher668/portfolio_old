@@ -33,8 +33,6 @@ export default (props: IProps) => {
                         />
                         <Image
                             fluid={drummingCloseupImage.childImageSharp.fluid}
-                            style={{width: '600px', height: '450px'}}
-                            className="center"
                         />
                         <p>
                             Music is an enrichment to my life, and throughout

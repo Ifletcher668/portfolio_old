@@ -63,7 +63,6 @@ export default ({data}: {[key: string]: any}) => {
                             )
                         })}
                     </section>
-                    <BackButton />
                 </>
             </ContentCard>
         </Layout>

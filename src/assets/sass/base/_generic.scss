@@ -8,11 +8,6 @@
     text-decoration: none;
 }
 
-body {
-    background: _palette(bg);
-    min-height: 100vh;
-}
-
 .center {
     width: 50%;
     margin: auto;
@@ -45,7 +40,6 @@ body {
     z-index: 1;
 }
 //     background: _palette(content-outline);
-
 .tags {
     display: flex;
     flex-flow: row wrap;

@@ -6,6 +6,7 @@ import ContentCard from '../../components/content/content'
 import config from '../../../config/website'
 import {Header} from '../../components/titles/titles'
 import {useImageQuery} from '../../graphql/queries/images'
+import BackButton from '../../components/back_button/backButton'
 
 export default (props: IProps) => {
     const {wealdAndWoeCoverImage} = useImageQuery()
@@ -21,7 +22,7 @@ export default (props: IProps) => {
                     <Image
                         fluid={wealdAndWoeCoverImage.childImageSharp.fluid}
                     />
-                    <article className="paragraph">
+                    <p>
                         Weald and Woe is a one-man Black Metal project from
                         Boise, Idaho. I simply embody the music in a live
                         setting.{' '}
@@ -32,7 +33,7 @@ export default (props: IProps) => {
                         <a href="https://www.facebook.com/wealdandwoe/about/?ref=page_internal">
                             here!
                         </a>
-                    </article>
+                    </p>
                 </>
             </ContentCard>
         </Layout>
