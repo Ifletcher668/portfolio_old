@@ -1,9 +1,13 @@
-import React from 'react'
+import React, {CSSProperties} from 'react'
 
 interface IHeaderProps extends IProps {
     center: boolean
     value: 1 | 2 | 3 | 4 | 5 | 6
     major: boolean
+}
+
+const headerStyling: CSSProperties = {
+    textAlign: 'center',
 }
 
 export const Header: React.FC<IHeaderProps> = (props: IHeaderProps) => {
@@ -13,7 +17,7 @@ export const Header: React.FC<IHeaderProps> = (props: IHeaderProps) => {
         return (
             <h1
                 className={`${center ? 'center ' : ''}${major ? 'major' : ''}`}
-                style={{textAlign: 'center'}}
+                style={headerStyling}
             >
                 {title || 'Header'}
             </h1>
@@ -22,7 +26,7 @@ export const Header: React.FC<IHeaderProps> = (props: IHeaderProps) => {
         return (
             <h2
                 className={`${center ? 'center ' : ''}${major ? 'major' : ''}`}
-                style={{textAlign: 'center'}}
+                style={headerStyling}
             >
                 {title || 'Header'}
             </h2>
@@ -31,7 +35,7 @@ export const Header: React.FC<IHeaderProps> = (props: IHeaderProps) => {
         return (
             <h3
                 className={`${center ? 'center ' : ''}${major ? 'major' : ''}`}
-                style={{textAlign: 'center'}}
+                style={headerStyling}
             >
                 {title || 'Header'}
             </h3>
@@ -40,7 +44,7 @@ export const Header: React.FC<IHeaderProps> = (props: IHeaderProps) => {
         return (
             <h4
                 className={`${center ? 'center ' : ''}${major ? 'major' : ''}`}
-                style={{textAlign: 'center'}}
+                style={headerStyling}
             >
                 {title || 'Header'}
             </h4>
@@ -49,7 +53,7 @@ export const Header: React.FC<IHeaderProps> = (props: IHeaderProps) => {
         return (
             <h5
                 className={`${center ? 'center ' : ''}${major ? 'major' : ''}`}
-                style={{textAlign: 'center'}}
+                style={headerStyling}
             >
                 {title || 'Header'}
             </h5>
@@ -59,7 +63,7 @@ export const Header: React.FC<IHeaderProps> = (props: IHeaderProps) => {
         return (
             <h6
                 className={`${center ? 'center ' : ''}${major ? 'major' : ''}`}
-                style={{textAlign: 'center'}}
+                style={headerStyling}
             >
                 {title || 'Header'}
             </h6>
