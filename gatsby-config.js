@@ -46,7 +46,8 @@ module.exports = {
                         ? 'http://localhost:1337/graphql'
                         : 'https://isiahfletcheradmin.herokuapp.com'
                 }`,
-                refetchInterval: 1000, // refetches Strapi data every 10 minutes
+                refetchInterval:
+                    process.env.NODE_ENV === 'development' ? 100 : 1000, // refetches Strapi data every 10 minutes
             },
         },
         // TODO: ensure everything works properly, then delete commented code
