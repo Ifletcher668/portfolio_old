@@ -42,21 +42,21 @@
 Navbar Sub-menu 
 ===============
 */
-
 .navbar {
     .nav-link {
         .sub-menu {
-            opacity: 0;
-            background-color: _palette(bg-contrast);
-            padding: 0.5rem;
-            border-radius: _size(border-radius);
+            padding: 0.5rem 2.5rem 1rem 2.5rem;
             position: absolute;
-            top: -120px;
+            top: -50px;
+            pointer-events: none;
+            opacity: 0;
+            background-color: _palette(bg-accent);
+            border-radius: _size(border-radius);
         }
-    }
-    .nav-link:hover .sub-menu {
-        // @include vendor('animation', 'showSubmenu ease-in 0.5s forwards');
-        animation: showSubMenu ease-out 0.5s forwards;
+        &:hover .sub-menu {
+            pointer-events: initial;
+            animation: showSubMenu ease-out 0.5s forwards;
+        }
     }
     .nav-link.strip-bottom:hover {
         a {
@@ -68,15 +68,14 @@ Navbar Sub-menu
 @include keyframes(showSubMenu) {
     0% {
         opacity: 0;
+        // transform: translateY(-120px);
     }
 
     50% {
-        transform: translateY(100px);
         opacity: 0.5;
     }
     100% {
-        top: 100px;
-        transform: translateX(5px);
+        top: 110px;
         opacity: 1;
     }
 }
