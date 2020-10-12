@@ -4,10 +4,10 @@ import Img from 'gatsby-image'
 import {Header} from '../titles/titles'
 
 interface IBodyText {
-    rich_text: any
+    data: any
 }
-export const BodyText: React.FC<IBodyText> = ({rich_text}: IBodyText) => {
-    return <MarkdownField source={rich_text} />
+export const BodyTextField: React.FC<IBodyText> = ({data}: IBodyText) => {
+    return <MarkdownField source={data} />
 }
 
 type Image = {
@@ -21,11 +21,11 @@ type Slide = {
 }
 
 interface ISlider {
-    slide: Slide[]
+    data: Slide[]
 }
 
 // TODO: Needs much, much work
-export const Slider: React.FC<ISlider> = ({slide}: ISlider) => {
+export const SliderField: React.FC<ISlider> = ({data}: ISlider) => {
     const styles: CSSProperties = {
         display: 'flex',
         flexDirection: 'row',
@@ -42,7 +42,7 @@ export const Slider: React.FC<ISlider> = ({slide}: ISlider) => {
         <>
             <div className="test">
                 <section style={styles} className="slider">
-                    {slide.map(({image, caption}) => {
+                    {data.map(({image, caption}) => {
                         const imageFile = image[0].imageFile
                         console.log(caption)
 
@@ -65,16 +65,65 @@ export const Slider: React.FC<ISlider> = ({slide}: ISlider) => {
 }
 
 interface IQuote {
-    quote: string
+    data: string
 }
-export const Quote: React.FC<IQuote> = ({quote}: IQuote) => {
-    return <>{quote}</>
+export const SingleQuoteField: React.FC<IQuote> = ({data}: IQuote) => {
+    return <>{data}</>
 }
 
 interface IMedia {
-    media: any
+    data: any
 }
-export const Media: React.FC<IMedia> = ({media}: IMedia) => {
-    const {imageFile} = media
+export const SingleMediaField: React.FC<IMedia> = ({data}: IMedia) => {
+    const {imageFile} = data
+
     return <Img fluid={imageFile.childImageSharp.fluid} />
+}
+
+type TextWithImage = {
+    media: any
+    header: string
+    body: string
+    position_left: boolean
+}
+
+interface ITextWithImage {
+    data: TextWithImage
+}
+
+export const TextWithImageField: React.FC<ITextWithImage> = ({
+    data,
+}: ITextWithImage) => {
+    const {media, header, body, position_left} = data
+
+    return (
+        <>
+            <section>
+                {position_left ? ( // image displayed to the left of text
+                    <>
+                        {' '}
+                        <Img
+                            fluid={media.media.imageFile.childImageSharp.fluid}
+                        />
+                        <div className="text">
+                            <h3>{header}</h3>
+                            <MarkdownField source={body} />
+                        </div>
+                    </>
+                ) : (
+                    // image displayed to the right of text
+                    <>
+                        {' '}
+                        <div className="text">
+                            <h3>{header}</h3>
+                            <MarkdownField source={body} />
+                        </div>
+                        <Img
+                            fluid={media.media.imageFile.childImageSharp.fluid}
+                        />
+                    </>
+                )}
+            </section>
+        </>
+    )
 }

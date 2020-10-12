@@ -1,5 +1,11 @@
 import React from 'react'
-import {BodyText, Slider, Quote, Media} from './dynamicZoneComponents'
+import {
+    BodyTextField,
+    SliderField,
+    SingleQuoteField,
+    SingleMediaField,
+    TextWithImageField,
+} from './dynamicZoneComponents'
 
 interface IDynamicZone {
     components: any[]
@@ -8,14 +14,26 @@ interface IDynamicZone {
 const DynamicZone: React.FC<IDynamicZone> = ({components}: IDynamicZone) => {
     return components.map((component, idx) => {
         switch (component.__typename) {
-            case 'STRAPI_ComponentContentBodyText':
-                return <BodyText key={idx} rich_text={component.rich_text} />
+            case 'STRAPI_ComponentContentBody':
+                return <BodyTextField key={idx} data={component.rich_text} />
             case 'STRAPI_ComponentContentSlider':
-                return <Slider key={idx} slide={component.slide} />
+                return <SliderField key={idx} data={component.slide} />
             case 'STRAPI_ComponentContentQuote':
-                return <Quote key={idx} quote={component.quote} />
+                return <SingleQuoteField key={idx} data={component.quote} />
             case 'STRAPI_ComponentContentMedia':
-                return <Media key={idx} media={component.media} />
+                return <SingleMediaField key={idx} data={component.media} />
+            case 'STRAPI_ComponentContentTextWithImage':
+                return (
+                    <TextWithImageField
+                        key={idx}
+                        data={{
+                            header: component.header,
+                            body: component.body,
+                            position_left: component.position_left,
+                            media: component.media,
+                        }}
+                    />
+                )
             default:
                 return null
         }

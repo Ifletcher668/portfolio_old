@@ -4,10 +4,10 @@ import Image from 'gatsby-image'
 import Layout from '../components/layout/layout'
 import {Header} from '../components/titles/titles'
 import SEO from '../components/SEO/SEO'
-
+import Tags from '../components/tags/tags'
 import ContentCard from '../components/content/content'
-import moment from 'moment'
 import DynamicZone from '../components/dynamic_zone_components/dynamicZone'
+import moment from 'moment'
 
 export const query = graphql`
     query GET_BLOG($id: ID!) {
@@ -17,6 +17,7 @@ export const query = graphql`
                 authors {
                     username
                     email
+                    link_to_user_biography
                 }
                 cover_image {
                     url
@@ -24,9 +25,12 @@ export const query = graphql`
                         ...FluidImage
                     }
                 }
+                quote {
+                    quote
+                }
                 content {
                     __typename
-                    ... on STRAPI_ComponentContentBodyText {
+                    ... on STRAPI_ComponentContentBody {
                         rich_text
                     }
                     ... on STRAPI_ComponentContentMedia {
@@ -35,6 +39,7 @@ export const query = graphql`
                             imageFile {
                                 ...FluidImage
                             }
+                            caption
                         }
                     }
                     ... on STRAPI_ComponentContentSlider {
@@ -51,14 +56,25 @@ export const query = graphql`
                     ... on STRAPI_ComponentContentQuote {
                         quote
                     }
+                    ... on STRAPI_ComponentContentTextWithImage {
+                        header
+                        body
+                        media {
+                            media {
+                                url
+                                imageFile {
+                                    ...FluidImage
+                                }
+                            }
+                        }
+                        position_left
+                    }
                 }
-                link_to_biography
+
                 tags {
                     tag
                 }
-                quote {
-                    quote
-                }
+
                 updatedAt
             }
         }
@@ -79,12 +95,14 @@ const BlogTemplate: React.FC = ({data}: {[key: string]: any}) => {
             },
         },
     }: {[key: string]: {[key: string]: Blog}} = data
-    let headerQuote = ''
 
+    // front-end verification in case no quote is added in strapi
+    let headerQuote = ''
     if (quote[0]) {
         headerQuote = quote[0].quote
     }
 
+    // maps and formats string of authors
     const mapAuthors = () => {
         if (authors.length === 0) return 'anonymous'
         else
@@ -119,18 +137,18 @@ const BlogTemplate: React.FC = ({data}: {[key: string]: any}) => {
                     ) : (
                         ''
                     )}
-                    <Image fluid={imageFile.childImageSharp.fluid} /> <br />
+                    {imageFile && (
+                        <Image fluid={imageFile.childImageSharp.fluid} />
+                    )}
                     <DynamicZone components={content} />
-                    {tags.map(({tag}, idx) => (
-                        <span key={idx}>{tag} </span>
-                    ))}
+                    <Tags data={tags} />
                     <Header
                         title={`by ${mapAuthors()}. Last updated ${moment(
                             updatedAt,
                         ).format('DD MMM, YYYY')}`}
                         major={false}
                         center={false}
-                        value={3}
+                        value={4}
                     />
                 </>
             </ContentCard>
