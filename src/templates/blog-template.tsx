@@ -82,12 +82,15 @@ const BlogTemplate: React.FC = ({data}: {[key: string]: any}) => {
                 authors,
                 content,
                 tags,
-                quote: {quote},
+                quote,
                 cover_image: {imageFile, alternativeText, caption},
                 updatedAt,
             },
         },
     }: {[key: string]: {[key: string]: Blog}} = data
+
+    let headerQuote = null
+    if (quote) headerQuote = quote.quote
 
     // maps and formats string of authors
     const mapAuthors = () => {
@@ -116,7 +119,7 @@ const BlogTemplate: React.FC = ({data}: {[key: string]: any}) => {
                     />
                     {quote && (
                         <Header
-                            title={`"${quote}"`}
+                            title={`"${headerQuote}"`}
                             major={false}
                             center={false}
                             value={6}
