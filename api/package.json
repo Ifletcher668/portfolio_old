@@ -8,8 +8,9 @@
         "start": "strapi start",
         "strapi": "strapi",
         "build": "strapi build",
-        "predeploy": "echo Starting deploy, Isiah!",
-        "deploy": "git push heroku master"
+        "predeploy": "echo Starting deploy, Isiah! && rm -rf ./node_modules package-lock.json",
+        "deploy": "npm install",
+        "postdeploy": "git push heroku master"
     },
     "devDependencies": {},
     "dependencies": {
@@ -23,7 +24,7 @@
         "strapi-plugin-graphql": "3.1.4",
         "strapi-plugin-upload": "3.1.4",
         "strapi-plugin-users-permissions": "3.1.4",
-        "strapi-provider-upload-cloudinary": "^3.1.4",
+        "strapi-provider-upload-cloudinary": "3.1.4",
         "strapi-utils": "3.1.4"
     },
     "author": {
