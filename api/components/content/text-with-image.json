@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_content_text_with_images",
+  "info": {
+    "name": "Text_with_image",
+    "icon": "layer-group"
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "string",
+      "required": true
+    },
+    "body": {
+      "type": "richtext",
+      "required": true
+    },
+    "position_left": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "media": {
+      "type": "component",
+      "repeatable": false,
+      "component": "content.media"
+    }
+  }
+}
