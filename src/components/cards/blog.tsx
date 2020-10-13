@@ -20,6 +20,7 @@ const Blog: React.FC<IBlogLinks> = (props: IBlogLinks) => {
 
     if (title.length > maxLenTitle) {
         for (let i = 0; i < maxLenTitle; i++) {
+            if (title[i] === undefined) break
             if (i === maxLenTitle - 1) {
                 clippedTitle += '...'
                 break
