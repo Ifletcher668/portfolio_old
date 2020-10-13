@@ -10,6 +10,7 @@ const Blog: React.FC<IBlogLinks> = (props: IBlogLinks) => {
     let clippedPreview = ''
 
     for (let i = 0; i < 200; i++) {
+        if (preview[i] === undefined) break
         clippedPreview += preview[i]
     }
     clippedPreview += '...'
