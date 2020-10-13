@@ -14,7 +14,7 @@ interface IDynamicZone {
 const DynamicZone: React.FC<IDynamicZone> = ({components}: IDynamicZone) => {
     return components.map((component, idx) => {
         switch (component.__typename) {
-            case 'STRAPI_ComponentContentBody':
+            case 'STRAPI_ComponentContentText':
                 return <BodyTextField key={idx} data={component.rich_text} />
             case 'STRAPI_ComponentContentSlider':
                 return <SliderField key={idx} data={component.slide} />

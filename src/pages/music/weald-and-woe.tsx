@@ -18,7 +18,12 @@ export default (props: IProps) => {
             />
             <ContentCard background>
                 <>
-                    <Header value={1} center title={`Weald and Woe`} major />
+                    <Header
+                        value={1}
+                        center={false}
+                        title={`Weald and Woe`}
+                        major
+                    />
                     <Image
                         fluid={wealdAndWoeCoverImage.childImageSharp.fluid}
                     />

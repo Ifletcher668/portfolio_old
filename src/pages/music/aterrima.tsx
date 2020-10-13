@@ -17,7 +17,7 @@ export default (props: IProps) => {
             />
             <ContentCard background>
                 <>
-                    <Header value={1} center title={`Aterrima`} major />
+                    <Header value={1} center={false} title={`Aterrima`} major />
                     <Image fluid={aterrimaOnStageImage.childImageSharp.fluid} />
                     <article className="paragraph">
                         The word, Aterrima (pronounced A-terre-eh-mah),

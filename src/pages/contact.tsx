@@ -13,7 +13,7 @@ const contact: React.FC<IProps> = (props: IProps) => {
                 title={config.metaDescriptions.contact.title}
                 descFor={config.metaDescriptions.contact.description}
             />
-            <Header title="Get in Touch" center={false} value={1} major />
+            <Header title="Get in Touch" center={true} value={1} major />
             <ContactForm />
         </Layout>
     )

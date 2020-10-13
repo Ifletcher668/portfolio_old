@@ -18,7 +18,9 @@ type Tags = {
 
 // blogs
 type PostImage = {
-    imageFile
+    alternativeText: string
+    caption: string
+    imageFile: GatsbyImageSharp
 }
 type Quote = {
     quote: string
@@ -35,9 +37,8 @@ type Blog = {
     cover_image: PostImage
     content: any
     link_to_biography: string
-    quote: Quote[]
+    quote: Quote
     preview: string
-    image: GatsbyImageSharp
     tags: Tags[]
     published: string
     createdAt: string

@@ -9,6 +9,7 @@ import ContentCard from '../components/content/content'
 import DynamicZone from '../components/dynamic_zone_components/dynamicZone'
 import moment from 'moment'
 
+// always query url for images, else graphql will return null
 export const query = graphql`
     query GET_BLOG($id: ID!) {
         strapi {
@@ -21,6 +22,8 @@ export const query = graphql`
                 }
                 cover_image {
                     url
+                    alternativeText
+                    caption
                     imageFile {
                         ...FluidImage
                     }
@@ -30,7 +33,7 @@ export const query = graphql`
                 }
                 content {
                     __typename
-                    ... on STRAPI_ComponentContentBody {
+                    ... on STRAPI_ComponentContentText {
                         rich_text
                     }
                     ... on STRAPI_ComponentContentMedia {
@@ -39,17 +42,7 @@ export const query = graphql`
                             imageFile {
                                 ...FluidImage
                             }
-                            caption
-                        }
-                    }
-                    ... on STRAPI_ComponentContentSlider {
-                        slide {
-                            image {
-                                url
-                                imageFile {
-                                    ...FluidImage
-                                }
-                            }
+
                             caption
                         }
                     }
@@ -89,18 +82,12 @@ const BlogTemplate: React.FC = ({data}: {[key: string]: any}) => {
                 authors,
                 content,
                 tags,
-                quote,
-                cover_image: {imageFile},
+                quote: {quote},
+                cover_image: {imageFile, alternativeText, caption},
                 updatedAt,
             },
         },
     }: {[key: string]: {[key: string]: Blog}} = data
-
-    // front-end verification in case no quote is added in strapi
-    let headerQuote = ''
-    if (quote[0]) {
-        headerQuote = quote[0].quote
-    }
 
     // maps and formats string of authors
     const mapAuthors = () => {
@@ -127,18 +114,24 @@ const BlogTemplate: React.FC = ({data}: {[key: string]: any}) => {
                         center={false}
                         value={1}
                     />
-                    {headerQuote !== '' ? (
+                    {quote && (
                         <Header
-                            title={headerQuote}
+                            title={`"${quote}"`}
                             major={false}
                             center={false}
                             value={6}
                         />
-                    ) : (
-                        ''
                     )}
                     {imageFile && (
-                        <Image fluid={imageFile.childImageSharp.fluid} />
+                        <section className="image-container">
+                            <Image
+                                fluid={imageFile.childImageSharp.fluid}
+                                alt={alternativeText}
+                                title="test"
+                            />
+
+                            {caption && <span>{caption}</span>}
+                        </section>
                     )}
                     <DynamicZone components={content} />
                     <Tags data={tags} />
