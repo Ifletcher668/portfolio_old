@@ -9,6 +9,7 @@ export default () => {
     const {
         strapi: {blogs},
     } = useStrapiContent()
+    console.log(blogs)
 
     return (
         <Layout>

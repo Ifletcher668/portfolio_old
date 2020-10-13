@@ -83,7 +83,7 @@ const BlogTemplate: React.FC = ({data}: {[key: string]: any}) => {
                 content,
                 tags,
                 quote,
-                cover_image: {imageFile, alternativeText, caption},
+                cover_image,
                 updatedAt,
             },
         },
@@ -91,6 +91,8 @@ const BlogTemplate: React.FC = ({data}: {[key: string]: any}) => {
 
     let headerQuote = null
     if (quote) headerQuote = quote.quote
+
+    const {imageFile, alternativeText, caption} = cover_image
 
     // maps and formats string of authors
     const mapAuthors = () => {
@@ -130,7 +132,6 @@ const BlogTemplate: React.FC = ({data}: {[key: string]: any}) => {
                             <Image
                                 fluid={imageFile.childImageSharp.fluid}
                                 alt={alternativeText}
-                                title="test"
                             />
 
                             {caption && <span>{caption}</span>}
