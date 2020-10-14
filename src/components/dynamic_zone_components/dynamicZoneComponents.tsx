@@ -68,7 +68,15 @@ interface IQuote {
     data: string
 }
 export const SingleQuoteField: React.FC<IQuote> = ({data}: IQuote) => {
-    return <Header title={`"${data}"`} major={false} center={false} value={6} />
+    return (
+        <Header
+            className="quote"
+            title={`"${data}"`}
+            major={false}
+            center={false}
+            value={6}
+        />
+    )
 }
 
 interface IMedia {

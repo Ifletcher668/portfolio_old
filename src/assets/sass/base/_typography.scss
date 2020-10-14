@@ -164,6 +164,9 @@ h5 {
 
 h6 {
     font-size: 0.7em;
+    &.quote {
+        margin: 0 0 _size(element-margin) 0;
+    }
 }
 
 @include breakpoint('<=small') {

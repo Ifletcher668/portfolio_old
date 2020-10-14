@@ -129,6 +129,7 @@ const BlogTemplate: React.FC = ({data}: {[key: string]: any}) => {
                     />
                     {quote && (
                         <Header
+                            className="quote"
                             title={`"${headerQuote}"`}
                             major={false}
                             center={false}
