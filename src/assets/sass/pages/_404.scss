@@ -4,9 +4,12 @@
     background: _palette(bg-accent);
     text-align: center;
     border-radius: _size(border-radius);
-}
-.error-page h1 {
-    text-transform: uppercase;
-    color: _palette(txt-dark);
-    margin-bottom: 2rem;
+    .error-container {
+        padding: _size(wrapper-edges, small);
+    }
+    h1 {
+        text-transform: uppercase;
+        color: _palette(txt-dark);
+        margin-bottom: 2rem;
+    }
 }
