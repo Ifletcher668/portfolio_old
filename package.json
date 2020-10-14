@@ -5,7 +5,9 @@
     "version": "0.1.0",
     "license": "MIT",
     "scripts": {
-        "build": "gatsby clean && gatsby build",
+        "prebuild": "rm -rf package-lock.json node_modules && npm install",
+        "build": "gatsby clean",
+        "postbuild": "gatsby build",
         "develop": "gatsby develop -p 3000",
         "start": "npm run clean && npm run develop",
         "serve": "gatsby serve",
