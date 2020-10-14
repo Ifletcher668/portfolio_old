@@ -1,7 +1,7 @@
 const {createRemoteFileNode} = require('gatsby-source-filesystem')
 const {resolve} = require('path')
 const path = require('path')
-const moment = require('moment')
+const {formatDateOnSlug} = require('./src/utils/formattedDates')
 
 require('dotenv').config({
     path: `.env.${process.env.NODE_ENV}`,
@@ -32,9 +32,8 @@ exports.createPages = async ({actions, graphql, reporter}) => {
         return reporter.panicOnBuild(`Error while running GraphQL query!`)
 
     data.strapi.blogs.forEach(({slug, id, published}) => {
-        const formattedDatePublished = moment(published).format('DD MMM, YYYY')
         createPage({
-            path: `/writing/journal/${formattedDatePublished}/${slug}`,
+            path: `/writing/journal/${formatDateOnSlug(published)}/${slug}`,
             component: path.resolve(`./src/templates/blog-template.tsx`), // the template
             context: {
                 id: id,
@@ -43,9 +42,8 @@ exports.createPages = async ({actions, graphql, reporter}) => {
     })
 
     data.strapi.poems.forEach(({slug, id, published}) => {
-        const formattedDatePublished = moment(published).format('DD MMM, YYYY')
         createPage({
-            path: `/writing/poetry/${formattedDatePublished}/${slug}`,
+            path: `/writing/poetry/${formatDateOnSlug(published)}/${slug}`,
             component: path.resolve(`./src/templates/poem-template.tsx`),
             context: {
                 id: id,
@@ -68,7 +66,6 @@ exports.createResolvers = async ({
             imageFile: {
                 type: 'File',
                 async resolve(source) {
-                    // need to find source (I think it's the heroku )
                     return await createRemoteFileNode({
                         url: source.url,
                         store,

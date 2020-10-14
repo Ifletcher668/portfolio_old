@@ -6,7 +6,7 @@ import SEO from '../components/SEO/SEO'
 import MarkdownField from 'react-markdown'
 import ContentCard from '../components/content/content'
 import {Header} from '../components/titles/titles'
-import moment from 'moment'
+import {formatDatePublished} from '../utils/formattedDates.js'
 
 export const query = graphql`
     query GET_POEM($id: ID!) {
@@ -31,8 +31,6 @@ export default ({data}: {[key: string]: any}) => {
         },
     }: {[key: string]: {[key: string]: Poem}} = data
 
-    const formattedDatePublished = moment(published).format('DD MMM, YYYY')
-
     return (
         <Layout>
             <SEO title={`${title}, by ${author}`} />
@@ -45,7 +43,9 @@ export default ({data}: {[key: string]: any}) => {
                     <Header
                         value={4}
                         center={false}
-                        title={`By ${author}, ${formattedDatePublished}`}
+                        title={`By ${author}, ${formatDatePublished(
+                            published,
+                        )}`}
                         major
                     />
                     <Header

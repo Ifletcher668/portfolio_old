@@ -50,21 +50,6 @@ module.exports = {
                     process.env.NODE_ENV === 'development' ? 100 : 1000, // refetches Strapi data every 10 minutes
             },
         },
-        // TODO: ensure everything works properly, then delete commented code
-        // {
-        //     resolve: `gatsby-source-strapi`,
-        //     options: {
-        //         apiURL: `${
-        //             process.env.NODE_ENV === 'development'
-        //                 ? 'http://localhost:1337'
-        //                 : 'https://isiahfletcheradmin.herokuapp.com'
-        //         }`,
-        //         queryLimit: 1000,
-        //         //  ONLY ADD TO ARRAY IF YOU HAVE DATA IN STRAPI !!!!
-        //         contentTypes: [`projects`, `blogs`, `poems`],
-        //         singleTypes: [`portfolio`],
-        //     },
-        // },
         {
             resolve: `gatsby-plugin-prefetch-google-fonts`,
             options: {

@@ -7,7 +7,7 @@ import SEO from '../components/SEO/SEO'
 import Tags from '../components/tags/tags'
 import ContentCard from '../components/content/content'
 import DynamicZone from '../components/dynamic_zone_components/dynamicZone'
-import moment from 'moment'
+import {formatDatePublished} from '../utils/formattedDates.js'
 
 // always query url for images, else graphql will return null
 export const query = graphql`
@@ -149,9 +149,9 @@ const BlogTemplate: React.FC = ({data}: {[key: string]: any}) => {
                     <DynamicZone components={content} />
                     <Tags data={tags} />
                     <Header
-                        title={`by ${mapAuthors()}. Last updated ${moment(
+                        title={`by ${mapAuthors()}. Last updated ${formatDatePublished(
                             updatedAt,
-                        ).format('DD MMM, YYYY')}`}
+                        )}`}
                         major={false}
                         center={false}
                         value={4}
