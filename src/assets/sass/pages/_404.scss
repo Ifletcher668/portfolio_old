@@ -1,8 +1,9 @@
 .error-page {
     display: grid;
     place-items: center;
-    background: _palette(txt-light);
+    background: _palette(bg-accent);
     text-align: center;
+    border-radius: _size(border-radius);
 }
 .error-page h1 {
     text-transform: uppercase;
