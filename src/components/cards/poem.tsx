@@ -2,9 +2,11 @@ import React from 'react'
 import {Link} from 'gatsby'
 import {Header} from '../titles/titles'
 import config from '../../../config/website'
+import moment from 'moment'
 
 const Poem: React.FC<IPoetryLinks> = (props: IPoetryLinks) => {
     const {title, author, published, slug, tags} = props
+    const formattedDatePublished = moment(published).format('DD MMM, YYYY')
 
     let maxLen = 30
     let sizedTitle = ''
@@ -21,7 +23,7 @@ const Poem: React.FC<IPoetryLinks> = (props: IPoetryLinks) => {
 
     return (
         <Link
-            to={`${config.routes.poetry}${slug}`}
+            to={`${config.routes.poetry}${formattedDatePublished}/${slug}`}
             key={title}
             className="card-wrapper"
         >

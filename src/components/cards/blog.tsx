@@ -3,9 +3,11 @@ import Image from 'gatsby-image'
 import {Link} from 'gatsby'
 import {Header} from '../titles/titles'
 import config from '../../../config/website'
+import moment from 'moment'
 
 const Blog: React.FC<IBlogLinks> = (props: IBlogLinks) => {
     const {title, author, preview, published, slug, image, tags} = props
+    const formattedDatePublished = moment(published).format('DD MMM, YYYY')
 
     let maxLenTitle = 30
     let clippedTitle = ''
@@ -23,7 +25,7 @@ const Blog: React.FC<IBlogLinks> = (props: IBlogLinks) => {
 
     return (
         <Link
-            to={`${config.routes.journal}${slug}`}
+            to={`${config.routes.journal}${formattedDatePublished}/${slug}`}
             key={title}
             className="card-wrapper"
         >
