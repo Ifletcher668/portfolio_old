@@ -7,16 +7,6 @@ import config from '../../../config/website'
 const Blog: React.FC<IBlogLinks> = (props: IBlogLinks) => {
     const {title, author, preview, published, slug, image, tags} = props
 
-    let clippedPreview = ''
-
-    for (let i = 0; i < 200; i++) {
-        if (preview[i] === undefined) {
-            clippedPreview += '...'
-            break
-        }
-        clippedPreview += preview[i]
-    }
-
     let maxLenTitle = 30
     let clippedTitle = ''
 
@@ -59,7 +49,7 @@ const Blog: React.FC<IBlogLinks> = (props: IBlogLinks) => {
                         center={false}
                         major={false}
                     />
-                    <p>{clippedPreview}</p>
+                    <p>{preview}</p>
                 </div>
             </article>
         </Link>

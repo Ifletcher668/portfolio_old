@@ -53,14 +53,14 @@
       "plugin": "users-permissions",
       "configurable": false
     },
-    "blog": {
-      "via": "authors",
-      "model": "blog"
-    },
     "link_to_user_biography": {
       "type": "uid",
       "targetField": "username",
       "required": true
+    },
+    "blogs": {
+      "via": "authors",
+      "collection": "blog"
     }
   }
 }

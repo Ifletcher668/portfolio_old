@@ -92,7 +92,14 @@ const BlogTemplate: React.FC = ({data}: {[key: string]: any}) => {
     let headerQuote = null
     if (quote) headerQuote = quote.quote
 
-    const {imageFile, alternativeText, caption} = cover_image
+    // front end validation in case no cover image is added
+    const coverImageValidated: {[key: string]: any} = {}
+    if (cover_image) {
+        const {imageFile, alternativeText, caption} = cover_image
+        coverImageValidated.imageFile = imageFile
+        coverImageValidated.alternativeText = alternativeText
+        coverImageValidated.caption = caption
+    }
 
     // maps and formats string of authors
     const mapAuthors = () => {
@@ -127,14 +134,19 @@ const BlogTemplate: React.FC = ({data}: {[key: string]: any}) => {
                             value={6}
                         />
                     )}
-                    {imageFile && (
+                    {cover_image && (
                         <section className="image-container">
                             <Image
-                                fluid={imageFile.childImageSharp.fluid}
-                                alt={alternativeText}
+                                fluid={
+                                    coverImageValidated.imageFile
+                                        .childImageSharp.fluid
+                                }
+                                alt={coverImageValidated.alternativeText}
                             />
 
-                            {caption && <span>{caption}</span>}
+                            {coverImageValidated.caption && (
+                                <span>{coverImageValidated.caption}</span>
+                            )}
                         </section>
                     )}
                     <DynamicZone components={content} />

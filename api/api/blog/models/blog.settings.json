@@ -1,62 +1,68 @@
 {
-    "kind": "collectionType",
-    "collectionName": "blogs",
-    "info": {
-        "name": "Blog"
+  "kind": "collectionType",
+  "collectionName": "blogs",
+  "info": {
+    "name": "Blog"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
     },
-    "options": {
-        "increments": true,
-        "timestamps": true
+    "published": {
+      "type": "date",
+      "required": true
     },
-    "attributes": {
-        "title": {
-            "type": "string",
-            "required": true
-        },
-        "published": {
-            "type": "date",
-            "required": true
-        },
-        "slug": {
-            "type": "uid",
-            "targetField": "title",
-            "required": true
-        },
-        "tags": {
-            "type": "component",
-            "repeatable": true,
-            "component": "content.tags"
-        },
-        "preview": {
-            "type": "string",
-            "required": true,
-            "default": "a newly published blog"
-        },
-        "authors": {
-            "plugin": "users-permissions",
-            "collection": "user",
-            "via": "blog"
-        },
-        "quote": {
-            "type": "component",
-            "repeatable": false,
-            "component": "content.quote"
-        },
-        "content": {
-            "type": "dynamiczone",
-            "components": [
-                "content.quote",
-                "content.media",
-                "content.text-with-image",
-                "content.text"
-            ]
-        },
-        "cover_image": {
-            "model": "file",
-            "via": "related",
-            "allowedTypes": ["files", "images", "videos"],
-            "plugin": "upload",
-            "required": false
-        }
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "tags": {
+      "type": "component",
+      "repeatable": true,
+      "component": "content.tags"
+    },
+    "preview": {
+      "type": "string",
+      "required": true,
+      "minLength": 10,
+      "maxLength": 200,
+      "default": "a newly published blog"
+    },
+    "authors": {
+      "plugin": "users-permissions",
+      "collection": "user",
+      "via": "blogs",
+      "dominant": true
+    },
+    "quote": {
+      "type": "component",
+      "repeatable": false,
+      "component": "content.quote"
+    },
+    "content": {
+      "type": "dynamiczone",
+      "components": [
+        "content.quote",
+        "content.media",
+        "content.text"
+      ]
+    },
+    "cover_image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "images",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
     }
+  }
 }
