@@ -27,7 +27,7 @@ export default () => {
                     fluid={coverImage.childImageSharp.fluid}
                     className="hero-img"
                 />
-                <article className="hero-info ">
+                <article className="hero-info">
                     <h1>I am Isiah</h1>
                     <h4>I live in Boise, Idaho, and I'm:</h4>
                     <h4>
@@ -64,7 +64,6 @@ export default () => {
                             {' '}
                             here.
                         </a>{' '}
-                        Lives in Boise, Idaho.
                     </h4>
                 </article>
             </div>
