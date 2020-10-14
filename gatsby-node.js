@@ -34,8 +34,7 @@ exports.createPages = async ({actions, graphql, reporter}) => {
     data.strapi.blogs.forEach(({slug, id, published}) => {
         const formattedDatePublished = moment(published).format('DD MMM, YYYY')
         createPage({
-            // path: `/writing/journal/${formattedDatePublished}/${slug}`,
-            path: `/writing/journal/${slug}`,
+            path: `/writing/journal/${formattedDatePublished}/${slug}`,
             component: path.resolve(`./src/templates/blog-template.tsx`), // the template
             context: {
                 id: id,
@@ -46,8 +45,7 @@ exports.createPages = async ({actions, graphql, reporter}) => {
     data.strapi.poems.forEach(({slug, id, published}) => {
         const formattedDatePublished = moment(published).format('DD MMM, YYYY')
         createPage({
-            // path: `/writing/poetry/${formattedDatePublished}/${slug}`,
-            path: `/writing/poetry/${slug}`,
+            path: `/writing/poetry/${formattedDatePublished}/${slug}`,
             component: path.resolve(`./src/templates/poem-template.tsx`),
             context: {
                 id: id,
