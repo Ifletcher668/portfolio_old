@@ -10,10 +10,12 @@ const Blog: React.FC<IBlogLinks> = (props: IBlogLinks) => {
     let clippedPreview = ''
 
     for (let i = 0; i < 200; i++) {
-        if (preview[i] === undefined) break
+        if (preview[i] === undefined) {
+            clippedPreview += '...'
+            break
+        }
         clippedPreview += preview[i]
     }
-    clippedPreview += '...'
 
     let maxLenTitle = 30
     let clippedTitle = ''
@@ -25,7 +27,7 @@ const Blog: React.FC<IBlogLinks> = (props: IBlogLinks) => {
                 clippedTitle += '...'
                 break
             }
-            clippedTitle += title[i] as string
+            clippedTitle += title[i]
         }
     } else clippedTitle = title
 

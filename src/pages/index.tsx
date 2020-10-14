@@ -29,7 +29,7 @@ export default () => {
                 />
                 <article className="hero-info ">
                     <h1>I am Isiah</h1>
-                    <h4>I'm:</h4>
+                    <h4>I live in Boise, Idaho, and I'm:</h4>
                     <h4>
                         <span>A drummer.</span> A timekeeper. A lyricist. The
                         co-founder of a band, Aterrima. An amateur audio
