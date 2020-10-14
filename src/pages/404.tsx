@@ -7,7 +7,7 @@ export default () => {
     return (
         <Layout>
             <SEO title="Sorry! Page Not Found" />
-            <main className="error-page">
+            <main className="error-page gutter">
                 <div className="error-container">
                     <h1>I'm sorry, I can't do that right now</h1>
                     <h4>404</h4>
