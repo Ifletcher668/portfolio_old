@@ -80,50 +80,51 @@ export const SingleMediaField: React.FC<IMedia> = ({data}: IMedia) => {
     return <Img fluid={imageFile.childImageSharp.fluid} />
 }
 
-type TextWithImage = {
-    media: any
-    header: string
-    body: string
-    position_left: boolean
-}
+// TODO:
+// type TextWithImage = {
+//     media: any
+//     header: string
+//     body: string
+//     position_left: boolean
+// }
 
-interface ITextWithImage {
-    data: TextWithImage
-}
+// interface ITextWithImage {
+//     data: TextWithImage
+// }
 
-export const TextWithImageField: React.FC<ITextWithImage> = ({
-    data,
-}: ITextWithImage) => {
-    const {media, header, body, position_left} = data
+// export const TextWithImageField: React.FC<ITextWithImage> = ({
+//     data,
+// }: ITextWithImage) => {
+//     const {media, header, body, position_left} = data
 
-    return (
-        <>
-            <section>
-                {position_left ? ( // image displayed to the left of text
-                    <>
-                        {' '}
-                        <Img
-                            fluid={media.media.imageFile.childImageSharp.fluid}
-                        />
-                        <div className="text">
-                            <h3>{header}</h3>
-                            <MarkdownField source={body} />
-                        </div>
-                    </>
-                ) : (
-                    // image displayed to the right of text
-                    <>
-                        {' '}
-                        <div className="text">
-                            <h3>{header}</h3>
-                            <MarkdownField source={body} />
-                        </div>
-                        <Img
-                            fluid={media.media.imageFile.childImageSharp.fluid}
-                        />
-                    </>
-                )}
-            </section>
-        </>
-    )
-}
+//     return (
+//         <>
+//             <section>
+//                 {position_left ? ( // image displayed to the left of text
+//                     <>
+//                         {' '}
+//                         <Img
+//                             fluid={media.media.imageFile.childImageSharp.fluid}
+//                         />
+//                         <div className="text">
+//                             <h3>{header}</h3>
+//                             <MarkdownField source={body} />
+//                         </div>
+//                     </>
+//                 ) : (
+//                     // image displayed to the right of text
+//                     <>
+//                         {' '}
+//                         <div className="text">
+//                             <h3>{header}</h3>
+//                             <MarkdownField source={body} />
+//                         </div>
+//                         <Img
+//                             fluid={media.media.imageFile.childImageSharp.fluid}
+//                         />
+//                     </>
+//                 )}
+//             </section>
+//         </>
+//     )
+// }

@@ -49,19 +49,6 @@ export const query = graphql`
                     ... on STRAPI_ComponentContentQuote {
                         quote
                     }
-                    ... on STRAPI_ComponentContentTextWithImage {
-                        header
-                        body
-                        media {
-                            media {
-                                url
-                                imageFile {
-                                    ...FluidImage
-                                }
-                            }
-                        }
-                        position_left
-                    }
                 }
 
                 tags {
@@ -73,6 +60,20 @@ export const query = graphql`
         }
     }
 `
+// TODO: add back to graphql
+// ... on STRAPI_ComponentContentTextWithImage {
+//     header
+//     body
+//     media {
+//         media {
+//             url
+//             imageFile {
+//                 ...FluidImage
+//             }
+//         }
+//     }
+//     position_left
+// }
 
 const BlogTemplate: React.FC = ({data}: {[key: string]: any}) => {
     const {
