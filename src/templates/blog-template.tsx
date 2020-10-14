@@ -119,14 +119,9 @@ const BlogTemplate: React.FC = ({data}: {[key: string]: any}) => {
     return (
         <Layout>
             <SEO title={`${title} by ${mapAuthors()} `} />
+            <Header title={title} major={false} center={false} value={1} />
             <ContentCard background={false}>
                 <>
-                    <Header
-                        title={title}
-                        major={false}
-                        center={false}
-                        value={1}
-                    />
                     {quote && (
                         <Header
                             className="quote"
