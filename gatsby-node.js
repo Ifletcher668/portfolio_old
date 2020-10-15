@@ -31,20 +31,24 @@ exports.createPages = async ({actions, graphql, reporter}) => {
     if (error)
         return reporter.panicOnBuild(`Error while running GraphQL query!`)
 
-    data.strapi.blogs.forEach(({slug, id, published}) => {
+    const blogs = data.strapi.blogs
+
+    blogs.forEach(({slug, id, published}) => {
         createPage({
             path: `/writing/journal/${formatDateOnSlug(published)}/${slug}`,
-            component: path.resolve(`./src/templates/blog-template.tsx`), // the template
+            component: path.resolve(`./src/templates/blogPost.tsx`), // the template
             context: {
                 id: id,
             },
         })
     })
 
-    data.strapi.poems.forEach(({slug, id, published}) => {
+    const poetry = data.strapi.poems
+
+    poetry.forEach(({slug, id, published}) => {
         createPage({
             path: `/writing/poetry/${formatDateOnSlug(published)}/${slug}`,
-            component: path.resolve(`./src/templates/poem-template.tsx`),
+            component: path.resolve(`./src/templates/poem.tsx`),
             context: {
                 id: id,
             },

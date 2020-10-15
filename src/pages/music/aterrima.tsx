@@ -1,10 +1,10 @@
 import React from 'react'
 import Image from 'gatsby-image'
-import Layout from '../../components/layout/layout'
+import Layout from '../../components/Layout'
 import SEO from '../../components/SEO/SEO'
-import ContentCard from '../../components/content/content'
+import ContentCard from '../../components/Content'
 import config from '../../../config/website'
-import {Header} from '../../components/titles/titles'
+import {Header} from '../../components/Titles'
 import {useImageQuery} from '../../graphql/queries/images'
 
 export default (props: IProps) => {

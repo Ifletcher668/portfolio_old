@@ -1,12 +1,12 @@
 import React, {Fragment} from 'react'
 import {graphql} from 'gatsby'
-import Layout from '../components/layout/layout'
-import {Header, Title} from '../components/titles/titles'
+import Layout from '../components/Layout'
+import {Header, Title} from '../components/Titles'
 import SEO from '../components/SEO/SEO'
-import Projects from '../components/projects/projects'
-import Tags from '../components/tags/tags'
+import Projects from '../components/Projects'
+import Tags from '../components/Tags'
 import MarkdownField from 'react-markdown'
-import ContentCard from '../components/content/content'
+import ContentCard from '../components/Content'
 
 import config from '../../config/website'
 

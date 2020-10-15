@@ -1,9 +1,9 @@
 import React from 'react'
-import Layout from '../../components/layout/layout'
+import Layout from '../../components/Layout'
 import SEO from '../../components/SEO/SEO'
-import ContentCard from '../../components/content/content'
+import ContentCard from '../../components/Content'
 import config from '../../../config/website'
-import {Header} from '../../components/titles/titles'
+import {Header} from '../../components/Titles'
 export default (props: IProps) => {
     return (
         <Layout>

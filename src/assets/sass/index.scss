@@ -45,15 +45,17 @@
 @import 'base/page';
 
 // components
-@import '../../components/links/socialLinks';
-@import '../../components/footer/footer';
-@import '../../components/navbar/navbar';
-@import '../../components/sidebar/sidebar';
-@import '../../components/services/services';
-@import '../../components/projects/projects';
-@import '../../components/cards/cardComponent';
-@import '../../components/content/content';
-@import '../../components/contact_form/contact-form';
+@import '../../components/Links/index';
+@import '../../components/Footer/index';
+@import '../../components/Navbar/index';
+@import '../../components/Sidebar/index';
+@import '../../components/Services/index';
+@import '../../components/Projects/index';
+@import '../../components/Cards/index';
+@import '../../components/Content/index';
+@import '../../components/ContactForm/index';
+@import '../../components/ReadingProgressBar/index';
+@import '../../components/ContactForm/index';
 
 // pages
 @import 'pages/indexPage';

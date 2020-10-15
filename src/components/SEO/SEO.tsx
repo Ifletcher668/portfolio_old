@@ -1,12 +1,11 @@
 import React from 'react'
 import {Helmet} from 'react-helmet'
-import {useStaticQuery, graphql} from 'gatsby'
-import config from '../../../config/website'
+import config from '../../../config/config.js'
+
 interface ISEOProps {
     title: string
     htmlAttributes?: {[key: string]: string}
     descFor?: string
-    // meta: any[]
 }
 
 const SEO: React.FC<ISEOProps> = ({
@@ -41,10 +40,7 @@ ISEOProps) => {
                     content: `website`,
                 },
             ]}
-        >
-            {/* <meta charSet="utf-8" /> */}
-            {/* <meta name="description" content={descFor || siteDescription} /> */}
-        </Helmet>
+        ></Helmet>
     )
 }
 

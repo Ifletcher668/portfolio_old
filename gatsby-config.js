@@ -1,5 +1,5 @@
 const path = require('path')
-const config = require('./config/site')
+const config = require('./config/config')
 
 require('dotenv').config({
     path: `.env.${process.env.NODE_ENV}`,
@@ -7,11 +7,10 @@ require('dotenv').config({
 
 module.exports = {
     siteMetadata: {
-        title: 'Isiahfletcher.com',
-        description:
-            'Drummer. Web Developer. Poet. Isiah Fletcher lives in Boise, Idaho',
+        title: config.siteTitle,
+        description: config.siteDescription,
         author: 'Isiah Fletcher',
-        siteUrl: 'https://isiahfletcher.netlify.app',
+        siteUrl: config.siteUrl,
     },
     plugins: [
         `gatsby-transformer-sharp`,
@@ -46,8 +45,7 @@ module.exports = {
                         ? 'http://localhost:1337/graphql'
                         : 'https://isiahfletcheradmin.herokuapp.com/graphql'
                 }`,
-                refetchInterval:
-                    process.env.NODE_ENV === 'development' ? 100 : 1000, // refetches Strapi data every 10 minutes
+                refetchInterval: process.env.NODE_ENV === 'development' && 50, // refetches Strapi data every 10 minutes
             },
         },
         {

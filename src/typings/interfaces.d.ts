@@ -27,23 +27,30 @@ interface IPoetryPage extends IProps {
 }
 
 interface IBlogLinks extends IProps {
-    title: string
-    author: string
-    preview: string
-    published: string
-    body: string
     slug: string
-    image: GatsbyImageSharp
-    tags: Tag[]
+    authors: Author[]
+    title: string
+    cover_image: PostImage
+    content: any
+    link_to_biography: string
+    quote: Quote
+    preview: string
+    tags: Tags[]
+    published: string
+    createdAt: string
+    updatedAt: string
 }
 
 interface IPoetryLinks extends IProps {
     title: string
+    body: string
+    test_body: any
     author: string
     published: string
-    body: string
+    tags: Tags[]
     slug: string
-    tags: Tag[]
+    createdAt: string
+    updatedAt: string
 }
 
 interface IPoemNode {

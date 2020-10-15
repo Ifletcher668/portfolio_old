@@ -1,18 +1,4 @@
 export default {
-    siteTitle: 'Isiah Fletcher',
-    siteTitleAlt: 'Drummer | Poet | Software Engineer',
-    siteTitleShort: 'IsiahFletcher',
-    siteUrl: 'https://isiahfletcher.com',
-    lang: 'en',
-    pathPrefix: '/',
-    siteLogo: 'images/logo.png',
-    siteDescription:
-        'Drummer. Web Developer. Poet. Isiah Fletcher lives in Beautiful Boise, Idaho',
-    minibio:
-        'Isiah Fletcher is a Javascript engineer, and a professional drummer and writer. He write content for the web, builds websites, writes poetry, and tours with his bands, Aterrima and Weald and Woe.',
-    author: 'Isiah J. Fletcher',
-    organization: 'Isiah Fletcher',
-
     // social media
     instagram: 'https://www.instagram.com/fletchmydrumsticks/?hl=en',
     github: 'https://github.com/Ifletcher668?tab=repositories',
@@ -75,7 +61,7 @@ export default {
                 'Isiah collects stories from his travels around the world (and internet), and stores them here to share. An avid reader, Isiah believes in amassing a list of influential things, showing off random projects, and sharing links to things of interest.',
         },
     },
-
+    // all site routes
     routes: {
         base: '/',
         music: '/music/',
