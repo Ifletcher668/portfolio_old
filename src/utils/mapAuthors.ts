@@ -5,6 +5,7 @@ type Author = {
 const mapAuthors = (authors: Author[], maxNumberOfAuthorsListed = false) => {
     let numberOfAuthors = authors.length
     if (numberOfAuthors === 0) return 'anonymous'
+    if (numberOfAuthors === 1) return authors[0].username
     if (maxNumberOfAuthorsListed) {
         const maxAuthorCount = 3
         const slimmedAuthorList = authors.slice(0, maxAuthorCount)
