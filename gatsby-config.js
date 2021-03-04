@@ -19,6 +19,7 @@ module.exports = {
         `gatsby-plugin-sitemap`,
         `gatsby-plugin-typescript`,
         `gatsby-plugin-sass`,
+        `gatsby-plugin-preload-fonts`,
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
@@ -48,20 +49,9 @@ module.exports = {
                 refetchInterval: process.env.NODE_ENV === 'development' && 50, // refetches Strapi data every 10 minutes
             },
         },
-        {
-            resolve: `gatsby-plugin-prefetch-google-fonts`,
-            options: {
-                fonts: [
-                    {
-                        family: `Cormorant Garamond`,
-                        variants: [`400`, `500`, `700`],
-                    },
-                    {
-                        family: `Montserrat`,
-                        variants: [`400`, `500`, `700`],
-                    },
-                ],
-            },
-        },
+        
+            
+
+        
     ],
 }
